@@ -1,16 +1,8 @@
 import React from "react";
 
 const HeavenlyBodies = (props) => {
-  const toggleActive = (val, index) => {
+  const toggleActive = (val) => {
     props.changeState(val);
-
-    // props.setBody({
-    //   bImage: props.destValues[index].image,
-    //   bName: props.destValues[index].name,
-    //   bInfo: props.bodyInfo[index],
-    //   bDistance: props.destValues[index].distance,
-    //   bTravel: props.destValues[index].travel,
-    // });
   };
 
   return (
@@ -49,36 +41,6 @@ const HeavenlyBodies = (props) => {
             ))}
           </ul>
         </div>
-        {/* <div className="heavenly-body-present" tabIndex="1" >
-          <div className="heavenly-body-name">
-            <h3>{props.body.bName}</h3>
-          </div>
-          <div className="heavenly-body-present-desc">
-            <p>{props.body.bInfo}</p>
-          </div>
-          <br />
-          <div className="destination-items" tabIndex="2">
-            <div className="destination-line"></div>
-            <table>
-              <thead>
-                <tr>
-                  <th className="destination-label">AVG. DISTANCE</th>
-                  <th className="destination-label">ESTIMATED TRAVEL TIME</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="destination-values distance">
-                    {props.body.bDistance}
-                  </td>
-                  <td className="destination-values travel">
-                    {props.body.bTravel}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div> */}
         {props.destValues.map((val) => (
           <div
             className={
