@@ -79,55 +79,6 @@ const Technology = () => {
           activeState={activeState}
           changeState={changeState}
         />
-        {/* <div className="tech-desc-items">
-          <div className="tech-btns">
-            <ul>
-              {techValues.map((val, index) => (
-                <li key={val.id}>
-                  <button
-                    onClick={() => toggleActive(val.id, index)}
-                    className={
-                      activeState === val.id
-                        ? "tech-button active"
-                        : "tech-button"
-                    }
-                  >
-                    {val.id}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="tech-info">
-            <h5>THE TERMINOLOGY...</h5>
-            {techValues.map((val) => (
-              <div
-                tabIndex={activeState === val.id ? "1" : ""}
-                key={val.id}
-                className={
-                  activeState === val.id
-                    ? "tech-name-desc active"
-                    : "tech-name-desc"
-                }
-              >
-                <h1>{val.techName}</h1>
-                {val.techDesc}
-              </div>
-            ))}
-          </div>
-          <div className="tech-img">
-            {techValues.map((val) => (
-              <img
-                key={val.id}
-                className={
-                  activeState === val.id ? "tech-photo active" : "tech-photo"
-                }
-                src={val.techImg}
-                alt={val.techName}
-              />
-            ))}
-          </div>
-        </div> */}
       </div>
     </section>
   );
