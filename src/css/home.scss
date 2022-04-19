@@ -1,11 +1,18 @@
 .section-home {
   position: relative;
+  z-index: 1;
   padding-top: 10%;
   padding-bottom: 10%;
-  height: 100%;
   margin: 0;
 
-  .section-items {
+  @media only screen and (min-width: 1400px) {
+    .section-items.sm-screen {
+      display: none;
+    }
+  }
+
+  // DESKTOP VIEW
+  .section-items.lg-screen {
     position: relative;
     top: 15%;
     display: flex;
@@ -62,7 +69,6 @@
           border-radius: 50%;
 
           .explore-hover {
-            z-index: 0;
             top: 0%;
             left: 0%;
             position: absolute;
@@ -93,6 +99,80 @@
             .explore {
               background-color: #0b0d17;
               color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // MOBILE VIEW
+  @media only screen and (max-width: 767px) {
+    .section-items.lg-screen {
+      display: none;
+    }
+
+    & {
+      padding-top: 0%;
+      padding-left: 20px;
+      padding-right: 20px;
+      justify-content: center;
+      .section-items.sm-screen {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .space-intro {
+          height: 276px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          h3 {
+            font-family: "Barlow Condensed", sans-serif;
+            font-weight: normal;
+            letter-spacing: 2.7px;
+          }
+
+          .space {
+            font-family: "Bellefair", sans-serif;
+            font-size: 80px;
+          }
+
+          p {
+            text-align: center;
+            font-size: 15px;
+            line-height: 25px;
+          }
+        }
+
+        .explore-button {
+          margin-top: 60px;
+          width: 150px;
+          height: 150px;
+          text-align: center;
+          line-height: 150px;
+
+          a {
+            text-decoration: none;
+            border-radius: 50%;
+
+            .explore {
+              font-size: 20px;
+              letter-spacing: 1.25px;
+              background-color: white;
+              border-radius: 50%;
+              font-family: "Bellefair", sans-serif;
+              color: #0b0d17;
+
+              &:active {
+                background-color: #0b0d17;
+                color: white;
+              }
+
+              &:focus {
+                border-radius: 50%;
+              }
             }
           }
         }

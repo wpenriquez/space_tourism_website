@@ -1,5 +1,8 @@
 import { ReactComponent as Logo } from "../assets/shared/logo.svg";
+import { ReactComponent as Hamburger } from "../assets/shared/icon-hamburger.svg";
+import { ReactComponent as CloseBtn } from "../assets/shared/icon-close.svg";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
 import "../css/navbar.css";
 
 const Navbar = () => {
@@ -16,10 +19,17 @@ const Navbar = () => {
   };
 
   changeBackground();
+
+  const [collapse, setCollapse] = useState(false);
+
+  const collapseMobileNav = () => {
+    setCollapse((prevState) => !prevState);
+    console.log(collapse);
+  };
   return (
     <header>
       <nav>
-        <div className="navbar-items">
+        <div className="navbar-items lg-screen">
           <div className="logo">
             <Link to="/">
               <Logo />
@@ -57,6 +67,53 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
+        <div className="navbar-items sm-screen">
+          <div className="logo">
+            <Link to="/">
+              <Logo />
+            </Link>
+          </div>
+          <div className="line"></div>
+          <div className="hamburger" onClick={collapseMobileNav}>
+            <Hamburger />
+          </div>
+        </div>
+        <div className={collapse ? "mobile-navbar active" : "mobile-navbar"}>
+            <div className="close-btn">
+              <div className="close-btn-icon" onClick={collapseMobileNav}>
+                <CloseBtn />
+              </div>
+            </div>
+            <div className="nav-links">
+              <ul>
+                <li>
+                  <NavLink to="/" onClick={collapseMobileNav}>
+                    <b>00</b> HOME
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/destination" onClick={collapseMobileNav}>
+                    <b>01</b> DESTINATION
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/crew" onClick={collapseMobileNav}>
+                    <b>02</b> CREW
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/technology" onClick={collapseMobileNav}>
+                    <b>03</b> TECHNOLOGY
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/missions" onClick={collapseMobileNav}>
+                    <b>04</b> MISSIONS
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
       </nav>
     </header>
   );

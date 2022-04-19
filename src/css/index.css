@@ -5,6 +5,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media only screen and (max-width: 767px) {
+  html {
+    height: 100%;
+  }
+}
+
 html body {
   padding: 0%;
   margin: 0;
@@ -34,6 +40,31 @@ html body.technology {
 
 html body.missions {
   background-image: url("../assets/missions/space-photo.jpeg");
+}
+
+@media only screen and (min-width: 1400px) {
+  html body .navbar-items.sm-screen,
+  html body .mobile-navbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html body {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+  }
+  html body.crew {
+    background-image: url("../assets/crew/background-crew-mobile.jpg");
+  }
+  html body.technology {
+    background-image: url("../assets/technology/background-technology-mobile.jpg");
+  }
+  html body.missions {
+    background-image: url("../assets/missions/space-photo.jpeg");
+  }
+  html body .navbar-items.lg-screen {
+    display: none;
+  }
 }
 
 html body::-webkit-scrollbar {

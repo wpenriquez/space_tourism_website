@@ -1,12 +1,18 @@
 .section-home {
   position: relative;
+  z-index: 1;
   padding-top: 10%;
   padding-bottom: 10%;
-  height: 100%;
   margin: 0;
 }
 
-.section-home .section-items {
+@media only screen and (min-width: 1400px) {
+  .section-home .section-items.sm-screen {
+    display: none;
+  }
+}
+
+.section-home .section-items.lg-screen {
   position: relative;
   top: 15%;
   display: -webkit-box;
@@ -17,41 +23,41 @@
       justify-content: space-around;
 }
 
-.section-home .section-items .space-intro {
+.section-home .section-items.lg-screen .space-intro {
   width: 450px;
   height: 382px;
 }
 
-.section-home .section-items .space-intro h3 {
+.section-home .section-items.lg-screen .space-intro h3 {
   letter-spacing: 4.75px;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 28px;
   font-weight: normal;
 }
 
-.section-home .section-items .space-intro .space {
+.section-home .section-items.lg-screen .space-intro .space {
   font-size: 150px;
   font-family: "Bellefair", sans-serif;
 }
 
-.section-home .section-items .space-intro p {
+.section-home .section-items.lg-screen .space-intro p {
   font-size: 18px;
   line-height: 35px;
 }
 
-.section-home .section-items .explore-button {
+.section-home .section-items.lg-screen .explore-button {
   position: relative;
   margin-left: -10%;
   margin-top: 10%;
   width: auto;
 }
 
-.section-home .section-items .explore-button a {
+.section-home .section-items.lg-screen .explore-button a {
   text-decoration: none;
   border-radius: 50%;
 }
 
-.section-home .section-items .explore-button a .explore {
+.section-home .section-items.lg-screen .explore-button a .explore {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
@@ -71,8 +77,7 @@
   border-radius: 50%;
 }
 
-.section-home .section-items .explore-button a .explore .explore-hover {
-  z-index: 0;
+.section-home .section-items.lg-screen .explore-button a .explore .explore-hover {
   top: 0%;
   left: 0%;
   position: absolute;
@@ -85,11 +90,11 @@
   transition: all 0.3s ease;
 }
 
-.section-home .section-items .explore-button a:hover .explore, .section-home .section-items .explore-button a:focus .explore {
+.section-home .section-items.lg-screen .explore-button a:hover .explore, .section-home .section-items.lg-screen .explore-button a:focus .explore {
   cursor: pointer;
 }
 
-.section-home .section-items .explore-button a:hover .explore .explore-hover, .section-home .section-items .explore-button a:focus .explore .explore-hover {
+.section-home .section-items.lg-screen .explore-button a:hover .explore .explore-hover, .section-home .section-items.lg-screen .explore-button a:focus .explore .explore-hover {
   opacity: 1;
   top: -27%;
   left: -27%;
@@ -97,8 +102,90 @@
   height: 420px;
 }
 
-.section-home .section-items .explore-button a:hover:focus .explore, .section-home .section-items .explore-button a:hover:active .explore, .section-home .section-items .explore-button a:focus:focus .explore, .section-home .section-items .explore-button a:focus:active .explore {
+.section-home .section-items.lg-screen .explore-button a:hover:focus .explore, .section-home .section-items.lg-screen .explore-button a:hover:active .explore, .section-home .section-items.lg-screen .explore-button a:focus:focus .explore, .section-home .section-items.lg-screen .explore-button a:focus:active .explore {
   background-color: #0b0d17;
   color: white;
+}
+
+@media only screen and (max-width: 767px) {
+  .section-home .section-items.lg-screen {
+    display: none;
+  }
+  .section-home {
+    padding-top: 0%;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section-home .section-items.sm-screen {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-home .section-items.sm-screen .space-intro {
+    height: 276px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section-home .section-items.sm-screen .space-intro h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: normal;
+    letter-spacing: 2.7px;
+  }
+  .section-home .section-items.sm-screen .space-intro .space {
+    font-family: "Bellefair", sans-serif;
+    font-size: 80px;
+  }
+  .section-home .section-items.sm-screen .space-intro p {
+    text-align: center;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .section-home .section-items.sm-screen .explore-button {
+    margin-top: 60px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+  }
+  .section-home .section-items.sm-screen .explore-button a {
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  .section-home .section-items.sm-screen .explore-button a .explore {
+    font-size: 20px;
+    letter-spacing: 1.25px;
+    background-color: white;
+    border-radius: 50%;
+    font-family: "Bellefair", sans-serif;
+    color: #0b0d17;
+  }
+  .section-home .section-items.sm-screen .explore-button a .explore:active {
+    background-color: #0b0d17;
+    color: white;
+  }
+  .section-home .section-items.sm-screen .explore-button a .explore:focus {
+    border-radius: 50%;
+  }
 }
 /*# sourceMappingURL=home.css.map */
