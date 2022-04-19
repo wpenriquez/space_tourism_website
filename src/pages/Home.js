@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <section className="section-home">
-      <div className="section-items">
-        <div className="space-intro">
+      <div className="section-items lg-screen">
+        <div className="space-intro lg-screen">
           <h3>SO, YOU WANT TO TRAVEL TO</h3>
           <span className="space">SPACE</span>
           <p>
@@ -16,7 +16,7 @@ const Home = () => {
             world experience!
           </p>
         </div>
-        <div className="explore-button">
+        <div className="explore-button lg-screen">
           <Link to="/destination">
             <div className="explore">
               EXPLORE

@@ -1,3 +1,5 @@
+// LARGE SCREENS
+
 .section-home {
   position: relative;
   padding-top: 10%;
@@ -5,14 +7,15 @@
   height: 100%;
   margin: 0;
 
-  .section-items {
+  .section-items.lg-screen {
     position: relative;
+    align-items: center;
     top: 15%;
     display: flex;
     width: 100%;
     justify-content: space-around;
 
-    .space-intro {
+    .space-intro.lg-screen {
       width: 450px;
       height: 382px;
 
@@ -34,7 +37,7 @@
       }
     }
 
-    .explore-button {
+    .explore-button.lg-screen {
       position: relative;
       margin-left: -10%;
       margin-top: 10%;
