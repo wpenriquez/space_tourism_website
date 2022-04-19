@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;700&family=Barlow:wght@100;300;700&family=Bellefair&display=swap");
+html {
+  overflow-x: hidden;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+html body {
+  padding: 0%;
+  margin: 0;
+  font-family: "Barlow", sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  color: #d0d6f9;
+  background: #1f1e1e;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/home/background-home-desktop.jpg");
+}
+
+html body.destination {
+  background-image: url("../assets/destination/background-destination-desktop.jpg");
+}
+
+html body.crew {
+  background-image: url("../assets/crew/background-crew-desktop.jpg");
+}
+
+html body.technology {
+  background-image: url("../assets/technology/background-technology-desktop.jpg");
+}
+
+html body.missions {
+  background-image: url("../assets/missions/space-photo.jpeg");
+}
+
+html body::-webkit-scrollbar {
+  display: none;
+}
+
+html #root .App header {
+  height: 96px;
+  margin-top: 2%;
+}
+
+html #root .App section {
+  position: relative;
+  z-index: 1;
+}
+/*# sourceMappingURL=index.css.map */

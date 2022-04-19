@@ -1,0 +1,131 @@
+.section-tech {
+  padding-bottom: 5%;
+  padding-left: 163px;
+  padding-top: 5%;
+}
+
+.section-tech .tech-intro {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 28px;
+  letter-spacing: 4.72px;
+  font-weight: normal;
+}
+
+.section-tech .tech-intro span {
+  font-weight: bold;
+  opacity: 0.3;
+  margin-right: 28px;
+}
+
+.section-tech .tech-desc-items {
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 527px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-tech .tech-desc-items .tech-btns {
+  width: 80px;
+  height: 304px;
+}
+
+.section-tech .tech-desc-items .tech-btns ul {
+  padding: 0;
+  margin: 0;
+}
+
+.section-tech .tech-desc-items .tech-btns ul li {
+  list-style: none;
+}
+
+.section-tech .tech-desc-items .tech-btns ul li .tech-button {
+  font-family: "Bellefair", sans-serif;
+  font-size: 32px;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 50%;
+  margin-bottom: 32px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.section-tech .tech-desc-items .tech-btns ul li .tech-button:hover, .section-tech .tech-desc-items .tech-btns ul li .tech-button:focus {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.section-tech .tech-desc-items .tech-btns ul li .tech-button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.section-tech .tech-desc-items .tech-btns ul li .tech-button.active {
+  background-color: white;
+  color: black;
+}
+
+.section-tech .tech-desc-items .tech-info {
+  width: 470px;
+  margin-top: -22%;
+}
+
+.section-tech .tech-desc-items .tech-info h5 {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 2.7px;
+}
+
+.section-tech .tech-desc-items .tech-info .tech-name-desc {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  left: 30%;
+}
+
+.section-tech .tech-desc-items .tech-info .tech-name-desc h1 {
+  margin: 11px 0 17px 0;
+  font-family: "Bellefair", sans-serif;
+  font-size: 56px;
+  font-weight: normal;
+}
+
+.section-tech .tech-desc-items .tech-info .tech-name-desc p {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.section-tech .tech-desc-items .tech-info .tech-name-desc.active {
+  left: 24%;
+  opacity: 1;
+}
+
+.section-tech .tech-desc-items .tech-img {
+  width: 515px;
+  height: 527px;
+}
+
+.section-tech .tech-desc-items .tech-img .tech-photo {
+  position: absolute;
+  opacity: 0;
+  left: 71%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.section-tech .tech-desc-items .tech-img .tech-photo.active {
+  opacity: 1;
+  left: 65%;
+}
+/*# sourceMappingURL=technology.css.map */

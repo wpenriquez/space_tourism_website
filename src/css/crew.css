@@ -1,0 +1,19 @@
+.section-crew {
+  padding-left: 163px;
+  padding-right: 163px;
+  padding-top: 5%;
+}
+
+.section-crew .section-items .crew-intro {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 28px;
+  letter-spacing: 4.72px;
+  font-weight: normal;
+}
+
+.section-crew .section-items .crew-intro span {
+  font-weight: bold;
+  opacity: 0.3;
+  margin-right: 28px;
+}
+/*# sourceMappingURL=crew.css.map */
