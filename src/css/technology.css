@@ -4,128 +4,253 @@
   padding-top: 5%;
 }
 
-.section-tech .tech-intro {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 28px;
-  letter-spacing: 4.72px;
-  font-weight: normal;
+@media only screen and (min-width: 1400px) {
+  .section-tech .section-items.sm-screen,
+  .section-tech .tech-desc-items.sm-screen {
+    display: none;
+  }
+  .section-tech .section-items.lg-screen .tech-intro {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 28px;
+    letter-spacing: 4.72px;
+    font-weight: normal;
+  }
+  .section-tech .section-items.lg-screen .tech-intro span {
+    font-weight: bold;
+    opacity: 0.3;
+    margin-right: 28px;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen {
+    margin-top: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 527px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns {
+    width: 80px;
+    height: 304px;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul {
+    padding: 0;
+    margin: 0;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li {
+    list-style: none;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li .tech-button {
+    font-family: "Bellefair", sans-serif;
+    font-size: 32px;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 50%;
+    margin-bottom: 32px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li .tech-button:hover, .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li .tech-button:focus {
+    border: 1px solid white;
+    cursor: pointer;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li .tech-button:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li .tech-button.active {
+    background-color: white;
+    color: black;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-info {
+    width: 470px;
+    margin-top: -22%;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-info h5 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 2.7px;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-info .tech-name-desc {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    left: 30%;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-info .tech-name-desc h1 {
+    margin: 11px 0 17px 0;
+    font-family: "Bellefair", sans-serif;
+    font-size: 56px;
+    font-weight: normal;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-info .tech-name-desc p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-info .tech-name-desc.active {
+    left: 24%;
+    opacity: 1;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-img {
+    width: 515px;
+    height: 527px;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-img .tech-photo {
+    position: absolute;
+    opacity: 0;
+    left: 71%;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-img .tech-photo.active {
+    opacity: 1;
+    left: 65%;
+  }
 }
 
-.section-tech .tech-intro span {
-  font-weight: bold;
-  opacity: 0.3;
-  margin-right: 28px;
-}
-
-.section-tech .tech-desc-items {
-  margin-top: 5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 527px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.section-tech .tech-desc-items .tech-btns {
-  width: 80px;
-  height: 304px;
-}
-
-.section-tech .tech-desc-items .tech-btns ul {
-  padding: 0;
-  margin: 0;
-}
-
-.section-tech .tech-desc-items .tech-btns ul li {
-  list-style: none;
-}
-
-.section-tech .tech-desc-items .tech-btns ul li .tech-button {
-  font-family: "Bellefair", sans-serif;
-  font-size: 32px;
-  width: 80px;
-  height: 80px;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  border-radius: 50%;
-  margin-bottom: 32px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.section-tech .tech-desc-items .tech-btns ul li .tech-button:hover, .section-tech .tech-desc-items .tech-btns ul li .tech-button:focus {
-  border: 1px solid white;
-  cursor: pointer;
-}
-
-.section-tech .tech-desc-items .tech-btns ul li .tech-button:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.section-tech .tech-desc-items .tech-btns ul li .tech-button.active {
-  background-color: white;
-  color: black;
-}
-
-.section-tech .tech-desc-items .tech-info {
-  width: 470px;
-  margin-top: -22%;
-}
-
-.section-tech .tech-desc-items .tech-info h5 {
-  margin: 0;
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-  letter-spacing: 2.7px;
-}
-
-.section-tech .tech-desc-items .tech-info .tech-name-desc {
-  position: absolute;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  left: 30%;
-}
-
-.section-tech .tech-desc-items .tech-info .tech-name-desc h1 {
-  margin: 11px 0 17px 0;
-  font-family: "Bellefair", sans-serif;
-  font-size: 56px;
-  font-weight: normal;
-}
-
-.section-tech .tech-desc-items .tech-info .tech-name-desc p {
-  font-size: 18px;
-  line-height: 32px;
-}
-
-.section-tech .tech-desc-items .tech-info .tech-name-desc.active {
-  left: 24%;
-  opacity: 1;
-}
-
-.section-tech .tech-desc-items .tech-img {
-  width: 515px;
-  height: 527px;
-}
-
-.section-tech .tech-desc-items .tech-img .tech-photo {
-  position: absolute;
-  opacity: 0;
-  left: 71%;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.section-tech .tech-desc-items .tech-img .tech-photo.active {
-  opacity: 1;
-  left: 65%;
+@media only screen and (max-width: 767px) {
+  .section-tech {
+    padding: 4% 0 5% 0;
+  }
+  .section-tech .section-items.lg-screen,
+  .section-tech .tech-desc-items.lg-screen {
+    display: none;
+  }
+  .section-tech .section-items.sm-screen {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section-tech .section-items.sm-screen .tech-intro {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    font-weight: normal;
+  }
+  .section-tech .section-items.sm-screen .tech-intro span {
+    font-weight: bold;
+    opacity: 0.3;
+    margin-right: 16px;
+  }
+  .section-tech .section-items.sm-screen .tech-items {
+    margin-top: 32px;
+    width: 100%;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-img {
+    position: relative;
+    width: 100%;
+    height: 170px;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-img .tech-photo {
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    width: 101%;
+    height: 100%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-img .tech-photo.active {
+    opacity: 1;
+    left: 0%;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns {
+    margin-top: 5%;
+    width: 152px;
+    position: relative;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns ul {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns ul li {
+    list-style: none;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns ul li .tech-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: none;
+    color: white;
+    font-family: "Bellefair", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 16px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns ul li .tech-button.active {
+    background-color: white;
+    color: #0b0d17;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-info {
+    position: relative;
+    width: 327px;
+    text-align: center;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-info h5 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2.36px;
+    font-weight: normal;
+    color: #d0d6f9;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-info .tech-name-desc {
+    margin-top: -30px;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-info .tech-name-desc h1 {
+    font-family: "Bellefair", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-info .tech-name-desc p {
+    font-family: "Barlow", sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-info .tech-name-desc.active {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=technology.css.map */

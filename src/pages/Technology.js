@@ -3,6 +3,9 @@ import "../css/technology.css";
 import firstTech from "../assets/technology/image-launch-vehicle-portrait.jpg";
 import secondTech from "../assets/technology/image-spaceport-portrait.jpg";
 import thirdTech from "../assets/technology/image-space-capsule-portrait.jpg";
+import firstTechLand from "../assets/technology/image-launch-vehicle-landscape.jpg";
+import secondTechLand from "../assets/technology/image-spaceport-landscape.jpg";
+import thirdTechLand from "../assets/technology/image-space-capsule-landscape.jpg";
 import TechnologyItems from "../components/TechnologyItems";
 
 const Technology = () => {
@@ -25,7 +28,17 @@ const Technology = () => {
           launch pad!
         </p>
       ),
+      techDescMobile: (
+        <p>
+          A launch vehicle or carrier rocket is a rocket-propelled vehicle used
+          to carry a payload from Earth's surface to space, usually to Earth
+          orbit or beyond. Our WEB-X carrier rocket is the most powerful in
+          operation. Standing 150 metres tall, it's quite an awe-inspiring sight
+          on the launch pad!
+        </p>
+      ),
       techImg: firstTech,
+      techImgLand: firstTechLand,
     },
     {
       id: 2,
@@ -43,7 +56,16 @@ const Technology = () => {
           advantage of the Earth’s rotation for launch.
         </p>
       ),
+      techDescMobile: (
+        <p>
+          A spaceport or cosmodrome is a site for launching (or receiving)
+          spacecraft, by analogy to the seaport for ships or airport for
+          aircraft. Based in the famous Cape Canaveral, our spaceport is ideally
+          situated to take advantage of the Earth’s rotation for launch.
+        </p>
+      ),
       techImg: secondTech,
+      techImgLand: secondTechLand,
     },
     {
       id: 3,
@@ -62,7 +84,17 @@ const Technology = () => {
           entertained.
         </p>
       ),
+      techDescMobile: (
+        <p>
+          A space capsule is an often-crewed spacecraft that uses a blunt-body
+          reentry capsule to reenter the Earth's atmosphere without wings. Our
+          capsule is where you'll spend your time during the flight. It includes
+          a space gym, cinema, and plenty of other activities to keep you
+          entertained.
+        </p>
+      ),
       techImg: thirdTech,
+      techImgLand: thirdTechLand,
     },
   ];
 
@@ -70,7 +102,17 @@ const Technology = () => {
 
   return (
     <section className="section-tech">
-      <div className="section-items">
+      <div className="section-items lg-screen">
+        <div className="tech-intro">
+          <span>03</span>SPACE LAUNCH 101
+        </div>
+        <TechnologyItems
+          techValues={techValues}
+          activeState={activeState}
+          changeState={changeState}
+        />
+      </div>
+      <div className="section-items sm-screen">
         <div className="tech-intro">
           <span>03</span>SPACE LAUNCH 101
         </div>

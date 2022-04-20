@@ -1,72 +1,167 @@
 .crew-carousel {
   position: relative;
   width: 100%;
-
   height: 665px;
-  .crew-carousel-inner {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
 
-    .crew-carousel-desc {
-      top: 154px;
+  // DESKTOP VIEW
+  @media only screen and (min-width: 1400px) {
+    .crew-carousel-inner.sm-screen {
+      display: none;
+    }
 
+    .crew-carousel-inner.lg-screen {
       position: relative;
-      height: 406px;
-      .crew-carousel-info {
-        width: 620px;
-        height: 271px;
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+
+      .crew-carousel-desc {
+        top: 154px;
+
         position: relative;
-        .crew-carousel-info-inner {
-          transition: all 0.3s ease;
-          opacity: 0;
-          font-family: "Bellefair", sans-serif;
+        height: 406px;
+        .crew-carousel-info {
+          width: 620px;
+          height: 271px;
+          position: relative;
+          .crew-carousel-info-inner {
+            transition: all 0.3s ease;
+            opacity: 0;
+            font-family: "Bellefair", sans-serif;
+            position: absolute;
+            h2 {
+              margin: 0;
+              font-size: 32px;
+              opacity: 0.5;
+              font-weight: normal;
+            }
+
+            h1 {
+              margin: 15px 0 27px 0;
+              font-size: 56px;
+              font-weight: normal;
+            }
+
+            p {
+              margin: 0;
+              font-family: "Barlow", sans-serif;
+              font-size: 18px;
+              line-height: 32px;
+              font-weight: normal;
+            }
+
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+        .crew-carousel-indicators {
+          width: 132px;
+
           position: absolute;
-          h2 {
-            margin: 0;
-            font-size: 32px;
-            opacity: 0.5;
-            font-weight: normal;
-          }
+          top: 99%;
+          ul {
+            padding: 0;
+            display: flex;
+            li {
+              list-style: none;
+              .crew-carousel-button {
+                transition: all 0.3s ease;
+                border-radius: 50%;
+                border: none;
+                background-color: rgba(255, 255, 255, 0.2);
+                width: 15px;
+                height: 15px;
+                margin-right: 24px;
 
-          h1 {
-            margin: 15px 0 27px 0;
-            font-size: 56px;
-            font-weight: normal;
-          }
+                &:hover,
+                &:focus {
+                  background-color: rgba(255, 255, 255, 0.5);
+                  cursor: pointer;
+                }
 
-          p {
-            margin: 0;
-            font-family: "Barlow", sans-serif;
-            font-size: 18px;
-            line-height: 32px;
-            font-weight: normal;
+                &.active {
+                  background-color: white;
+                }
+              }
+            }
           }
+        }
+      }
+      .crew-carousel-images {
+        position: relative;
+        width: 100%;
+
+        .crew-carousel-img {
+          height: 100%;
+          position: absolute;
+          left: 10%;
+          opacity: 0;
+          transition: all 0.5s ease;
+
+          &.active {
+            left: 0%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // MOBILE VIEW
+  @media only screen and (max-width: 767px) {
+    .crew-carousel-inner.lg-screen {
+      display: none;
+    }
+
+    & {
+      height: auto;
+    }
+
+    .crew-carousel-inner.sm-screen {
+      margin-top: -1%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: auto;
+      .crew-carousel-images {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 32px;
+        width: 327px;
+        height: 223px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .crew-carousel-img {
+          position: absolute;
+          width: auto;
+          height: 100%;
+          opacity: 0;
+          transition: all 0.3s ease;
 
           &.active {
             opacity: 1;
           }
         }
       }
-      .crew-carousel-indicators {
-        width: 132px;
 
-        position: absolute;
-        top: 99%;
+      .crew-carousel-indicators {
+        width: 98px;
         ul {
           padding: 0;
           display: flex;
           li {
             list-style: none;
+            margin-right: 16px;
             .crew-carousel-button {
               transition: all 0.3s ease;
-              border-radius: 50%;
-              border: none;
               background-color: rgba(255, 255, 255, 0.2);
-              width: 15px;
-              height: 15px;
-              margin-right: 24px;
+              border-radius: 50%;
+              width: 10px;
+              height: 12px;
+              border: none;
 
               &:hover,
               &:focus {
@@ -81,21 +176,43 @@
           }
         }
       }
-    }
-    .crew-carousel-images {
-      position: relative;
-      width: 100%;
 
-      .crew-carousel-img {
-        height: 100%;
-        position: absolute;
-        left: 10%;
-        opacity: 0;
-        transition: all 0.5s ease;
+      .crew-carousel-info {
+        position: relative;
+        width: 327px;
+        .crew-carousel-info-inner {
+          left: 0;
+          position: absolute;
+          transition: all 0.3s ease;
+          font-family: "Bellefair", sans-serif;
+          opacity: 0;
+          transition: all 0.3s ease;
+          text-align: center;
 
-        &.active {
-          left: 0%;
-          opacity: 1;
+          h2 {
+            margin-top: 0;
+            font-weight: normal;
+            font-size: 16px;
+            opacity: 0.5;
+          }
+
+          h1 {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: normal;
+          }
+
+          p {
+            margin-top: -10px;
+            font-family: "Barlow", sans-serif;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: normal;
+          }
+
+          &.active {
+            opacity: 1;
+          }
         }
       }
     }

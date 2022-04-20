@@ -14,7 +14,6 @@
   .section-destination .section-items.lg-screen .destination-intro {
     font-family: "Barlow Condensed", sans-serif;
     letter-spacing: 4.72px;
-    font-size: 28px;
   }
   .section-destination .section-items.lg-screen .destination-intro span {
     font-weight: bold;
@@ -22,6 +21,7 @@
     margin-right: 28px;
   }
   .section-destination .section-items.lg-screen .destination-intro h3 {
+    font-size: 28px;
     font-weight: 300;
   }
   .section-destination .section-items.lg-screen .heavenly-bodies .heavenly-bodies-section {
@@ -170,7 +170,6 @@
     position: relative;
   }
   .section-destination .section-items.sm-screen .destination-intro {
-    font-size: 16px;
     font-family: "Barlow Condensed", sans-serif;
     letter-spacing: 2.7px;
     text-align: center;
@@ -178,9 +177,10 @@
   .section-destination .section-items.sm-screen .destination-intro span {
     font-weight: bold;
     opacity: 0.3;
-    margin-right: 18px;
+    margin-right: 16px;
   }
   .section-destination .section-items.sm-screen .destination-intro h3 {
+    font-size: 16px;
     font-weight: 300;
   }
   .section-destination .section-items.sm-screen .heavenly-bodies {
