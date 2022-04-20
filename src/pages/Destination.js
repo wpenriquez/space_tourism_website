@@ -56,7 +56,19 @@ const Destination = () => {
 
   return (
     <section className="section-destination">
-      <div className="section-items">
+      <div className="section-items lg-screen">
+        <div className="destination-intro">
+          <h3>
+            <span>01</span>PICK YOUR DESTINATION
+          </h3>
+        </div>
+        <HeavenlyBodies
+          destValues={destValues}
+          activeState={activeState}
+          changeState={changeState}
+        />
+      </div>
+      <div className="section-items sm-screen">
         <div className="destination-intro">
           <h3>
             <span>01</span>PICK YOUR DESTINATION

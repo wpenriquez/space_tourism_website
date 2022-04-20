@@ -42,13 +42,6 @@ html body.missions {
   background-image: url("../assets/missions/space-photo.jpeg");
 }
 
-@media only screen and (min-width: 1400px) {
-  html body .navbar-items.sm-screen,
-  html body .mobile-navbar {
-    display: none;
-  }
-}
-
 @media only screen and (max-width: 767px) {
   html body {
     background-image: url("../assets/home/background-home-mobile.jpg");
@@ -62,9 +55,6 @@ html body.missions {
   html body.missions {
     background-image: url("../assets/missions/space-photo.jpeg");
   }
-  html body .navbar-items.lg-screen {
-    display: none;
-  }
 }
 
 html body::-webkit-scrollbar {
@@ -74,6 +64,12 @@ html body::-webkit-scrollbar {
 html #root .App header {
   height: 96px;
   margin-top: 2%;
+}
+
+@media only screen and (max-width: 767px) {
+  html #root .App header {
+    height: 88px;
+  }
 }
 
 html #root .App section {

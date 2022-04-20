@@ -1,155 +1,283 @@
 .section-destination {
   padding-top: 3%;
 
-  .section-items {
-    position: relative;
-    padding: 0px 163px 0px 163px;
-
-    .destination-intro {
-      font-family: "Barlow Condensed", sans-serif;
-      letter-spacing: 4.72px;
-      span {
-        font-weight: bold;
-        opacity: 0.3;
-        margin-right: 28px;
-      }
-      h3 {
-        font-size: 28px;
-        font-weight: 300;
-      }
+  // DESKTOP VIEW
+  @media only screen and (min-width: 1400px) {
+    .section-items.sm-screen {
+      display: none;
     }
 
-    .heavenly-bodies-section {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5%;
+    .section-items.lg-screen {
+      position: relative;
+      padding: 0px 163px 0px 163px;
 
-      .heavenly-body-img {
-        width: 445px;
-        height: 445px;
-
-        .body-img {
-          filter: brightness(10%);
-          transition: all 1s ease;
-          position: absolute;
-          opacity: 0;
-
-          &.active {
-            filter: brightness(120%);
-            opacity: 1;
-          }
+      .destination-intro {
+        font-family: "Barlow Condensed", sans-serif;
+        letter-spacing: 4.72px;
+        font-size: 28px;
+        span {
+          font-weight: bold;
+          opacity: 0.3;
+          margin-right: 28px;
+        }
+        h3 {
+          font-weight: 300;
         }
       }
 
-      .heavenly-body-info {
-        position: relative;
-        width: 445px;
-        height: 472px;
+      .heavenly-bodies {
+        .heavenly-bodies-section {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5%;
 
-        .heavenly-body-nav {
-          ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            li {
-              list-style: none;
-              button {
+          .heavenly-body-img {
+            width: 445px;
+            height: 445px;
+
+            .body-img {
+              filter: brightness(10%);
+              transition: all 1s ease;
+              position: absolute;
+              opacity: 0;
+
+              &.active {
+                filter: brightness(120%);
+                opacity: 1;
+              }
+            }
+          }
+
+          .heavenly-body-info {
+            position: relative;
+            width: 445px;
+            height: 472px;
+
+            .heavenly-body-nav {
+              ul {
+                margin: 0;
                 padding: 0;
-                border: none;
-                position: relative;
-                width: auto;
-                margin-right: 45px;
-                font-family: "Barlow Condensed", sans-serif;
-                font-size: 16px;
-                letter-spacing: 2.7px;
-                cursor: pointer;
-                color: #d0d6f9;
-                background: none;
+                display: flex;
+                li {
+                  list-style: none;
+                  button {
+                    padding: 0;
+                    border: none;
+                    position: relative;
+                    width: auto;
+                    margin-right: 45px;
+                    font-family: "Barlow Condensed", sans-serif;
+                    font-size: 16px;
+                    letter-spacing: 2.7px;
+                    cursor: pointer;
+                    color: #d0d6f9;
+                    background: none;
 
-                span {
-                  left: -3%;
-                  margin-top: 30px;
-                  position: absolute;
-                  border: 2px solid white;
-                  width: 0%;
-                  opacity: 0;
-                  transition: all 0.3s ease;
-                }
+                    span {
+                      left: -3%;
+                      margin-top: 30px;
+                      position: absolute;
+                      border: 2px solid white;
+                      width: 0%;
+                      opacity: 0;
+                      transition: all 0.3s ease;
+                    }
 
-                &:hover,
-                &:focus {
-                  span {
-                    width: 100%;
-                    opacity: 0.5;
+                    &:hover,
+                    &:focus {
+                      span {
+                        width: 100%;
+                        opacity: 0.5;
+                      }
+                    }
+
+                    &.active {
+                      color: white;
+                      span {
+                        width: 100%;
+                        opacity: 1;
+                      }
+                    }
                   }
                 }
+              }
+            }
 
-                &.active {
+            .heavenly-body-present {
+              position: absolute;
+              left: -10%;
+              width: 445px;
+              opacity: 0;
+              transition: all 0.3s ease;
+
+              &.active {
+                opacity: 1;
+                left: 0%;
+              }
+              .heavenly-body-name {
+                h3 {
                   color: white;
-                  span {
-                    width: 100%;
-                    opacity: 1;
-                  }
+                  font-family: "Bellefair", sans-serif;
+                  font-weight: normal;
+                  font-size: 100px;
+                  margin-left: 5px;
+                  margin-top: 37px;
+                }
+              }
+              .heavenly-body-present-desc {
+                margin-top: -20%;
+                p {
+                  color: #d0d6f9;
+                  font-family: "Barlow", sans-serif;
+                  font-size: 18px;
+                  line-height: 35px;
+                }
+              }
+            }
+            .destination-items {
+              position: relative;
+              width: 100%;
+              .destination-line {
+                opacity: 0.2;
+                border: 0.1px solid white;
+              }
+              table {
+                margin-top: 6%;
+                text-align: left;
+                width: 100%;
+                .destination-label {
+                  font-family: "Barlow Condensed", sans-serif;
+                  font-size: 14px;
+                  font-weight: normal;
+                  letter-spacing: 2.36px;
+                }
+                .destination-values {
+                  line-height: 50px;
+                  font-family: "Bellefair", sans-serif;
+                  font-size: 28px;
                 }
               }
             }
           }
         }
+      }
+    }
+  }
 
-        .heavenly-body-present {
-          position: absolute;
-          left: -10%;
-          width: 445px;
-          opacity: 0;
-          transition: all 0.3s ease;
+  @media only screen and (max-width: 767px) {
+    & {
+      padding: 0;
+      .section-items.lg-screen {
+        display: none;
+      }
 
-          &.active {
-            opacity: 1;
-            left: 0%;
+      .section-items.sm-screen {
+        position: relative;
+
+        .destination-intro {
+          font-size: 16px;
+          font-family: "Barlow Condensed", sans-serif;
+          letter-spacing: 2.7px;
+          text-align: center;
+
+          span {
+            font-weight: bold;
+            opacity: 0.3;
+            margin-right: 18px;
           }
-          .heavenly-body-name {
-            h3 {
-              color: white;
-              font-family: "Bellefair", sans-serif;
-              font-weight: normal;
-              font-size: 100px;
-              margin-left: 5px;
-              margin-top: 37px;
-            }
-          }
-          .heavenly-body-present-desc {
-            margin-top: -20%;
-            p {
-              color: #d0d6f9;
-              font-family: "Barlow", sans-serif;
-              font-size: 18px;
-              line-height: 35px;
-            }
+
+          h3 {
+            font-weight: 300;
           }
         }
-        .destination-items {
-          position: relative;
-          width: 100%;
-          .destination-line {
-            opacity: 0.2;
-            border: 0.1px solid white;
-          }
-          table {
-            margin-top: 6%;
-            text-align: left;
-            width: 100%;
-            .destination-label {
-              font-family: "Barlow Condensed", sans-serif;
-              font-size: 14px;
-              font-weight: normal;
-              letter-spacing: 2.36px;
+
+        .heavenly-bodies {
+          margin-top: 30px;
+          .heavenly-bodies-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+
+            .heavenly-body-img {
+              
+              width: 170px;
+              height: 170px;
+
+              .body-img {
+                filter: brightness(10%);
+                transition: all 1s ease;
+                position: absolute;
+                opacity: 0;
+                width: 170px;
+                height: 170px;
+
+                &.active {
+                  opacity: 1;
+                  filter: brightness(120%);
+                }
+              }
             }
-            .destination-values {
-              line-height: 50px;
-              font-family: "Bellefair", sans-serif;
-              font-size: 28px;
+
+            .heavenly-body-info {
+              position: relative;
+              width: 327px;
+              height: 457px;
+
+              .heavenly-body-nav {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                ul {
+                  padding: 0;
+                  display: flex;
+
+                  li {
+                    list-style: none;
+
+                    button {
+                      padding: 0;
+                      border: none;
+                      position: relative;
+                      margin-right: 26px;
+                      font-family: "Barlow Condensed", sans-serif;
+                      font-size: 14px;
+                      letter-spacing: 2.7px;
+                      cursor: pointer;
+                      color: #d0d6f9;
+                      background: none;
+
+                      span {
+                        left: -6%;
+                        margin-top: 25px;
+                        position: absolute;
+                        border: 2px solid white;
+                        width: 0%;
+                        opacity: 0;
+                        transition: all 0.3s ease;
+                      }
+
+                      &:hover,
+                      &:focus {
+                        span {
+                          width: 100%;
+                          opacity: 0.5;
+                        }
+                      }
+
+                      &.active {
+                        color: white;
+                        span {
+                          width: 100%;
+                          opacity: 1;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

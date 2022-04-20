@@ -5,100 +5,100 @@
   padding-bottom: 10%;
   margin: 0;
 
+  // DESKTOP VIEW
   @media only screen and (min-width: 1400px) {
     .section-items.sm-screen {
       display: none;
     }
-  }
 
-  // DESKTOP VIEW
-  .section-items.lg-screen {
-    position: relative;
-    top: 15%;
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-
-    .space-intro {
-      width: 450px;
-      height: 382px;
-
-      h3 {
-        letter-spacing: 4.75px;
-        font-family: "Barlow Condensed", sans-serif;
-        font-size: 28px;
-        font-weight: normal;
-      }
-
-      .space {
-        font-size: 150px;
-        font-family: "Bellefair", sans-serif;
-      }
-
-      p {
-        font-size: 18px;
-        line-height: 35px;
-      }
-    }
-
-    .explore-button {
+    .section-items.lg-screen {
       position: relative;
-      margin-left: -10%;
-      margin-top: 10%;
-      width: auto;
+      top: 15%;
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
 
-      a {
-        text-decoration: none;
-        border-radius: 50%;
-        .explore {
-          transition: all 0.3s ease;
-          position: relative;
-          letter-spacing: 2px;
-          border: none;
-          position: relative;
-          margin-left: -10%;
-          margin-top: 10%;
-          line-height: 274px;
-          text-align: center;
-          font-size: 32px;
-          font-family: "Bellefair", sans-serif;
-          color: #0b0d17;
-          width: 274px;
-          height: 274px;
-          background-color: white;
-          border-radius: 50%;
+      .space-intro {
+        width: 450px;
+        height: 382px;
 
-          .explore-hover {
-            top: 0%;
-            left: 0%;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.2);
-            opacity: 0;
-            border-radius: 50%;
-            width: 274px;
-            height: 274px;
-            transition: all 0.3s ease;
-          }
+        h3 {
+          letter-spacing: 4.75px;
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 28px;
+          font-weight: normal;
         }
 
-        &:hover,
-        &:focus {
+        .space {
+          font-size: 150px;
+          font-family: "Bellefair", sans-serif;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 35px;
+        }
+      }
+
+      .explore-button {
+        position: relative;
+        margin-left: -10%;
+        margin-top: 10%;
+        width: auto;
+
+        a {
+          text-decoration: none;
+          border-radius: 50%;
           .explore {
-            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 2px;
+            border: none;
+            position: relative;
+            margin-left: -10%;
+            margin-top: 10%;
+            line-height: 274px;
+            text-align: center;
+            font-size: 32px;
+            font-family: "Bellefair", sans-serif;
+            color: #0b0d17;
+            width: 274px;
+            height: 274px;
+            background-color: white;
+            border-radius: 50%;
+
             .explore-hover {
-              opacity: 1;
-              top: -27%;
-              left: -27%;
-              width: 420px;
-              height: 420px;
+              top: 0%;
+              left: 0%;
+              position: absolute;
+              background-color: rgba(255, 255, 255, 0.2);
+              opacity: 0;
+              border-radius: 50%;
+              width: 274px;
+              height: 274px;
+              transition: all 0.3s ease;
             }
           }
 
-          &:focus,
-          &:active {
+          &:hover,
+          &:focus {
             .explore {
-              background-color: #0b0d17;
-              color: white;
+              cursor: pointer;
+              .explore-hover {
+                opacity: 1;
+                top: -27%;
+                left: -27%;
+                width: 420px;
+                height: 420px;
+              }
+            }
+
+            &:focus,
+            &:active {
+              .explore {
+                background-color: #0b0d17;
+                color: white;
+              }
             }
           }
         }
@@ -164,8 +164,10 @@
               border-radius: 50%;
               font-family: "Bellefair", sans-serif;
               color: #0b0d17;
+              transition: all 0.3s ease;
 
-              &:active {
+              &:active,
+              &:hover {
                 background-color: #0b0d17;
                 color: white;
               }

@@ -42,15 +42,8 @@ html {
       background-image: url("../assets/missions/space-photo.jpeg");
     }
 
-    // DESKTOP VIEW
-    @media only screen and (min-width: 1400px) {
-      .navbar-items.sm-screen,
-      .mobile-navbar {
-        display: none;
-      }
-    }
 
-    // MOBILE VIEW
+    // MOBILE VIEW BACKGROUND
     @media only screen and (max-width: 767px) {
       background-image: url("../assets/home/background-home-mobile.jpg");
 
@@ -65,10 +58,6 @@ html {
       &.missions {
         background-image: url("../assets/missions/space-photo.jpeg");
       }
-
-      .navbar-items.lg-screen {
-        display: none;
-      }
     }
   }
 
@@ -80,7 +69,14 @@ html {
     .App {
       header {
         height: 96px;
+
+        // HEADER HEIGHT ON DESKTOP VIEW
         margin-top: 2%;
+
+        // HEADER HEIGHT ON MOBILE VIEW
+        @media only screen and (max-width: 767px) {
+          height: 88px;
+        }
       }
       section {
         position: relative;
