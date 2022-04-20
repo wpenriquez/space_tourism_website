@@ -43,6 +43,7 @@ const HeavenlyBodies = (props) => {
         </div>
         {props.destValues.map((val) => (
           <div
+            key={val.id}
             className={
               props.activeState === val.id
                 ? "heavenly-body-present active"
