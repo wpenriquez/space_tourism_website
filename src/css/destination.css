@@ -3,7 +3,8 @@
 }
 
 @media only screen and (min-width: 1400px) {
-  .section-destination .section-items.sm-screen {
+  .section-destination .section-items.sm-screen,
+  .section-destination .table.sm-screen {
     display: none;
   }
   .section-destination .section-items.lg-screen {
@@ -161,7 +162,8 @@
   .section-destination {
     padding: 0;
   }
-  .section-destination .section-items.lg-screen {
+  .section-destination .section-items.lg-screen,
+  .section-destination .table.lg-screen {
     display: none;
   }
   .section-destination .section-items.sm-screen {
@@ -222,6 +224,7 @@
     height: 457px;
   }
   .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .heavenly-body-nav {
+    width: 100%;
     margin-top: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -231,6 +234,7 @@
             justify-content: center;
   }
   .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .heavenly-body-nav ul {
+    width: 240px;
     padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -271,6 +275,61 @@
   .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .heavenly-body-nav ul li button.active span {
     width: 100%;
     opacity: 1;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .heavenly-body-present {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .heavenly-body-present.active {
+    top: 20%;
+    opacity: 1;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .heavenly-body-present .heavenly-body-name h3 {
+    margin: 0;
+    padding: 0;
+    font-family: "Bellefair", sans-serif;
+    font-size: 56px;
+    font-weight: normal;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .heavenly-body-present .heavenly-body-present-desc p {
+    font-family: "Barlow", sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .destination-items {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .destination-items .destination-line {
+    opacity: 0.3;
+    border: 0.1px solid white;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .destination-items table {
+    margin-top: 6%;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .destination-items table .avg-distance,
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .destination-items table .travel-time {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 2.36px;
+    font-size: 14px;
+    padding-bottom: 12px;
+  }
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .destination-items table .val-distance,
+  .section-destination .section-items.sm-screen .heavenly-bodies .heavenly-bodies-section .heavenly-body-info .destination-items table .val-travel {
+    font-family: "Bellefair", sans-serif;
+    font-size: 28px;
+    padding-bottom: 32px;
   }
 }
 /*# sourceMappingURL=destination.css.map */

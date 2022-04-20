@@ -2,10 +2,18 @@ import React, { useEffect, useState } from "react";
 
 const MissionForm = (props) => {
   const [year, setYear] = useState([]);
-  const [minyear, setMinYear] = useState([]);
-  const [maxyear, setMaxYear] = useState([]);
 
   let keyWord, launchPads, minYear, maxYear;
+
+  const checkYearRange = (min, max) => {
+    if (!isNaN(parseInt(min))) {
+      if (!isNaN(parseInt(max))) {
+        if (parseInt(min) > parseInt(max)) {
+          alert("Invalid year range");
+        }
+      }
+    }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -15,34 +23,14 @@ const MissionForm = (props) => {
     minYear = document.querySelector("#min-year").value;
     maxYear = document.querySelector("#max-year").value;
 
+    checkYearRange(minYear, maxYear);
+
     props.setSearch({
       keyword: keyWord,
       launchpad: launchPads,
       minyear: minYear,
       maxyear: maxYear,
     });
-  };
-
-  const minSelectHandler = () => {
-    // minYear = parseInt(document.querySelector("#min-year").value);
-    // let highYear;
-    // if (!isNaN(minYear)) {
-    //   highYear = year.filter((val) => {
-    //     return val > minYear;
-    //   });
-    //   setMaxYear(highYear);
-    // }
-  };
-
-  const maxSelectHandler = () => {
-    // maxYear = parseInt(document.querySelector("#max-year").value);
-    // let lowYear;
-    // if (!isNaN(maxYear)) {
-    //   lowYear = year.filter((val) => {
-    //     return val < maxYear;
-    //   });
-    //   setMinYear(lowYear);
-    // }
   };
 
   useEffect(() => {
@@ -58,8 +46,6 @@ const MissionForm = (props) => {
       setYear(yearArr);
     };
     computeYear();
-    setMaxYear(yearArr);
-    setMinYear(yearArr);
   }, [props.launch, props.search]);
 
   return (
@@ -96,7 +82,7 @@ const MissionForm = (props) => {
             </td>
             <td className="min-year-select">
               {/* MIN YEAR */}
-              <select name="min-year" id="min-year" onChange={minSelectHandler}>
+              <select name="min-year" id="min-year">
                 <option value="">Any</option>
                 {year.map((val, index) => (
                   <option key={index} value={val}>
@@ -107,7 +93,7 @@ const MissionForm = (props) => {
             </td>
             <td className="max-year-select">
               {/* MAX YEAR */}
-              <select name="max-year" id="max-year" onChange={maxSelectHandler}>
+              <select name="max-year" id="max-year">
                 <option value="">Any</option>
                 {year.map((val, index) => (
                   <option key={index} value={val}>

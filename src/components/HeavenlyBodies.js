@@ -64,7 +64,7 @@ const HeavenlyBodies = (props) => {
                 tabIndex={props.activeState === val.id ? "2" : ""}
               >
                 <div className="destination-line"></div>
-                <table>
+                <table className="table lg-screen">
                   <thead>
                     <tr>
                       <th className="destination-label">AVG. DISTANCE</th>
@@ -81,6 +81,24 @@ const HeavenlyBodies = (props) => {
                       <td className="destination-values travel">
                         {val.travel}
                       </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table className="table sm-screen">
+                  <thead>
+                    <tr>
+                      <td className="avg-distance">AVG. DISTANCE</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="val-distance">{val.distance}</td>
+                    </tr>
+                    <tr>
+                      <td className="travel-time">EST. TRAVEL TIME</td>
+                    </tr>
+                    <tr>
+                      <td className="val-travel">{val.travel}</td>
                     </tr>
                   </tbody>
                 </table>

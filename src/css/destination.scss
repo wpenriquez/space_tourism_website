@@ -3,7 +3,8 @@
 
   // DESKTOP VIEW
   @media only screen and (min-width: 1400px) {
-    .section-items.sm-screen {
+    .section-items.sm-screen,
+    .table.sm-screen {
       display: none;
     }
 
@@ -166,10 +167,12 @@
     }
   }
 
+  // MOBILE VIEW
   @media only screen and (max-width: 767px) {
     & {
       padding: 0;
-      .section-items.lg-screen {
+      .section-items.lg-screen,
+      .table.lg-screen {
         display: none;
       }
 
@@ -202,7 +205,6 @@
             width: auto;
 
             .heavenly-body-img {
-              
               width: 170px;
               height: 170px;
 
@@ -227,10 +229,13 @@
               height: 457px;
 
               .heavenly-body-nav {
+                width: 100%;
                 margin-top: 10px;
                 display: flex;
                 justify-content: center;
                 ul {
+                  width: 240px;
+
                   padding: 0;
                   display: flex;
 
@@ -275,6 +280,65 @@
                         }
                       }
                     }
+                  }
+                }
+              }
+
+              .heavenly-body-present {
+                position: absolute;
+                text-align: center;
+                top: 25%;
+                opacity: 0;
+                transition: all 0.3s ease;
+
+                &.active {
+                  top: 20%;
+                  opacity: 1;
+                }
+
+                .heavenly-body-name {
+                  h3 {
+                    margin: 0;
+                    padding: 0;
+                    font-family: "Bellefair", sans-serif;
+                    font-size: 56px;
+                    font-weight: normal;
+                  }
+                }
+                .heavenly-body-present-desc {
+                  p {
+                    font-family: "Barlow", sans-serif;
+                    font-weight: normal;
+                    font-size: 15px;
+                    line-height: 25px;
+                  }
+                }
+              }
+
+              .destination-items {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+
+                .destination-line {
+                  opacity: 0.3;
+                  border: 0.1px solid white;
+                }
+
+                table {
+                  margin-top: 6%;
+                  .avg-distance,
+                  .travel-time {
+                    font-family: "Barlow Condensed", sans-serif;
+                    letter-spacing: 2.36px;
+                    font-size: 14px;
+                    padding-bottom: 12px;
+                  }
+                  .val-distance,
+                  .val-travel {
+                    font-family: "Bellefair", sans-serif;
+                    font-size: 28px;
+                    padding-bottom: 32px;
                   }
                 }
               }
