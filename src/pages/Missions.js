@@ -175,9 +175,23 @@ const Missions = () => {
   // FUNCTION TO SMOOTHLY SCROLL TO FORM //
   //-------------------------------------//
   const scrollToForm = () => {
+    console.log("fired");
     $("html,body").animate(
       {
         scrollTop: $(".missions-content").offset().top,
+      },
+      500
+    );
+  };
+
+  //_______________________________________________//
+  // FUNCTION TO SMOOTHLY SCROLL TO FORM ON MOBILE //
+  //-----------------------------------------------//
+  const scrollToFormMobile = () => {
+    $("html,body").animate(
+      {
+        scrollTop: $(".section-items.sm-screen > .missions-content").offset()
+          .top,
       },
       500
     );
@@ -189,7 +203,21 @@ const Missions = () => {
   const scrollToTop = () => {
     $("html,body").animate(
       {
-        scrollTop: $("#missions-content").position().top + 125,
+        scrollTop: $(".missions-content").position().top + 125,
+      },
+      500
+    );
+  };
+
+  //_________________________________________________________//
+  // FUNCTION TO SMOOTHLY SCROLL TO TOP OF RESULTS ON MOBILE //
+  //---------------------------------------------------------//
+  const scrollToTopMobile = () => {
+    $("html,body").animate(
+      {
+        scrollTop:
+          $(".section-items.sm-screen > .missions-content").position().top +
+          125,
       },
       500
     );
@@ -197,7 +225,8 @@ const Missions = () => {
 
   return (
     <section className="section-missions">
-      <div className="section-items">
+      {/* DESKTOP VIEW */}
+      <div className="section-items lg-screen">
         <div className="missions-head">
           <div className="missions-intro">
             <h1>DISCOVER SPACE MISSIONS</h1>
@@ -251,6 +280,30 @@ const Missions = () => {
               Back to top
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* MOBILE VIEW */}
+      <div className="section-items sm-screen">
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onClick={scrollToFormMobile}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
+          </div>
+        </div>
+        <div id="missions-content" className="missions-content">
+          <MissionForm
+            launchpad={launchPad}
+            launch={launch}
+            search={search}
+            setSearch={setSearch}
+          />
         </div>
       </div>
     </section>
