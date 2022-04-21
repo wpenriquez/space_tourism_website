@@ -24,11 +24,11 @@ const Navbar = () => {
 
   const collapseMobileNav = () => {
     setCollapse((prevState) => !prevState);
-    console.log(collapse);
   };
   return (
     <header>
       <nav>
+        {/* DESKTOP VIEW */}
         <div className="navbar-items lg-screen">
           <div className="logo">
             <Link to="/">
@@ -67,6 +67,8 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
+
+        {/* MOBILE VIEW */}
         <div className="navbar-items sm-screen">
           <div className="logo">
             <Link to="/">
@@ -78,6 +80,8 @@ const Navbar = () => {
             <Hamburger />
           </div>
         </div>
+
+        {/* MOBILE COLLAPSABLE NAVBAR */}
         <div className={collapse ? "mobile-navbar active" : "mobile-navbar"}>
           <div className="close-btn">
             <div className="close-btn-icon" onClick={collapseMobileNav}>

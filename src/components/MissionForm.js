@@ -15,13 +15,32 @@ const MissionForm = (props) => {
     }
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = (event, mobile, tablet) => {
     event.preventDefault();
 
-    keyWord = document.querySelector("#keywords").value;
-    launchPads = document.querySelector("#launchpads").value;
-    minYear = document.querySelector("#min-year").value;
-    maxYear = document.querySelector("#max-year").value;
+    console.log("submitHandler");
+
+    if (mobile) {
+      keyWord = document.querySelector(
+        ".section-items.sm-screen  #keywords.mobile"
+      ).value;
+      launchPads = document.querySelector(
+        ".section-items.sm-screen  #launchpads.mobile"
+      ).value;
+      minYear = document.querySelector(
+        ".section-items.sm-screen  #min-year.mobile"
+      ).value;
+      maxYear = document.querySelector(
+        ".section-items.sm-screen  #max-year.mobile"
+      ).value;
+    } else if (tablet) {
+      console.log("tablet");
+    } else {
+      keyWord = document.querySelector("#keywords").value;
+      launchPads = document.querySelector("#launchpads").value;
+      minYear = document.querySelector("#min-year").value;
+      maxYear = document.querySelector("#max-year").value;
+    }
 
     checkYearRange(minYear, maxYear);
 
@@ -113,7 +132,11 @@ const MissionForm = (props) => {
       </form>
 
       {/* MOBILE VIEW */}
-      <form action="" className="missions-form sm-screen">
+      <form
+        action=""
+        className="missions-form sm-screen"
+        onSubmit={(evt) => submitHandler(evt, true, false)}
+      >
         <table>
           <thead>
             <tr>
@@ -125,7 +148,12 @@ const MissionForm = (props) => {
           <tbody>
             <tr>
               <td className="keywords-input" colSpan="2">
-                <input type="text" id="keywords" placeholder="e.g. Falcon" />
+                <input
+                  type="text"
+                  id="keywords"
+                  className="mobile"
+                  placeholder="e.g. Falcon"
+                />
               </td>
             </tr>
             <tr>
@@ -135,7 +163,7 @@ const MissionForm = (props) => {
             </tr>
             <tr>
               <td className="launchpads-select" colSpan="2">
-                <select name="launchpads" id="launchpads">
+                <select name="launchpads" id="launchpads" className="mobile">
                   <option value="">Any</option>
                   {props.launchpad.map((val) => (
                     <option key={val.id} value={val.id}>
@@ -152,7 +180,7 @@ const MissionForm = (props) => {
             <tr>
               <td className="min-year-select">
                 {/* MIN YEAR */}
-                <select name="min-year" id="min-year">
+                <select name="min-year" id="min-year" className="mobile">
                   <option value="">Any</option>
                   {year.map((val, index) => (
                     <option key={index} value={val}>
@@ -163,7 +191,7 @@ const MissionForm = (props) => {
               </td>
               <td className="max-year-select">
                 {/* MAX YEAR */}
-                <select name="max-year" id="max-year">
+                <select name="max-year" id="max-year" className="mobile">
                   <option value="">Any</option>
                   {year.map((val, index) => (
                     <option key={index} value={val}>

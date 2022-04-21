@@ -138,9 +138,15 @@ const Missions = () => {
       if (matches.length <= 3) {
         document.querySelector(".missions-result-container").style.height =
           "585px";
+        document.querySelector(
+          ".section-items.sm-screen .missions-result-container"
+        ).style.height = "850px";
       } else {
         document.querySelector(".missions-result-container").style.height =
           "auto";
+        document.querySelector(
+          ".section-items.sm-screen .missions-result-container"
+        ).style.height = "auto";
       }
     };
 
@@ -174,24 +180,10 @@ const Missions = () => {
   //_____________________________________//
   // FUNCTION TO SMOOTHLY SCROLL TO FORM //
   //-------------------------------------//
-  const scrollToForm = () => {
-    console.log("fired");
+  const scrollToForm = (form) => {
     $("html,body").animate(
       {
-        scrollTop: $(".missions-content").offset().top,
-      },
-      500
-    );
-  };
-
-  //_______________________________________________//
-  // FUNCTION TO SMOOTHLY SCROLL TO FORM ON MOBILE //
-  //-----------------------------------------------//
-  const scrollToFormMobile = () => {
-    $("html,body").animate(
-      {
-        scrollTop: $(".section-items.sm-screen > .missions-content").offset()
-          .top,
+        scrollTop: $(form).offset().top,
       },
       500
     );
@@ -200,24 +192,10 @@ const Missions = () => {
   //_______________________________________________//
   // FUNCTION TO SMOOTHLY SCROLL TO TOP OF RESULTS //
   //-----------------------------------------------//
-  const scrollToTop = () => {
+  const scrollToTop = (top, offset) => {
     $("html,body").animate(
       {
-        scrollTop: $(".missions-content").position().top + 125,
-      },
-      500
-    );
-  };
-
-  //_________________________________________________________//
-  // FUNCTION TO SMOOTHLY SCROLL TO TOP OF RESULTS ON MOBILE //
-  //---------------------------------------------------------//
-  const scrollToTopMobile = () => {
-    $("html,body").animate(
-      {
-        scrollTop:
-          $(".section-items.sm-screen > .missions-content").position().top +
-          125,
+        scrollTop: $(top).position().top + offset,
       },
       500
     );
@@ -233,11 +211,15 @@ const Missions = () => {
           </div>
           <div
             onKeyDown={(e) => {
+              const form = ".missions-content";
               if (e.keyCode === 13) {
-                scrollToForm();
+                scrollToForm(form);
               }
             }}
-            onClick={scrollToForm}
+            onClick={() => {
+              const form = ".missions-content";
+              scrollToForm(form);
+            }}
             className="missions-down-btn"
             tabIndex="0"
           >
@@ -276,7 +258,13 @@ const Missions = () => {
           </div>
           <div className="missions-footer">
             <p>Copyright © 2022 </p>
-            <button id="test" onClick={scrollToTop}>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".missions-content";
+                scrollToTop(top, 125);
+              }}
+            >
               Back to top
             </button>
           </div>
@@ -290,7 +278,10 @@ const Missions = () => {
             <h1>DISCOVER SPACE MISSIONS</h1>
           </div>
           <div
-            onClick={scrollToFormMobile}
+            onClick={() => {
+              const form = ".section-items.sm-screen > .missions-content";
+              scrollToForm(form);
+            }}
             className="missions-down-btn"
             tabIndex="0"
           >
@@ -304,6 +295,40 @@ const Missions = () => {
             search={search}
             setSearch={setSearch}
           />
+          <div id="missions-body" className="missions-body">
+            <div className="missions-results">
+              <div className="missions-search-results">
+                <p>
+                  {matchLength > 1
+                    ? `Showing ${matchLength} Missions`
+                    : matchLength === 1
+                    ? `Showing ${matchLength} Mission`
+                    : `No Missions Found`}
+                </p>
+              </div>
+              <div className="missions-result-container">
+                {matches.map((val) => (
+                  <MissionCard
+                    key={val.flight_number}
+                    value={val}
+                    launchpad={launchPad}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="missions-footer">
+            <p>Copyright © 2022 </p>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".section-items.sm-screen > .missions-content";
+                scrollToTop(top, 100);
+              }}
+            >
+              Back to top
+            </button>
+          </div>
         </div>
       </div>
     </section>
