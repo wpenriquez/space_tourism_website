@@ -1,6 +1,7 @@
 @media only screen and (min-width: 1400px) {
   .navbar-items.sm-screen,
-  .mobile-navbar {
+  .mobile-navbar,
+  .navbar-items.md-screen {
     display: none;
   }
   .navbar-items.lg-screen {
@@ -99,7 +100,8 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .navbar-items.lg-screen {
+  .navbar-items.lg-screen,
+  .navbar-items.md-screen {
     display: none;
   }
   .navbar-items.sm-screen {
@@ -200,6 +202,74 @@
   .mobile-navbar .nav-links ul li a.active span {
     opacity: 1;
     height: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-items.lg-screen,
+  .navbar-items.sm-screen,
+  .mobile-navbar {
+    display: none;
+  }
+  .navbar-items.md-screen {
+    padding-left: 32px;
+    height: 96px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar-items.md-screen .logo {
+    width: 48px;
+    height: 48px;
+  }
+  .navbar-items.md-screen .line {
+    border: 0.1px solid rgba(255, 255, 255, 0.4);
+    width: 15%;
+    height: 0;
+  }
+  .navbar-items.md-screen .nav-links {
+    background-color: rgba(200, 200, 200, 0.08);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar-items.md-screen .nav-links ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 16px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 100;
+    letter-spacing: 2.7px;
+    position: relative;
+  }
+  .navbar-items.md-screen .nav-links ul li {
+    list-style: none;
+    font-size: 14px;
+    letter-spacing: 2.36px;
+    margin-right: 37px;
+  }
+  .navbar-items.md-screen .nav-links ul li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-decoration: none;
+    color: white;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
 }
 /*# sourceMappingURL=navbar.css.map */

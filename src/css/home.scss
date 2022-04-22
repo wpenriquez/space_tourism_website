@@ -7,7 +7,8 @@
 
   // DESKTOP VIEW
   @media only screen and (min-width: 1400px) {
-    .section-items.sm-screen {
+    .section-items.sm-screen,
+    .section-items.md-screen {
       display: none;
     }
 
@@ -108,7 +109,8 @@
 
   // MOBILE VIEW
   @media only screen and (max-width: 767px) {
-    .section-items.lg-screen {
+    .section-items.lg-screen,
+    .section-items.md-screen {
       display: none;
     }
 
@@ -180,5 +182,12 @@
         }
       }
     }
+  }
+}
+
+// TABLET VIEW {
+@media only screen and (max-width: 992px) {
+  .section-items.sm-screen, .section-items.lg-screen {
+    display: none;
   }
 }

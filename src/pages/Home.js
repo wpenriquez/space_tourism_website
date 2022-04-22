@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <section className="section-home">
+      {/* DESKTOP VIEW */}
       <div className="section-items lg-screen">
         <div className="space-intro">
           <h3>SO, YOU WANT TO TRAVEL TO</h3>
@@ -25,6 +26,8 @@ const Home = () => {
           </Link>
         </div>
       </div>
+
+      {/* MOBILE VIEW */}
       <div className="section-items sm-screen">
         <div className="space-intro">
           <h3>SO, YOU WANT TO TRAVEL TO</h3>
@@ -44,6 +47,11 @@ const Home = () => {
             </div>
           </Link>
         </div>
+      </div>
+
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
+        <h1>Hello</h1>
       </div>
     </section>
   );

@@ -42,7 +42,6 @@ html {
       background-image: url("../assets/missions/space-photo.jpeg");
     }
 
-
     // MOBILE VIEW BACKGROUND
     @media only screen and (max-width: 767px) {
       background-image: url("../assets/home/background-home-mobile.jpg");
@@ -53,6 +52,23 @@ html {
 
       &.technology {
         background-image: url("../assets/technology/background-technology-mobile.jpg");
+      }
+
+      &.missions {
+        background-image: url("../assets/missions/space-photo.jpeg");
+      }
+    }
+
+    // TABLET VIEW BACKGROUND
+    @media only screen and (max-width: 992px) {
+      background-image: url("../assets/home/background-home-tablet.jpg");
+
+      &.crew {
+        background-image: url("../assets/crew/background-crew-tablet.jpg");
+      }
+
+      &.technology {
+        background-image: url("../assets/technology/background-technology-tablet.jpg");
       }
 
       &.missions {
@@ -76,6 +92,10 @@ html {
         // HEADER HEIGHT ON MOBILE VIEW
         @media only screen and (max-width: 767px) {
           height: 88px;
+        }
+
+        @media only screen and (max-width: 992px) {
+          margin-top: 0;
         }
       }
       section {

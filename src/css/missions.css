@@ -363,7 +363,7 @@
     color: black;
     font-size: 12px;
   }
-  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-info h2 span {
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-info h2 span b {
     color: red;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns {
