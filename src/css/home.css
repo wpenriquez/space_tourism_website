@@ -6,7 +6,7 @@
   margin: 0;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 992px) {
   .section-home .section-items.sm-screen,
   .section-home .section-items.md-screen {
     display: none;
@@ -181,9 +181,75 @@
   }
 }
 
-@media only screen and (max-width: 992px) {
-  .section-items.sm-screen, .section-items.lg-screen {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .section-home .section-items.sm-screen,
+  .section-home .section-items.lg-screen {
     display: none;
+  }
+  .section-home {
+    padding: 0;
+    margin-top: 106px;
+  }
+  .section-home .section-items.md-screen {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section-home .section-items.md-screen .space-intro {
+    width: 450px;
+    height: 334px;
+    text-align: center;
+  }
+  .section-home .section-items.md-screen .space-intro h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    letter-spacing: 3.38px;
+    font-weight: normal;
+  }
+  .section-home .section-items.md-screen .space-intro .space {
+    font-family: "Bellefair", sans-serif;
+    font-size: 150px;
+    font-weight: normal;
+    line-height: 150px;
+  }
+  .section-home .section-items.md-screen .space-intro p {
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .section-home .section-items.md-screen .explore-button {
+    width: 242px;
+    height: 242px;
+    margin-top: 156px;
+    background-color: white;
+    border-radius: 50%;
+    line-height: 242px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-home .section-items.md-screen .explore-button a {
+    text-decoration: none;
+  }
+  .section-home .section-items.md-screen .explore-button a .explore {
+    font-family: "Bellefair", sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #0b0d17;
+  }
+  .section-home .section-items.md-screen .explore-button:active, .section-home .section-items.md-screen .explore-button:hover {
+    background-color: #414141;
+  }
+  .section-home .section-items.md-screen .explore-button:active a .explore, .section-home .section-items.md-screen .explore-button:hover a .explore {
+    color: white;
   }
 }
 /*# sourceMappingURL=home.css.map */

@@ -4,7 +4,7 @@
   padding-top: 5%;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 992px) {
   .section-tech .section-items.sm-screen,
   .section-tech .tech-desc-items.sm-screen {
     display: none;

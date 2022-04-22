@@ -4,7 +4,7 @@
   padding-top: 20%;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 992px) {
   .section-missions .section-items.sm-screen,
   .section-missions .missions-form.sm-screen,
   .section-missions .mission-item-inner.sm-screen {
