@@ -5,7 +5,8 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .crew-carousel .crew-carousel-inner.sm-screen {
+  .crew-carousel .crew-carousel-inner.sm-screen,
+  .crew-carousel .crew-carousel-inner.md-screen {
     display: none;
   }
   .crew-carousel .crew-carousel-inner.lg-screen {
@@ -106,7 +107,8 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .crew-carousel .crew-carousel-inner.lg-screen {
+  .crew-carousel .crew-carousel-inner.lg-screen,
+  .crew-carousel .crew-carousel-inner.md-screen {
     display: none;
   }
   .crew-carousel {
@@ -213,6 +215,120 @@
     font-weight: normal;
   }
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-info .crew-carousel-info-inner.active {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .crew-carousel {
+    height: 100%;
+  }
+  .crew-carousel .crew-carousel-inner.sm-screen,
+  .crew-carousel .crew-carousel-inner.lg-screen {
+    display: none;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info {
+    position: relative;
+    margin-top: 20px;
+    width: 450px;
+    height: 290px;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info .crew-carousel-info-inner {
+    position: absolute;
+    text-align: center;
+    font-family: "Bellefair", sans-serif;
+    left: -15%;
+    opacity: 0;
+    width: 450px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info .crew-carousel-info-inner h2 {
+    font-size: 24px;
+    font-weight: normal;
+    opacity: 0.6;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info .crew-carousel-info-inner h1 {
+    font-weight: normal;
+    font-size: 40px;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info .crew-carousel-info-inner p {
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    color: #d0d6f9;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info .crew-carousel-info-inner.active {
+    opacity: 1;
+    left: 0%;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators {
+    margin-top: 10px;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 88px;
+    margin: 0;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul li {
+    list-style: none;
+    margin-right: 16px;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul li .crew-carousel-button {
+    padding: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: none;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul li .crew-carousel-button:hover, .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul li .crew-carousel-button:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul li .crew-carousel-button.active {
+    background-color: white;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-images {
+    position: relative;
+    margin-top: 0;
+    height: 100%;
+    width: 540px;
+    height: 483px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-images .crew-carousel-img {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-images .crew-carousel-img.active {
+    margin-top: 40px;
     opacity: 1;
   }
 }

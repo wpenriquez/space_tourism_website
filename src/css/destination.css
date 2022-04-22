@@ -362,6 +362,7 @@
     letter-spacing: 3.38px;
   }
   .section-destination .section-items.md-screen .destination-intro h3 span {
+    opacity: 0.3;
     font-weight: bold;
     margin-right: 19px;
   }

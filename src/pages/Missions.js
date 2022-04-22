@@ -331,6 +331,25 @@ const Missions = () => {
           </div>
         </div>
       </div>
+
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onClick={() => {
+              const form = ".section-items.sm-screen > .missions-content";
+              scrollToForm(form);
+            }}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
