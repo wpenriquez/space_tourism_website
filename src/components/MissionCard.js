@@ -80,6 +80,7 @@ const MissionCard = (props) => {
 
   return (
     <div className="mission-item">
+      {/* DESKTOP VIEW */}
       <div className="mission-item-inner lg-screen">
         <div className="mission-logo">
           <img
@@ -229,6 +230,8 @@ const MissionCard = (props) => {
           <p>Flight Number</p>
         </div>
       </div>
+
+      {/* MOBILE VIEW */}
       <div className="mission-item-inner sm-screen">
         <div className="mission-flight-number-logo">
           <div className="mission-flight-number">
@@ -368,6 +371,157 @@ const MissionCard = (props) => {
             <YouTube />
             <span></span>
           </button>
+        </div>
+      </div>
+
+      {/* TABLET VIEW */}
+      <div className="mission-item-inner md-screen">
+        <div className="mission-logo">
+          <img
+            src={
+              typeof props.value.links.mission_patch !== "undefined"
+                ? props.value.links.mission_patch
+                : ""
+            }
+            alt="Patch_Img"
+            width="100%"
+          />{" "}
+        </div>
+        <div className="mission-info">
+          <table>
+            <thead>
+              <tr>
+                <td colSpan="5">
+                  {props.value.rocket.rocket_name +
+                    " - " +
+                    (props.value.flight_number === 49
+                      ? props.value.payloads[1].payload_id
+                      : props.value.payloads[0].payload_id)}
+                  {!props.value.land_success || !props.value.launch_success ? (
+                    <span>
+                      {" "}
+                      - <b>Failed Mission</b>
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colSpan="5" className="mission-desc">
+                  {computeTimeLocation(
+                    props.value.launch_date_local,
+                    props.value.launch_site.site_id,
+                    props.launchpad
+                  )}
+                </td>
+              </tr>
+              <tr className="mission-btns">
+                <td>
+                  <button
+                    onClick={() => {
+                      if (
+                        typeof props.value.links.reddit_campaign !== "undefined"
+                      ) {
+                        window
+                          .open(props.value.links.reddit_campaign, "_blank")
+                          .focus();
+                      }
+                    }}
+                    disabled={
+                      typeof props.value.links.reddit_campaign === "undefined"
+                        ? true
+                        : false
+                    }
+                  >
+                    Reddit Campaign
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      if (
+                        typeof props.value.links.reddit_launch !== "undefined"
+                      ) {
+                        window
+                          .open(props.value.links.reddit_launch, "_blank")
+                          .focus();
+                      }
+                    }}
+                    disabled={
+                      typeof props.value.links.reddit_launch === "undefined"
+                        ? true
+                        : false
+                    }
+                  >
+                    Reddit Launch
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      if (
+                        typeof props.value.links.reddit_media !== "undefined"
+                      ) {
+                        window
+                          .open(props.value.links.reddit_media, "_blank")
+                          .focus();
+                      }
+                    }}
+                    disabled={
+                      typeof props.value.links.reddit_media === "undefined"
+                        ? true
+                        : false
+                    }
+                  >
+                    Reddit Media
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      if (typeof props.value.links.presskit !== "undefined") {
+                        window
+                          .open(props.value.links.presskit, "_blank")
+                          .focus();
+                      }
+                    }}
+                    disabled={
+                      typeof props.value.links.presskit === "undefined"
+                        ? true
+                        : false
+                    }
+                  >
+                    Press Kit
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      if (typeof props.value.links.video_link !== "undefined") {
+                        window
+                          .open(props.value.links.video_link, "_blank")
+                          .focus();
+                      }
+                    }}
+                    disabled={
+                      typeof props.value.links.video_link === "undefined"
+                        ? true
+                        : false
+                    }
+                  >
+                    Watch Video
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="mission-flight-number">
+          <h1>#{props.value.flight_number}</h1>
+          <p>Flight Number</p>
         </div>
       </div>
     </div>

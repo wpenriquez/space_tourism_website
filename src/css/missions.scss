@@ -636,10 +636,11 @@
 
     & {
       padding: 0;
-      border: 1px solid red;
     }
 
     .section-items.md-screen {
+      margin-top: 45%;
+
       .missions-head {
         position: relative;
         display: flex;
@@ -659,6 +660,211 @@
           img {
             filter: invert(75%);
             -webkit-filter: invert(75%);
+          }
+        }
+      }
+
+      .missions-content {
+        background-color: rgb(205, 215, 215);
+        margin-top: 50%;
+        padding: 15px;
+
+        .form-container {
+          margin-bottom: 5px;
+          .missions-form.md-screen {
+            background-color: rgb(229, 229, 229);
+            color: black;
+            padding: 10px;
+
+            table {
+              width: 100%;
+
+              .label {
+                font-weight: bold;
+                font-size: 20px;
+              }
+
+              .left-col {
+                width: 40%;
+              }
+
+              #keywords {
+                box-sizing: border-box;
+              }
+
+              #keywords,
+              #launchpads,
+              #min-year,
+              #max-year {
+                border: none;
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid rgb(196, 196, 196);
+              }
+
+              .keywords-input,
+              .launchpads-select,
+              .min-year-select,
+              .max-year-select,
+              .form-apply {
+                padding-bottom: 2%;
+              }
+
+              .form-apply {
+                justify-content: center;
+                .apply-btn {
+                  width: 100%;
+                  height: 40px;
+                  font-size: 25px;
+                  background-color: rgb(10, 183, 131);
+                  color: white;
+                  border-radius: 15px;
+                  border: none;
+
+                  &:active {
+                    filter: brightness(85%);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .missions-body {
+          position: relative;
+          background-color: white;
+          padding: 20px;
+          .missions-results {
+            .missions-search-results {
+              text-align: center;
+              color: black;
+              font-size: 20px;
+            }
+
+            .missions-result-container {
+              .mission-item {
+                border: 1px solid rgb(220, 220, 220);
+                padding: 10px;
+                border-radius: 15px;
+                margin: 30px 0px 30px 0px;
+                position: relative;
+                width: auto;
+                height: 162px;
+                box-shadow: 5px 5px 10px 0px #888888;
+                .mission-item-inner.md-screen {
+                  position: relative;
+                  width: 100%;
+                  height: 162px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  .mission-logo {
+                    width: 500px;
+                    line-height: 100px;
+                    color: black;
+
+                    img {
+                      width: 100px;
+                    }
+                  }
+                  .mission-info {
+                    position: relative;
+                    color: black;
+                    font-weight: 100;
+                    width: auto;
+                    left: -13%;
+
+                    table {
+                      border-collapse: collapse;
+                      margin-top: 1%;
+                      width: 50%;
+                      thead {
+                        tr {
+                          td {
+                            font-weight: bold;
+                            padding-bottom: 10px;
+
+                            span {
+                              b {
+                                color: red;
+                              }
+                            }
+                          }
+                        }
+                      }
+                      tbody {
+                        tr {
+                          td {
+                            font-size: 14px;
+                          }
+
+                          .mission-desc {
+                            padding-bottom: 10px;
+                          }
+                        }
+
+                        .mission-btns {
+                          td {
+                            padding-top: 7%;
+                            button {
+                              font-size: 16px;
+                              margin-right: 10px;
+                              font-family: "Barlow", sans-serif;
+                              background-color: white;
+                              border: 1px solid rgb(196, 196, 196);
+                              padding: 5px 10px 5px 10px;
+                              border-radius: 5px;
+                              cursor: pointer;
+
+                              &:disabled {
+                                cursor: default;
+                              }
+
+                              &:not([disabled]):hover {
+                                background-color: rgb(212, 212, 212);
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .mission-flight-number {
+                    position: relative;
+                    text-align: center;
+                    color: black;
+                    width: 100px;
+                    height: 100px;
+
+                    p {
+                      font-weight: 100;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .missions-footer {
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+          p {
+            color: rgb(120, 120, 120);
+          }
+          button {
+            font-size: 14px;
+            background: none;
+            border: none;
+            font-family: "Barlow", sans-serif;
+            text-decoration: underline;
+            cursor: pointer;
+            &:hover {
+              font-weight: bold;
+            }
           }
         }
       }
