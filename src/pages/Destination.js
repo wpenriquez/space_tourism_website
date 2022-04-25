@@ -56,6 +56,7 @@ const Destination = () => {
 
   return (
     <section className="section-destination">
+      {/* DESKTOP VIEW */}
       <div className="section-items lg-screen">
         <div className="destination-intro">
           <h3>
@@ -68,7 +69,23 @@ const Destination = () => {
           changeState={changeState}
         />
       </div>
+
+      {/* MOBILE VIEW */}
       <div className="section-items sm-screen">
+        <div className="destination-intro">
+          <h3>
+            <span>01</span>PICK YOUR DESTINATION
+          </h3>
+        </div>
+        <HeavenlyBodies
+          destValues={destValues}
+          activeState={activeState}
+          changeState={changeState}
+        />
+      </div>
+
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
         <div className="destination-intro">
           <h3>
             <span>01</span>PICK YOUR DESTINATION

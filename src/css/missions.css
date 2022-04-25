@@ -4,10 +4,13 @@
   padding-top: 20%;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 992px) {
   .section-missions .section-items.sm-screen,
+  .section-missions .section-items.md-screen,
+  .section-missions .missions-form.md-screen,
   .section-missions .missions-form.sm-screen,
-  .section-missions .mission-item-inner.sm-screen {
+  .section-missions .mission-item-inner.sm-screen,
+  .section-missions .mission-item-inner.md-screen {
     display: none;
   }
   .section-missions .section-items.lg-screen .missions-head {
@@ -244,8 +247,11 @@
 
 @media only screen and (max-width: 767px) {
   .section-missions .section-items.lg-screen,
+  .section-missions .section-items.md-screen,
+  .section-missions .missions-form.md-screen,
   .section-missions .missions-form.lg-screen,
-  .section-missions .mission-item-inner.lg-screen {
+  .section-missions .mission-item-inner.lg-screen,
+  .section-missions .mission-item-inner.md-screen {
     display: none;
   }
   .section-missions {
@@ -363,7 +369,7 @@
     color: black;
     font-size: 12px;
   }
-  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-info h2 span {
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-info h2 span b {
     color: red;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns {
@@ -563,6 +569,348 @@
     background: none;
     font-family: "Barlow", sans-serif;
     text-decoration: underline;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .section-missions .section-items.sm-screen,
+  .section-missions .section-items.lg-screen,
+  .section-missions .missions-form.lg-screen,
+  .section-missions .missions-form.sm-screen,
+  .section-missions .mission-item-inner.sm-screen,
+  .section-missions .mission-item-inner.lg-screen {
+    display: none;
+  }
+  .section-missions {
+    padding: 0;
+  }
+  .section-missions .section-items.md-screen {
+    margin-top: 45%;
+  }
+  .section-missions .section-items.md-screen .missions-head {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: "Bellefair", sans-serif;
+  }
+  .section-missions .section-items.md-screen .missions-head .missions-intro h1 {
+    font-weight: normal;
+    font-size: 55px;
+  }
+  .section-missions .section-items.md-screen .missions-head .missions-down-btn {
+    width: 15%;
+  }
+  .section-missions .section-items.md-screen .missions-head .missions-down-btn img {
+    filter: invert(75%);
+    -webkit-filter: invert(75%);
+  }
+  .section-missions .section-items.md-screen .missions-content {
+    background-color: #cdd7d7;
+    margin-top: 50%;
+    padding: 15px;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container {
+    margin-bottom: 5px;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen {
+    background-color: #e5e5e5;
+    color: black;
+    padding: 10px;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table {
+    width: 100%;
+    border-spacing: 10px;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .label {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .left-col {
+    width: 40%;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #keywords {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #keywords,
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #launchpads,
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #min-year,
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #max-year {
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .min-year-select,
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .max-year-select {
+    text-align: center;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn {
+    width: 100%;
+    height: 40px;
+    font-size: 25px;
+    background-color: #0ab783;
+    color: white;
+    border-radius: 15px;
+    border: none;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:active {
+    -webkit-filter: brightness(85%);
+            filter: brightness(85%);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-search-results {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item {
+    border: 1px solid gainsboro;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 30px 0px 30px 0px;
+    position: relative;
+    width: auto;
+    height: 162px;
+    -webkit-box-shadow: 5px 5px 10px 0px #888888;
+            box-shadow: 5px 5px 10px 0px #888888;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen {
+    position: relative;
+    width: 100%;
+    height: 162px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo img {
+    width: auto;
+    height: 100%;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info {
+    position: relative;
+    color: black;
+    font-weight: 100;
+    width: 65%;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table thead tr td {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table thead tr td span b {
+    color: red;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody tr td {
+    font-size: 14px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody tr .mission-desc {
+    padding-bottom: 10px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns {
+    position: relative;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-dropdown-btn {
+    z-index: 2;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    margin-right: 10px;
+    font-family: "Barlow", sans-serif;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-dropdown-btn.active {
+    background-color: red;
+    fill: white;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content {
+    position: absolute;
+    top: -20%;
+    left: 0%;
+    opacity: 0;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+    width: 0px;
+    height: 50px;
+    padding: 10px;
+    padding-left: 36px;
+    z-index: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button {
+    position: relative;
+    visibility: hidden;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button span {
+    visibility: hidden;
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    width: 80%;
+    border: 1px solid #aaaaaa;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:disabled {
+    border: 1px solid gainsboro;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:disabled span {
+    visibility: visible;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:active {
+    background-color: red;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:active svg {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content.active {
+    opacity: 1;
+    left: 8%;
+    width: 210px;
+    z-index: 1;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content.active button {
+    visibility: visible;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin-right: 10px;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    position: relative;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main span {
+    visibility: hidden;
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    width: 80%;
+    border: 1px solid #aaaaaa;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled {
+    border: 1px solid gainsboro;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled span {
+    visibility: visible;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):active, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):hover {
+    background-color: royalblue;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):active svg, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):hover svg {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):active, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):hover {
+    background-color: red;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):active svg, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):hover svg {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled {
+    fill: grey;
+    border: 1px solid #c4c4c4;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-flight-number {
+    position: relative;
+    text-align: center;
+    color: black;
+    width: 100px;
+    height: 100px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-flight-number p {
+    font-weight: 100;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-footer {
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-footer p {
+    color: #787878;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-footer button {
+    font-size: 14px;
+    background: none;
+    border: none;
+    font-family: "Barlow", sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-footer button:hover {
+    font-weight: bold;
   }
 }
 /*# sourceMappingURL=missions.css.map */

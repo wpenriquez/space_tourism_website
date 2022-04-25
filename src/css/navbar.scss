@@ -7,9 +7,10 @@
 }
 
 // DESKTOP VIEW
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 992px) {
   .navbar-items.sm-screen,
-  .mobile-navbar {
+  .mobile-navbar,
+  .navbar-items.md-screen {
     display: none;
   }
 
@@ -104,7 +105,8 @@
 
 // MOBILE VIEW
 @media only screen and (max-width: 767px) {
-  .navbar-items.lg-screen {
+  .navbar-items.lg-screen,
+  .navbar-items.md-screen {
     display: none;
   }
 
@@ -194,6 +196,88 @@
               span {
                 opacity: 1;
                 height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// TABLET VIEW
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar-items.lg-screen,
+  .navbar-items.sm-screen,
+  .mobile-navbar {
+    display: none;
+  }
+
+  .navbar-items.md-screen {
+    padding-left: 32px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
+
+    .line {
+      border: 0.1px solid rgba(255, 255, 255, 0.4);
+      width: 15%;
+      height: 0;
+    }
+
+    .nav-links {
+      background-color: rgba(200, 200, 200, 0.08);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      height: 100%;
+      display: flex;
+      position: relative;
+      align-items: center;
+      ul {
+        height: 100%;
+        display: flex;
+        @include text-style();
+        position: relative;
+        li {
+          display: flex;
+          position: relative;
+          height: 100%;
+          list-style: none;
+          font-size: 14px;
+          letter-spacing: 2.36px;
+          margin-right: 37px;
+
+          a {
+            position: relative;
+            display: flex;
+            padding: 0;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            height: 100%;
+
+            span {
+              position: absolute;
+              top: 95%;
+              left: 0%;
+              height: 5px;
+              background-color: white;
+              width: 0%;
+              opacity: 0;
+              transition: all 0.3s ease;
+            }
+
+            &.active {
+              span {
+                opacity: 1;
+                width: 100%;
               }
             }
           }

@@ -4,8 +4,9 @@
   padding-top: 5%;
 }
 
-@media only screen and (min-width: 1400px) {
-  .section-crew .section-items.sm-screen {
+@media only screen and (min-width: 992px) {
+  .section-crew .section-items.sm-screen,
+  .section-crew .section-items.md-screen {
     display: none;
   }
   .section-crew .section-items.lg-screen .crew-intro {
@@ -25,7 +26,8 @@
   .section-crew {
     padding: 4% 0 4% 0;
   }
-  .section-crew .section-items.lg-screen {
+  .section-crew .section-items.lg-screen,
+  .section-crew .section-items.md-screen {
     display: none;
   }
   .section-crew .section-items.sm-screen .crew-intro {
@@ -41,6 +43,29 @@
   }
   .section-crew .section-items.sm-screen .crew-intro h3 {
     font-weight: 300;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .section-crew {
+    position: relative;
+    padding: 0;
+    margin-top: 40px;
+  }
+  .section-crew .section-items.sm-screen,
+  .section-crew .section-items.lg-screen {
+    display: none;
+  }
+  .section-crew .section-items.md-screen .crew-intro {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    letter-spacing: 3.38px;
+    padding-left: 39px;
+  }
+  .section-crew .section-items.md-screen .crew-intro span {
+    opacity: 0.3;
+    font-weight: bold;
+    margin-right: 16px;
   }
 }
 /*# sourceMappingURL=crew.css.map */

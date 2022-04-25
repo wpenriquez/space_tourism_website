@@ -102,6 +102,7 @@ const Technology = () => {
 
   return (
     <section className="section-tech">
+      {/* DESKTOP VIEW */}
       <div className="section-items lg-screen">
         <div className="tech-intro">
           <span>03</span>SPACE LAUNCH 101
@@ -112,7 +113,21 @@ const Technology = () => {
           changeState={changeState}
         />
       </div>
+
+      {/* MOBILE VIEW */}
       <div className="section-items sm-screen">
+        <div className="tech-intro">
+          <span>03</span>SPACE LAUNCH 101
+        </div>
+        <TechnologyItems
+          techValues={techValues}
+          activeState={activeState}
+          changeState={changeState}
+        />
+      </div>
+
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
         <div className="tech-intro">
           <span>03</span>SPACE LAUNCH 101
         </div>

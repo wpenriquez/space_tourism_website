@@ -114,13 +114,24 @@ const Crew = () => {
 
   return (
     <section className="section-crew">
+      {/* DESKTOP VIEW */}
       <div className="section-items lg-screen">
         <div className="crew-intro">
           <span>02</span>MEET YOUR CREW
         </div>
         <Carousel crewVal={crewValues} />
       </div>
+
+      {/* MOBILE VIEW */}
       <div className="section-items sm-screen">
+        <div className="crew-intro">
+          <span>02</span>MEET YOUR CREW
+        </div>
+        <Carousel crewVal={crewValues} />
+      </div>
+
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
         <div className="crew-intro">
           <span>02</span>MEET YOUR CREW
         </div>
