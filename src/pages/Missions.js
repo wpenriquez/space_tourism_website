@@ -137,7 +137,7 @@ const Missions = () => {
     const changeResultsHeight = () => {
       if (matches.length <= 3) {
         document.querySelector(".missions-result-container").style.height =
-          "585px";
+          "650px";
         document.querySelector(
           ".section-items.sm-screen .missions-result-container"
         ).style.height = "850px";
@@ -213,6 +213,11 @@ const Missions = () => {
     <section className="section-missions">
       {/* DESKTOP VIEW */}
       <div className="section-items lg-screen">
+        <div className="missions-top-intro">
+          <h3>
+            <span>04</span>REVISIT PAST MISSIONS
+          </h3>
+        </div>
         <div className="missions-head">
           <div className="missions-intro">
             <h1>DISCOVER SPACE MISSIONS</h1>

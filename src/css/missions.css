@@ -1,7 +1,7 @@
 .section-missions {
   width: 100%;
   height: 100%;
-  padding-top: 20%;
+  padding-top: 3%;
 }
 
 @media only screen and (min-width: 992px) {
@@ -13,8 +13,25 @@
   .section-missions .mission-item-inner.md-screen {
     display: none;
   }
+  .section-missions .section-items.lg-screen .missions-top-intro {
+    padding-left: 163px;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 4.72px;
+  }
+  .section-missions .section-items.lg-screen .missions-top-intro span {
+    font-weight: bold;
+    opacity: 0.3;
+    margin-right: 28px;
+  }
+  .section-missions .section-items.lg-screen .missions-top-intro h3 {
+    font-size: 28px;
+    font-weight: 300;
+  }
   .section-missions .section-items.lg-screen .missions-head {
-    margin-bottom: 20%;
+    padding-left: 163px;
+    padding-right: 163px;
+    margin-top: 15%;
+    margin-bottom: 50%;
     position: relative;
     font-family: "Bellefair", sans-serif;
     text-align: center;
@@ -33,7 +50,7 @@
     padding: 0;
     margin: 0 0 10% 0;
     font-weight: normal;
-    font-size: 100px;
+    font-size: 85px;
   }
   .section-missions .section-items.lg-screen .missions-head .missions-down-btn {
     width: 8%;
@@ -53,16 +70,22 @@
   }
   .section-missions .section-items.lg-screen .missions-content {
     position: relative;
-    background-color: #cdd7d7;
-    padding: 50px 50px 0px 50px;
+    background-color: rgba(200, 200, 200, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 50px 163px 0px 163px;
     height: auto;
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen {
-    background-color: #e5e5e5;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgba(4, 5, 13, 0.5);
     padding: 20px;
-    color: black;
+    color: white;
     text-align: left;
-    margin-bottom: 1px;
+    margin-bottom: 5px;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.37px;
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table {
     border-spacing: 5px;
@@ -76,12 +99,33 @@
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td input,
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td select {
-    border: 1px solid #c4c4c4;
-    border-radius: 5px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+    color: white;
+    font-family: "Barlow", sans-serif;
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td input {
     width: 98%;
     height: 30px;
+  }
+  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td ::-webkit-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td :-ms-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td ::-ms-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td ::placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td :-ms-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td ::-ms-input-placeholder {
+    color: grey;
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td select {
     height: 33px;
@@ -94,24 +138,30 @@
     width: 100%;
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td .apply-btn {
+    font-family: "Barlow Condensed", sans-serif;
     height: 33px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border: none;
-    color: white;
+    color: #0b0d17;
     padding: 0 10px 0 10px;
     border-radius: 5px;
     width: 100%;
     font-size: 18px;
-    background-color: #0ab783;
+    background-color: white;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
+    filter: brightness(100%);
+    -webkit-filter: brightness(100%);
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td .apply-btn:hover {
-    background-color: #0c9e72;
+    filter: brightness(80%);
+    -webkit-filter: brightness(80%);
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td .apply-btn:active {
-    background-color: grey;
+    background-color: #0b0d17;
+    color: white;
   }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr .keywords-input {
     width: 25%;
@@ -122,29 +172,32 @@
   .section-missions .section-items.lg-screen .missions-content .missions-body {
     position: relative;
     padding: 20px 50px 20px 50px;
-    background-color: white;
+    background-color: rgba(111, 111, 111, 0.6);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-search-results {
-    color: black;
+    color: white;
     text-align: center;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-search-results p {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    letter-spacing: 1.3px;
     margin-top: 5px;
-    font-weight: 300;
+    font-weight: normal;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container {
     position: relative;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item {
-    border: 1px solid gainsboro;
+    border: 2px solid gainsboro;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 50px 20px;
     margin: 30px 0px 30px 0px;
     position: relative;
     width: 100%;
     height: 162px;
-    -webkit-box-shadow: 5px 5px 10px 0px #888888;
-            box-shadow: 5px 5px 10px 0px #888888;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen {
     position: relative;
@@ -159,26 +212,31 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.5px;
+    color: white;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-logo {
+    position: relative;
     height: 100px;
     width: 100px;
-    line-height: 100px;
-    color: black;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-logo img {
+    width: 100%;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info {
     position: relative;
-    color: black;
     font-weight: 100;
-    width: auto;
-    left: -13%;
+    width: 720px;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table {
+    position: relative;
     border-collapse: collapse;
     margin-top: 1%;
-    width: auto;
+    width: 100%;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table thead tr td {
+    font-size: 20px;
     font-weight: bold;
     padding-bottom: 10px;
   }
@@ -186,7 +244,7 @@
     color: red;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table tbody tr td {
-    font-size: 14px;
+    font-size: 16px;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table tbody tr .mission-desc {
     padding-bottom: 10px;
@@ -198,26 +256,30 @@
     font-size: 16px;
     margin-right: 10px;
     font-family: "Barlow", sans-serif;
-    background-color: white;
-    border: 1px solid #c4c4c4;
+    background: none;
+    border: 1px solid white;
+    color: white;
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
     cursor: pointer;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table tbody .mission-btns td button:disabled {
     cursor: default;
+    color: #c4c4c4;
+    border: 1px solid #c4c4c4;
+    text-decoration: line-through;
   }
-  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table tbody .mission-btns td button:not([disabled]):hover {
-    background-color: #d4d4d4;
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table tbody .mission-btns td button:not([disabled]):hover, .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-info table tbody .mission-btns td button:not([disabled]):focus {
+    background-color: #838383;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-flight-number {
     position: relative;
     text-align: center;
-    color: black;
     width: 100px;
     height: 100px;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.lg-screen .mission-flight-number p {
+    font-size: 16px;
     font-weight: 100;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-footer {
@@ -225,19 +287,26 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.37px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-footer p {
-    color: #787878;
+    color: white;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-footer button {
-    font-size: 14px;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.37px;
+    font-size: 16px;
     background: none;
     border: none;
-    font-family: "Barlow", sans-serif;
+    color: #c5c5c5;
     text-decoration: underline;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: normal;
     cursor: pointer;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-footer button:hover {
