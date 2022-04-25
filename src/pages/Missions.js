@@ -347,6 +347,11 @@ const Missions = () => {
 
       {/* TABLET VIEW */}
       <div className="section-items md-screen">
+        <div className="missions-top-intro">
+          <h3>
+            <span>04</span>REVISIT PAST MISSIONS
+          </h3>
+        </div>
         <div className="missions-head">
           <div className="missions-intro">
             <h1>DISCOVER SPACE MISSIONS</h1>

@@ -652,11 +652,25 @@
   }
   .section-missions {
     padding: 0;
+    margin-top: 40px;
   }
-  .section-missions .section-items.md-screen {
-    margin-top: 45%;
+  .section-missions .section-items.md-screen .missions-top-intro {
+    padding-left: 39px;
+  }
+  .section-missions .section-items.md-screen .missions-top-intro h3 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 3.38px;
+  }
+  .section-missions .section-items.md-screen .missions-top-intro h3 span {
+    opacity: 0.3;
+    font-weight: bold;
+    margin-right: 19px;
   }
   .section-missions .section-items.md-screen .missions-head {
+    margin-top: 40%;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -672,7 +686,7 @@
   }
   .section-missions .section-items.md-screen .missions-head .missions-intro h1 {
     font-weight: normal;
-    font-size: 55px;
+    font-size: 50px;
   }
   .section-missions .section-items.md-screen .missions-head .missions-down-btn {
     width: 15%;
@@ -682,19 +696,27 @@
     -webkit-filter: invert(75%);
   }
   .section-missions .section-items.md-screen .missions-content {
-    background-color: #cdd7d7;
+    background-color: rgba(200, 200, 200, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     margin-top: 50%;
-    padding: 15px;
+    padding: 20px;
+    padding-left: 39px;
+    padding-right: 39px;
   }
   .section-missions .section-items.md-screen .missions-content .form-container {
     margin-bottom: 5px;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen {
-    background-color: #e5e5e5;
-    color: black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgba(4, 5, 13, 0.5);
+    color: white;
     padding: 10px;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.37px;
     width: 100%;
     border-spacing: 10px;
   }
@@ -716,12 +738,33 @@
     border: none;
     width: 100%;
     height: 40px;
-    border-radius: 5px;
-    border: 1px solid #c4c4c4;
+    border: none;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-family: "Barlow", sans-serif;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .min-year-select,
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .max-year-select {
     text-align: center;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table ::-webkit-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table :-ms-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table ::-ms-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table ::placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table :-ms-input-placeholder {
+    color: grey;
+  }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table ::-ms-input-placeholder {
+    color: grey;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply {
     -webkit-box-pack: center;
@@ -729,38 +772,48 @@
             justify-content: center;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1px;
     width: 100%;
     height: 40px;
     font-size: 25px;
-    background-color: #0ab783;
-    color: white;
+    background-color: white;
+    color: #0b0d17;
     border-radius: 15px;
     border: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:active {
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:focus, .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:hover {
     -webkit-filter: brightness(85%);
             filter: brightness(85%);
   }
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:active {
+    background-color: #0b0d17;
+    color: white;
+  }
   .section-missions .section-items.md-screen .missions-content .missions-body {
     position: relative;
-    background-color: white;
+    background-color: rgba(111, 111, 111, 0.6);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     padding: 20px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-search-results {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.3px;
     text-align: center;
-    color: black;
+    color: white;
     font-size: 20px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item {
-    border: 1px solid gainsboro;
+    border: 2px solid gainsboro;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 50px 20px;
     margin: 30px 0px 30px 0px;
     position: relative;
     width: auto;
     height: 162px;
-    -webkit-box-shadow: 5px 5px 10px 0px #888888;
-            box-shadow: 5px 5px 10px 0px #888888;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen {
     position: relative;
@@ -775,15 +828,14 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    color: white;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.3px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo {
     position: relative;
     width: 100px;
     height: 100px;
-    color: black;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo img {
     width: auto;
@@ -791,7 +843,6 @@
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info {
     position: relative;
-    color: black;
     font-weight: 100;
     width: 65%;
   }
@@ -828,8 +879,8 @@
     font-size: 16px;
     margin-right: 10px;
     font-family: "Barlow", sans-serif;
-    background-color: white;
-    border: 1px solid black;
+    background: none;
+    border: 1px solid white;
     padding: 5px 10px 5px 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -838,15 +889,14 @@
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-dropdown-btn.active {
     background-color: red;
-    fill: white;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content {
     position: absolute;
     top: -20%;
     left: 0%;
     opacity: 0;
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid white;
+    background-color: #3f4049;
     border-radius: 20px;
     width: 0px;
     height: 50px;
@@ -863,12 +913,18 @@
     position: relative;
     visibility: hidden;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 15px;
-    background-color: white;
+    background: none;
     margin-left: 20px;
     width: 50px;
     height: 50px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button svg {
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button span {
     visibility: hidden;
@@ -876,12 +932,12 @@
     left: 10%;
     top: 45%;
     width: 80%;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #c4c4c4;
     -webkit-transform: rotate(40deg);
             transform: rotate(40deg);
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:disabled {
-    border: 1px solid gainsboro;
+    border: 1px solid #adadad;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:disabled span {
     visibility: visible;
@@ -905,14 +961,18 @@
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main {
     width: 50px;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid white;
     margin-right: 10px;
-    background: white;
+    background: none;
     border-radius: 50%;
     padding: 8px;
     position: relative;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main svg {
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main span {
     visibility: hidden;
@@ -929,6 +989,10 @@
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled span {
     visibility: visible;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):active, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):hover {
     background-color: royalblue;
@@ -951,7 +1015,7 @@
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-flight-number {
     position: relative;
     text-align: center;
-    color: black;
+    color: white;
     width: 100px;
     height: 100px;
   }
@@ -963,18 +1027,22 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.37px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
   .section-missions .section-items.md-screen .missions-content .missions-footer p {
-    color: #787878;
+    color: white;
   }
   .section-missions .section-items.md-screen .missions-content .missions-footer button {
+    color: #c5c5c5;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.37px;
     font-size: 14px;
     background: none;
     border: none;
-    font-family: "Barlow", sans-serif;
     text-decoration: underline;
     cursor: pointer;
   }

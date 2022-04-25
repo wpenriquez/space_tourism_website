@@ -704,12 +704,30 @@
 
     & {
       padding: 0;
+
+      margin-top: 40px;
     }
 
     .section-items.md-screen {
-      margin-top: 45%;
+      .missions-top-intro {
+        padding-left: 39px;
+        h3 {
+          margin: 0;
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 20px;
+          font-weight: normal;
+          letter-spacing: 3.38px;
+
+          span {
+            opacity: 0.3;
+            font-weight: bold;
+            margin-right: 19px;
+          }
+        }
+      }
 
       .missions-head {
+        margin-top: 40%;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -718,7 +736,7 @@
         .missions-intro {
           h1 {
             font-weight: normal;
-            font-size: 55px;
+            font-size: 50px;
           }
         }
 
@@ -733,18 +751,25 @@
       }
 
       .missions-content {
-        background-color: rgb(205, 215, 215);
+        background-color: rgba(200, 200, 200, 0.08);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         margin-top: 50%;
-        padding: 15px;
+        padding: 20px;
+        padding-left: 39px;
+        padding-right: 39px;
 
         .form-container {
           margin-bottom: 5px;
           .missions-form.md-screen {
-            background-color: rgb(229, 229, 229);
-            color: black;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-color: rgba(4, 5, 13, 0.5);
+            color: white;
             padding: 10px;
-
             table {
+              font-family: "Barlow Condensed", sans-serif;
+              letter-spacing: 1.37px;
               width: 100%;
               border-spacing: 10px;
 
@@ -768,36 +793,52 @@
                 border: none;
                 width: 100%;
                 height: 40px;
-                border-radius: 5px;
-                border: 1px solid rgb(196, 196, 196);
+                border: none;
+                background: none;
+                border-bottom: 1px solid white;
+                color: white;
+                font-family: "Barlow", sans-serif;
               }
-
-              // .keywords-input,
-              // .launchpads-select,
-              // .min-year-select,
-              // .max-year-select,
-              // .form-apply {
-              //   padding-bottom: 2%;
-              // }
 
               .min-year-select,
               .max-year-select {
                 text-align: center;
               }
 
+              ::placeholder {
+                color: grey;
+              }
+
+              :-ms-input-placeholder {
+                color: grey;
+              }
+
+              ::-ms-input-placeholder {
+                color: grey;
+              }
+
               .form-apply {
                 justify-content: center;
                 .apply-btn {
+                  font-family: "Barlow Condensed", sans-serif;
+                  letter-spacing: 1px;
                   width: 100%;
                   height: 40px;
                   font-size: 25px;
-                  background-color: rgb(10, 183, 131);
-                  color: white;
+                  background-color: white;
+                  color: #0b0d17;
                   border-radius: 15px;
                   border: none;
+                  transition: all 0.3s ease;
+
+                  &:focus,
+                  &:hover {
+                    filter: brightness(85%);
+                  }
 
                   &:active {
-                    filter: brightness(85%);
+                    background-color: #0b0d17;
+                    color: white;
                   }
                 }
               }
@@ -807,25 +848,30 @@
 
         .missions-body {
           position: relative;
-          background-color: white;
+          background-color: rgba(111, 111, 111, 0.6);
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
           padding: 20px;
+
           .missions-results {
             .missions-search-results {
+              font-family: "Barlow Condensed", sans-serif;
+              letter-spacing: 1.3px;
               text-align: center;
-              color: black;
+              color: white;
               font-size: 20px;
             }
 
             .missions-result-container {
               .mission-item {
-                border: 1px solid rgb(220, 220, 220);
+                border: 2px solid rgb(220, 220, 220);
                 padding: 10px;
-                border-radius: 15px;
+                border-radius: 50px 20px;
                 margin: 30px 0px 30px 0px;
                 position: relative;
                 width: auto;
                 height: 162px;
-                box-shadow: 5px 5px 10px 0px #888888;
+
                 .mission-item-inner.md-screen {
                   position: relative;
                   width: 100%;
@@ -833,13 +879,13 @@
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
+                  color: white;
+                  font-family: "Barlow Condensed", sans-serif;
+                  letter-spacing: 1.3px;
                   .mission-logo {
                     position: relative;
-
                     width: 100px;
                     height: 100px;
-                    color: black;
-                    display: flex;
 
                     img {
                       width: auto;
@@ -848,7 +894,6 @@
                   }
                   .mission-info {
                     position: relative;
-                    color: black;
                     font-weight: 100;
                     width: 65%;
 
@@ -894,8 +939,8 @@
                                 font-size: 16px;
                                 margin-right: 10px;
                                 font-family: "Barlow", sans-serif;
-                                background-color: white;
-                                border: 1px solid black; // disabled: rgb(196, 196, 196)
+                                background: none;
+                                border: 1px solid white; // disabled: rgb(196, 196, 196)
                                 padding: 5px 10px 5px 10px;
                                 border-radius: 50%;
                                 cursor: pointer;
@@ -903,7 +948,6 @@
 
                                 &.active {
                                   background-color: red;
-                                  fill: white;
                                 }
                               }
 
@@ -912,8 +956,8 @@
                                 top: -20%;
                                 left: 0%;
                                 opacity: 0;
-                                border: 1px solid black;
-                                background-color: white;
+                                border: 1px solid white;
+                                background-color: rgb(63, 64, 73);
                                 border-radius: 20px;
                                 width: 0px;
                                 height: 50px;
@@ -927,12 +971,17 @@
                                   position: relative;
                                   visibility: hidden;
                                   padding: 5px;
-                                  border: 1px solid black;
+                                  border: 1px solid white;
                                   border-radius: 15px;
-                                  background-color: white;
+                                  background: none;
                                   margin-left: 20px;
                                   width: 50px;
                                   height: 50px;
+                                  transition: all 0.3s ease;
+
+                                  svg {
+                                    filter: invert(100%);
+                                  }
 
                                   span {
                                     visibility: hidden;
@@ -940,12 +989,12 @@
                                     left: 10%;
                                     top: 45%;
                                     width: 80%;
-                                    border: 1px solid rgb(170, 170, 170);
+                                    border: 1px solid rgb(196, 196, 196);
                                     transform: rotate(40deg);
                                   }
 
                                   &:disabled {
-                                    border: 1px solid rgb(220, 220, 220);
+                                    border: 1px solid rgb(173, 173, 173);
 
                                     span {
                                       visibility: visible;
@@ -974,16 +1023,21 @@
                                 }
                               }
                             }
+
                             button.main {
                               width: 50px;
                               height: 50px;
-                              border: 1px solid black;
+                              border: 1px solid white;
                               margin-right: 10px;
-                              background: white;
+                              background: none;
                               border-radius: 50%;
                               padding: 8px;
                               position: relative;
                               transition: all 0.3s ease;
+
+                              svg {
+                                filter: invert(100%);
+                              }
 
                               span {
                                 visibility: hidden;
@@ -1004,6 +1058,7 @@
                               }
 
                               &.presskit {
+                                transition: all 0.3s ease;
                                 &:not(:disabled):active,
                                 &:not(:disabled):hover {
                                   background-color: royalblue;
@@ -1041,7 +1096,7 @@
                   .mission-flight-number {
                     position: relative;
                     text-align: center;
-                    color: black;
+                    color: white;
                     width: 100px;
                     height: 100px;
 
@@ -1058,15 +1113,19 @@
         .missions-footer {
           padding: 10px;
           display: flex;
+          font-family: "Barlow Condensed", sans-serif;
+          letter-spacing: 1.37px;
           justify-content: space-between;
           p {
-            color: rgb(120, 120, 120);
+            color: white;
           }
           button {
+            color: rgb(197, 197, 197);
+            font-family: "Barlow Condensed", sans-serif;
+            letter-spacing: 1.37px;
             font-size: 14px;
             background: none;
             border: none;
-            font-family: "Barlow", sans-serif;
             text-decoration: underline;
             cursor: pointer;
             &:hover {
