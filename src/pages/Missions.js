@@ -141,11 +141,19 @@ const Missions = () => {
         document.querySelector(
           ".section-items.sm-screen .missions-result-container"
         ).style.height = "850px";
+
+        document.querySelector(
+          ".section-items.md-screen .missions-result-container"
+        ).style.height = "850px";
       } else {
         document.querySelector(".missions-result-container").style.height =
           "auto";
         document.querySelector(
           ".section-items.sm-screen .missions-result-container"
+        ).style.height = "auto";
+
+        document.querySelector(
+          ".section-items.md-screen .missions-result-container"
         ).style.height = "auto";
       }
     };
