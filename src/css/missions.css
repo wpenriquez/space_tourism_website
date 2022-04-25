@@ -627,6 +627,7 @@
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table {
     width: 100%;
+    border-spacing: 10px;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .label {
     font-weight: bold;
@@ -649,12 +650,9 @@
     border-radius: 5px;
     border: 1px solid #c4c4c4;
   }
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .keywords-input,
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .launchpads-select,
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .min-year-select,
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .max-year-select,
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply {
-    padding-bottom: 2%;
+  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .max-year-select {
+    text-align: center;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply {
     -webkit-box-pack: center;
@@ -710,24 +708,27 @@
             justify-content: space-between;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo {
-    width: 500px;
-    line-height: 100px;
+    position: relative;
+    width: 100px;
+    height: 100px;
     color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo img {
-    width: 100px;
+    width: auto;
+    height: 100%;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info {
     position: relative;
     color: black;
     font-weight: 100;
-    width: auto;
-    left: -13%;
+    width: 65%;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table {
     border-collapse: collapse;
-    margin-top: 1%;
-    width: 50%;
+    width: 100%;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table thead tr td {
     font-weight: bold;
@@ -743,23 +744,140 @@
     padding-bottom: 10px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td {
-    padding-top: 7%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button {
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns {
+    position: relative;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-dropdown-btn {
+    z-index: 2;
+    position: relative;
+    width: 50px;
+    height: 50px;
     font-size: 16px;
     margin-right: 10px;
     font-family: "Barlow", sans-serif;
     background-color: white;
-    border: 1px solid #c4c4c4;
+    border: 1px solid black;
     padding: 5px 10px 5px 10px;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
-  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button:disabled {
-    cursor: default;
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-dropdown-btn.active {
+    background-color: red;
+    fill: white;
   }
-  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button:not([disabled]):hover {
-    background-color: #d4d4d4;
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content {
+    position: absolute;
+    top: -20%;
+    left: 0%;
+    opacity: 0;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+    width: 0px;
+    height: 50px;
+    padding: 10px;
+    padding-left: 36px;
+    z-index: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button {
+    position: relative;
+    visibility: hidden;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button span {
+    visibility: hidden;
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    width: 80%;
+    border: 1px solid #aaaaaa;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:disabled {
+    border: 1px solid gainsboro;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:disabled span {
+    visibility: visible;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:active {
+    background-color: red;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:active svg {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content.active {
+    opacity: 1;
+    left: 8%;
+    width: 210px;
+    z-index: 1;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content.active button {
+    visibility: visible;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin-right: 10px;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    position: relative;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main span {
+    visibility: hidden;
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    width: 80%;
+    border: 1px solid #aaaaaa;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled {
+    border: 1px solid gainsboro;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled span {
+    visibility: visible;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):active, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):hover {
+    background-color: royalblue;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):active svg, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):hover svg {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):active, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):hover {
+    background-color: red;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):active svg, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.youtube:not(:disabled):hover svg {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled {
+    fill: grey;
+    border: 1px solid #c4c4c4;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-flight-number {
     position: relative;

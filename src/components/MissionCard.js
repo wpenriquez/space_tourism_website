@@ -391,7 +391,7 @@ const MissionCard = (props) => {
           <table>
             <thead>
               <tr>
-                <td colSpan="5">
+                <td>
                   {props.value.rocket.rocket_name +
                     " - " +
                     (props.value.flight_number === 49
@@ -410,7 +410,7 @@ const MissionCard = (props) => {
             </thead>
             <tbody>
               <tr>
-                <td colSpan="5" className="mission-desc">
+                <td className="mission-desc">
                   {computeTimeLocation(
                     props.value.launch_date_local,
                     props.value.launch_site.site_id,
@@ -419,6 +419,125 @@ const MissionCard = (props) => {
                 </td>
               </tr>
               <tr className="mission-btns">
+                <td>
+                  <div className="reddit-btns">
+                    <button
+                      onClick={() => setDropDown((prevState) => !prevState)}
+                      className={
+                        dropDown
+                          ? "reddit-dropdown-btn main active"
+                          : "reddit-dropdown-btn main"
+                      }
+                    >
+                      <RedditBtn />
+                    </button>
+                    <div
+                      className={
+                        dropDown ? "reddit-content active" : "reddit-content"
+                      }
+                    >
+                      <button
+                        onClick={() => {
+                          if (
+                            typeof props.value.links.reddit_campaign !==
+                            "undefined"
+                          ) {
+                            window
+                              .open(props.value.links.reddit_campaign, "_blank")
+                              .focus();
+                          }
+                        }}
+                        disabled={
+                          typeof props.value.links.reddit_campaign ===
+                          "undefined"
+                            ? true
+                            : false
+                        }
+                      >
+                        <CampaignBtn />
+                        <span></span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (
+                            typeof props.value.links.reddit_launch !==
+                            "undefined"
+                          ) {
+                            window
+                              .open(props.value.links.reddit_launch, "_blank")
+                              .focus();
+                          }
+                        }}
+                        disabled={
+                          typeof props.value.links.reddit_launch === "undefined"
+                            ? true
+                            : false
+                        }
+                      >
+                        <LaunchBtn />
+                        <span></span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (
+                            typeof props.value.links.reddit_media !==
+                            "undefined"
+                          ) {
+                            window
+                              .open(props.value.links.reddit_media, "_blank")
+                              .focus();
+                          }
+                        }}
+                        disabled={
+                          typeof props.value.links.reddit_media === "undefined"
+                            ? true
+                            : false
+                        }
+                      >
+                        <MediaBtn />
+                        <span></span>
+                      </button>
+                    </div>
+                  </div>
+                  <button
+                    className="presskit main"
+                    onClick={() => {
+                      if (typeof props.value.links.presskit !== "undefined") {
+                        window
+                          .open(props.value.links.presskit, "_blank")
+                          .focus();
+                      }
+                    }}
+                    disabled={
+                      typeof props.value.links.presskit === "undefined"
+                        ? true
+                        : false
+                    }
+                  >
+                    <PressKit />
+                    <span></span>
+                  </button>
+                  <button
+                    className="youtube main"
+                    onClick={() => {
+                      if (typeof props.value.links.video_link !== "undefined") {
+                        window
+                          .open(props.value.links.video_link, "_blank")
+                          .focus();
+                      }
+                    }}
+                    disabled={
+                      typeof props.value.links.video_link === "undefined"
+                        ? true
+                        : false
+                    }
+                  >
+                    <YouTube />
+                    <span></span>
+                  </button>
+                </td>
+              </tr>
+              {/* <tr className="mission-btns">
                 <td>
                   <button
                     onClick={() => {
@@ -515,7 +634,7 @@ const MissionCard = (props) => {
                     Watch Video
                   </button>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
