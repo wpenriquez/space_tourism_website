@@ -1,46 +1,213 @@
 .crew-carousel {
   position: relative;
   width: 100%;
-
   height: 665px;
-  .crew-carousel-inner {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
 
-    .crew-carousel-desc {
-      top: 154px;
+  // DESKTOP VIEW
+  @media only screen and (min-width: 992px) {
+    .crew-carousel-inner.sm-screen,
+    .crew-carousel-inner.md-screen {
+      display: none;
+    }
 
+    .crew-carousel-inner.lg-screen {
       position: relative;
-      height: 406px;
-      .crew-carousel-info {
-        width: 620px;
-        height: 271px;
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+
+      .crew-carousel-desc {
+        top: 154px;
         position: relative;
-        .crew-carousel-info-inner {
-          transition: all 0.3s ease;
-          opacity: 0;
-          font-family: "Bellefair", sans-serif;
+        height: 406px;
+        .crew-carousel-info {
+          width: 620px;
+          height: 271px;
+          position: relative;
+          .crew-carousel-info-inner {
+            transition: all 0.3s ease;
+            opacity: 0;
+            font-family: "Bellefair", sans-serif;
+            position: absolute;
+            h2 {
+              margin: 0;
+              font-size: 32px;
+              opacity: 0.5;
+              font-weight: normal;
+            }
+
+            h1 {
+              margin: 15px 0 27px 0;
+              font-size: 56px;
+              font-weight: normal;
+            }
+
+            p {
+              margin: 0;
+              font-family: "Barlow", sans-serif;
+              font-size: 18px;
+              line-height: 32px;
+              font-weight: normal;
+            }
+
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+        .crew-carousel-indicators {
+          width: 132px;
+
           position: absolute;
+          top: 99%;
+          ul {
+            padding: 0;
+            display: flex;
+            li {
+              list-style: none;
+              .crew-carousel-button {
+                transition: all 0.3s ease;
+                border-radius: 50%;
+                border: none;
+                background-color: rgba(255, 255, 255, 0.2);
+                width: 15px;
+                height: 15px;
+                margin-right: 24px;
+
+                &:hover,
+                &:focus {
+                  background-color: rgba(255, 255, 255, 0.5);
+                  cursor: pointer;
+                }
+
+                &.active {
+                  background-color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+      .crew-carousel-images {
+        position: relative;
+        width: 100%;
+
+        .crew-carousel-img {
+          height: 100%;
+          position: absolute;
+          left: 10%;
+          opacity: 0;
+          transition: all 0.5s ease;
+
+          &.active {
+            left: 0%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // MOBILE VIEW
+  @media only screen and (max-width: 767px) {
+    .crew-carousel-inner.lg-screen,
+    .crew-carousel-inner.md-screen {
+      display: none;
+    }
+
+    & {
+      height: auto;
+    }
+
+    .crew-carousel-inner.sm-screen {
+      margin-top: -1%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: auto;
+      .crew-carousel-images {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 32px;
+        width: 327px;
+        height: 223px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .crew-carousel-img {
+          position: absolute;
+          width: auto;
+          height: 100%;
+          opacity: 0;
+          transition: all 0.3s ease;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+
+      .crew-carousel-indicators {
+        width: 98px;
+        ul {
+          padding: 0;
+          display: flex;
+          li {
+            list-style: none;
+            margin-right: 16px;
+            .crew-carousel-button {
+              transition: all 0.3s ease;
+              background-color: rgba(255, 255, 255, 0.2);
+              border-radius: 50%;
+              width: 10px;
+              height: 12px;
+              border: none;
+
+              &:hover,
+              &:focus {
+                background-color: rgba(255, 255, 255, 0.5);
+                cursor: pointer;
+              }
+
+              &.active {
+                background-color: white;
+              }
+            }
+          }
+        }
+      }
+
+      .crew-carousel-info {
+        position: relative;
+        width: 327px;
+        .crew-carousel-info-inner {
+          left: 0;
+          position: absolute;
+          transition: all 0.3s ease;
+          font-family: "Bellefair", sans-serif;
+          opacity: 0;
+          transition: all 0.3s ease;
+          text-align: center;
+
           h2 {
-            margin: 0;
-            font-size: 32px;
-            opacity: 0.5;
+            margin-top: 0;
             font-weight: normal;
+            font-size: 16px;
+            opacity: 0.5;
           }
 
           h1 {
-            margin: 15px 0 27px 0;
-            font-size: 56px;
+            margin-top: 0;
+            font-size: 24px;
             font-weight: normal;
           }
 
           p {
-            margin: 0;
+            margin-top: -10px;
             font-family: "Barlow", sans-serif;
-            font-size: 18px;
-            line-height: 32px;
+            font-size: 15px;
+            line-height: 25px;
             font-weight: normal;
           }
 
@@ -49,24 +216,85 @@
           }
         }
       }
-      .crew-carousel-indicators {
-        width: 132px;
+    }
+  }
 
-        position: absolute;
-        top: 99%;
+  // TABLET VIEW
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    & {
+      height: 100%;
+    }
+
+    .crew-carousel-inner.sm-screen,
+    .crew-carousel-inner.lg-screen {
+      display: none;
+    }
+
+    .crew-carousel-inner.md-screen {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .crew-carousel-info {
+        position: relative;
+        margin-top: 20px;
+        width: 450px;
+        height: 290px;
+
+        .crew-carousel-info-inner {
+          position: absolute;
+          text-align: center;
+          font-family: "Bellefair", sans-serif;
+          left: -15%;
+          opacity: 0;
+          width: 450px;
+          transition: all 0.3s ease;
+
+          h2 {
+            font-size: 24px;
+            font-weight: normal;
+            opacity: 0.6;
+          }
+
+          h1 {
+            font-weight: normal;
+            font-size: 40px;
+          }
+
+          p {
+            font-family: "Barlow", sans-serif;
+            font-size: 16px;
+            line-height: 28px;
+            color: #d0d6f9;
+          }
+
+          &.active {
+            opacity: 1;
+            left: 0%;
+          }
+        }
+      }
+
+      .crew-carousel-indicators {
+        margin-top: 10px;
         ul {
           padding: 0;
           display: flex;
+          width: 88px;
+          margin: 0;
           li {
             list-style: none;
+            margin-right: 16px;
+
             .crew-carousel-button {
+              padding: 0;
               transition: all 0.3s ease;
-              border-radius: 50%;
-              border: none;
               background-color: rgba(255, 255, 255, 0.2);
-              width: 15px;
-              height: 15px;
-              margin-right: 24px;
+              border-radius: 50%;
+              width: 10px;
+              height: 10px;
+              border: none;
 
               &:hover,
               &:focus {
@@ -82,20 +310,25 @@
         }
       }
     }
-    .crew-carousel-images {
-      position: relative;
-      width: 650px;
 
-      .crew-carousel-img {
+
+      .crew-carousel-images {
+        position: relative;
+        margin-top: 0;
         height: 100%;
-        position: absolute;
-        left: 10%;
-        opacity: 0;
-        transition: all 0.5s ease;
-
-        &.active {
-          left: 0%;
-          opacity: 1;
+        width: 540px;
+        height: 483px;
+        display: flex;
+        justify-content: center;
+        .crew-carousel-img {
+          position: absolute;
+          opacity: 0;
+          height: 100%;
+          transition: all 0.3s ease;
+          &.active {
+            margin-top: 40px;
+            opacity: 1;
+          }
         }
       }
     }

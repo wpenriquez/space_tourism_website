@@ -138,9 +138,23 @@ const Missions = () => {
       if (matches.length <= 3) {
         document.querySelector(".missions-result-container").style.height =
           "585px";
+        document.querySelector(
+          ".section-items.sm-screen .missions-result-container"
+        ).style.height = "850px";
+
+        document.querySelector(
+          ".section-items.md-screen .missions-result-container"
+        ).style.height = "850px";
       } else {
         document.querySelector(".missions-result-container").style.height =
           "auto";
+        document.querySelector(
+          ".section-items.sm-screen .missions-result-container"
+        ).style.height = "auto";
+
+        document.querySelector(
+          ".section-items.md-screen .missions-result-container"
+        ).style.height = "auto";
       }
     };
 
@@ -174,10 +188,10 @@ const Missions = () => {
   //_____________________________________//
   // FUNCTION TO SMOOTHLY SCROLL TO FORM //
   //-------------------------------------//
-  const scrollToForm = () => {
+  const scrollToForm = (form) => {
     $("html,body").animate(
       {
-        scrollTop: $(".missions-content").offset().top,
+        scrollTop: $(form).offset().top,
       },
       500
     );
@@ -186,10 +200,10 @@ const Missions = () => {
   //_______________________________________________//
   // FUNCTION TO SMOOTHLY SCROLL TO TOP OF RESULTS //
   //-----------------------------------------------//
-  const scrollToTop = () => {
+  const scrollToTop = (top, offset) => {
     $("html,body").animate(
       {
-        scrollTop: $("#missions-content").position().top + 125,
+        scrollTop: $(top).position().top + offset,
       },
       500
     );
@@ -197,58 +211,194 @@ const Missions = () => {
 
   return (
     <section className="section-missions">
-      <div className="missions-head">
-        <div className="missions-intro">
-          <h1>DISCOVER SPACE MISSIONS</h1>
-        </div>
-        <div
-          onKeyDown={(e) => {
-            if (e.keyCode === 13) {
-              scrollToForm();
-            }
-          }}
-          onClick={scrollToForm}
-          className="missions-down-btn"
-          tabIndex="0"
-        >
-          <img src={chevron} alt="" />
-        </div>
-      </div>
-      <div id="missions-content" className="missions-content">
-        <MissionForm
-          launchpad={launchPad}
-          launch={launch}
-          search={search}
-          setSearch={setSearch}
-        />
-
-        <div id="missions-body" className="missions-body">
-          <div className="missions-results">
-            <div className="missions-search-results">
-              <p>
-                {matchLength > 1
-                  ? `Showing ${matchLength} Missions`
-                  : matchLength === 1
-                  ? `Showing ${matchLength} Mission`
-                  : `No Missions Found`}
-              </p>
-            </div>
-            <div className="missions-result-container">
-              {matches.map((val) => (
-                <MissionCard
-                  key={val.flight_number}
-                  value={val}
-                  launchpad={launchPad}
-                />
-              ))}
-            </div>
+      {/* DESKTOP VIEW */}
+      <div className="section-items lg-screen">
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onKeyDown={(e) => {
+              const form = ".missions-content";
+              if (e.keyCode === 13) {
+                scrollToForm(form);
+              }
+            }}
+            onClick={() => {
+              const form = ".missions-content";
+              scrollToForm(form);
+            }}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
           </div>
         </div>
-        <div className="missions-footer">
-          <p>Copyright © 2022 </p>
-          <button id="test" onClick={scrollToTop}>
-            Back to top
-          </button>
+        <div id="missions-content" className="missions-content">
+          <MissionForm
+            launchpad={launchPad}
+            launch={launch}
+            search={search}
+            setSearch={setSearch}
+          />
+
+          <div id="missions-body" className="missions-body">
+            <div className="missions-results">
+              <div className="missions-search-results">
+                <p>
+                  {matchLength > 1
+                    ? `Showing ${matchLength} Missions`
+                    : matchLength === 1
+                    ? `Showing ${matchLength} Mission`
+                    : `No Missions Found`}
+                </p>
+              </div>
+              <div className="missions-result-container">
+                {matches.map((val) => (
+                  <MissionCard
+                    key={val.flight_number}
+                    value={val}
+                    launchpad={launchPad}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="missions-footer">
+            <p>Copyright © 2022 </p>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".missions-content";
+                scrollToTop(top, 125);
+              }}
+            >
+              Back to top
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE VIEW */}
+      <div className="section-items sm-screen">
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onClick={() => {
+              const form = ".section-items.sm-screen > .missions-content";
+              scrollToForm(form);
+            }}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
+          </div>
+        </div>
+        <div id="missions-content" className="missions-content">
+          <MissionForm
+            launchpad={launchPad}
+            launch={launch}
+            search={search}
+            setSearch={setSearch}
+          />
+          <div id="missions-body" className="missions-body">
+            <div className="missions-results">
+              <div className="missions-search-results">
+                <p>
+                  {matchLength > 1
+                    ? `Showing ${matchLength} Missions`
+                    : matchLength === 1
+                    ? `Showing ${matchLength} Mission`
+                    : `No Missions Found`}
+                </p>
+              </div>
+              <div className="missions-result-container">
+                {matches.map((val) => (
+                  <MissionCard
+                    key={val.flight_number}
+                    value={val}
+                    launchpad={launchPad}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="missions-footer">
+            <p>Copyright © 2022 </p>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".section-items.sm-screen > .missions-content";
+                scrollToTop(top, 100);
+              }}
+            >
+              Back to top
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onClick={() => {
+              const form = ".section-items.md-screen > .missions-content";
+              scrollToForm(form);
+            }}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
+          </div>
+        </div>
+        <div id="missions-content" className="missions-content">
+          <MissionForm
+            launchpad={launchPad}
+            launch={launch}
+            search={search}
+            setSearch={setSearch}
+          />
+          <div id="missions-body" className="missions-body">
+            <div className="missions-results">
+              <div className="missions-search-results">
+                <p>
+                  {matchLength > 1
+                    ? `Showing ${matchLength} Missions`
+                    : matchLength === 1
+                    ? `Showing ${matchLength} Mission`
+                    : `No Missions Found`}
+                </p>
+              </div>
+              <div className="missions-result-container">
+                {matches.map((val) => (
+                  <MissionCard
+                    key={val.flight_number}
+                    value={val}
+                    launchpad={launchPad}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="missions-footer">
+            <p>Copyright © 2022 </p>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".section-items.md-screen > .missions-content";
+                scrollToTop(top, 830);
+              }}
+            >
+              Back to top
+            </button>
+          </div>
         </div>
       </div>
     </section>

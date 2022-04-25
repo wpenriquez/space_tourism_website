@@ -1,155 +1,555 @@
 .section-destination {
   padding-top: 3%;
 
-  .section-items {
-    position: relative;
-    padding: 0px 163px 0px 163px;
-
-    .destination-intro {
-      font-family: "Barlow Condensed", sans-serif;
-      letter-spacing: 4.72px;
-      span {
-        font-weight: bold;
-        opacity: 0.3;
-        margin-right: 28px;
-      }
-      h3 {
-        font-size: 28px;
-        font-weight: 300;
-      }
+  // DESKTOP VIEW
+  @media only screen and (min-width: 992px) {
+    .section-items.sm-screen,
+    .section-items.md-screen,
+    .table.md-screen,
+    .table.sm-screen {
+      display: none;
     }
 
-    .heavenly-bodies-section {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      padding: 5%;
 
-      .heavenly-body-img {
-        width: 445px;
-        height: 445px;
+    .section-items.lg-screen {
+      position: relative;
+      padding: 0px 163px 0px 163px;
 
-        .body-img {
-          filter: brightness(10%);
-          transition: all 1s ease;
-          position: absolute;
-          opacity: 0;
+      .destination-intro {
+        font-family: "Barlow Condensed", sans-serif;
+        letter-spacing: 4.72px;
 
-          &.active {
-            filter: brightness(120%);
-            opacity: 1;
-          }
+        span {
+          font-weight: bold;
+          opacity: 0.3;
+          margin-right: 28px;
+        }
+        h3 {
+          font-size: 28px;
+          font-weight: 300;
+
         }
       }
 
-      .heavenly-body-info {
-        position: relative;
-        width: 445px;
-        height: 472px;
+      .heavenly-bodies {
+        .heavenly-bodies-section {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5%;
 
-        .heavenly-body-nav {
-          ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            li {
-              list-style: none;
-              button {
+          .heavenly-body-img {
+            width: 445px;
+            height: 445px;
+
+            .body-img {
+              filter: brightness(10%);
+              transition: all 1s ease;
+              position: absolute;
+              opacity: 0;
+
+              &.active {
+                filter: brightness(120%);
+                opacity: 1;
+              }
+            }
+          }
+
+          .heavenly-body-info {
+            position: relative;
+            width: 445px;
+            height: 472px;
+
+            .heavenly-body-nav {
+              ul {
+                margin: 0;
                 padding: 0;
-                border: none;
-                position: relative;
-                width: auto;
-                margin-right: 45px;
-                font-family: "Barlow Condensed", sans-serif;
-                font-size: 16px;
-                letter-spacing: 2.7px;
-                cursor: pointer;
-                color: #d0d6f9;
-                background: none;
+                display: flex;
+                li {
+                  list-style: none;
+                  button {
+                    padding: 0;
+                    border: none;
+                    position: relative;
+                    width: auto;
+                    margin-right: 45px;
+                    font-family: "Barlow Condensed", sans-serif;
+                    font-size: 16px;
+                    letter-spacing: 2.7px;
+                    cursor: pointer;
+                    color: #d0d6f9;
+                    background: none;
 
-                span {
-                  left: -3%;
-                  margin-top: 30px;
-                  position: absolute;
-                  border: 2px solid white;
-                  width: 0%;
-                  opacity: 0;
-                  transition: all 0.3s ease;
-                }
+                    span {
+                      left: -3%;
+                      margin-top: 30px;
+                      position: absolute;
+                      border: 2px solid white;
+                      width: 0%;
+                      opacity: 0;
+                      transition: all 0.3s ease;
+                    }
 
-                &:hover,
-                &:focus {
-                  span {
-                    width: 100%;
-                    opacity: 0.5;
+                    &:hover,
+                    &:focus {
+                      span {
+                        width: 100%;
+                        opacity: 0.5;
+                      }
+                    }
+
+                    &.active {
+                      color: white;
+                      span {
+                        width: 100%;
+                        opacity: 1;
+                      }
+                    }
                   }
                 }
+              }
+            }
+
+            .heavenly-body-present {
+              position: absolute;
+              left: -10%;
+              width: 445px;
+              opacity: 0;
+              transition: all 0.3s ease;
+
+              &.active {
+                opacity: 1;
+                left: 0%;
+              }
+              .heavenly-body-name {
+                h3 {
+                  color: white;
+                  font-family: "Bellefair", sans-serif;
+                  font-weight: normal;
+                  font-size: 100px;
+                  margin-left: 5px;
+                  margin-top: 37px;
+                }
+              }
+              .heavenly-body-present-desc {
+                margin-top: -20%;
+                p {
+                  color: #d0d6f9;
+                  font-family: "Barlow", sans-serif;
+                  font-size: 18px;
+                  line-height: 35px;
+                }
+              }
+            }
+            .destination-items {
+              position: relative;
+              width: 100%;
+              .destination-line {
+                opacity: 0.2;
+                border: 0.1px solid white;
+              }
+              table {
+                margin-top: 6%;
+                text-align: left;
+                width: 100%;
+                .destination-label {
+                  font-family: "Barlow Condensed", sans-serif;
+                  font-size: 14px;
+                  font-weight: normal;
+                  letter-spacing: 2.36px;
+                }
+                .destination-values {
+                  line-height: 50px;
+                  font-family: "Bellefair", sans-serif;
+                  font-size: 28px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // MOBILE VIEW
+  @media only screen and (max-width: 767px) {
+    & {
+      padding: 0;
+      .section-items.lg-screen,
+      .section-items.md-screen,
+      .table.md-screen,
+      .table.lg-screen {
+        display: none;
+      }
+
+      .section-items.sm-screen {
+        position: relative;
+
+        .destination-intro {
+          font-family: "Barlow Condensed", sans-serif;
+          letter-spacing: 2.7px;
+          text-align: center;
+
+          span {
+            font-weight: bold;
+            opacity: 0.3;
+            margin-right: 16px;
+          }
+
+          h3 {
+            font-size: 16px;
+            font-weight: 300;
+          }
+        }
+
+        .heavenly-bodies {
+          margin-top: 30px;
+          .heavenly-bodies-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+
+            .heavenly-body-img {
+              width: 170px;
+              height: 170px;
+
+              .body-img {
+                filter: brightness(10%);
+                -webkit-filter: brightness(10%);
+                transition: all 1s ease;
+                position: absolute;
+                opacity: 0;
+                width: 170px;
+                height: 170px;
 
                 &.active {
-                  color: white;
-                  span {
-                    width: 100%;
-                    opacity: 1;
+                  opacity: 1;
+                  filter: brightness(120%);
+                  -webkit-filter: brightness(120%);
+                }
+              }
+            }
+
+            .heavenly-body-info {
+              position: relative;
+              width: 327px;
+              height: 457px;
+
+              .heavenly-body-nav {
+                width: 100%;
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                ul {
+                  width: 240px;
+
+                  padding: 0;
+                  display: flex;
+
+                  li {
+                    list-style: none;
+
+                    button {
+                      padding: 0;
+                      border: none;
+                      position: relative;
+                      margin-right: 26px;
+                      font-family: "Barlow Condensed", sans-serif;
+                      font-size: 14px;
+                      letter-spacing: 2.7px;
+                      cursor: pointer;
+                      color: #d0d6f9;
+                      background: none;
+
+                      span {
+                        left: -6%;
+                        margin-top: 25px;
+                        position: absolute;
+                        border: 2px solid white;
+                        width: 0%;
+                        opacity: 0;
+                        transition: all 0.3s ease;
+                      }
+
+                      &:hover,
+                      &:focus {
+                        span {
+                          width: 100%;
+                          opacity: 0.5;
+                        }
+                      }
+
+                      &.active {
+                        color: white;
+                        span {
+                          width: 100%;
+                          opacity: 1;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .heavenly-body-present {
+                position: absolute;
+                text-align: center;
+                top: 25%;
+                opacity: 0;
+                transition: all 0.3s ease;
+
+                &.active {
+                  top: 20%;
+                  opacity: 1;
+                }
+
+                .heavenly-body-name {
+                  h3 {
+                    margin: 0;
+                    padding: 0;
+                    font-family: "Bellefair", sans-serif;
+                    font-size: 56px;
+                    font-weight: normal;
+                  }
+                }
+                .heavenly-body-present-desc {
+                  p {
+                    font-family: "Barlow", sans-serif;
+                    font-weight: normal;
+                    font-size: 15px;
+                    line-height: 25px;
+                  }
+                }
+              }
+
+              .destination-items {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+
+                .destination-line {
+                  opacity: 0.3;
+                  border: 0.1px solid white;
+                }
+
+                table {
+                  margin-top: 6%;
+                  .avg-distance,
+                  .travel-time {
+                    font-family: "Barlow Condensed", sans-serif;
+                    letter-spacing: 2.36px;
+                    font-size: 14px;
+                    padding-bottom: 12px;
+                  }
+                  .val-distance,
+                  .val-travel {
+                    font-family: "Bellefair", sans-serif;
+                    font-size: 28px;
+                    padding-bottom: 32px;
                   }
                 }
               }
             }
           }
         }
+      }
+    }
+  }
 
-        .heavenly-body-present {
-          position: absolute;
-          left: -10%;
-          width: 445px;
-          opacity: 0;
-          transition: all 0.3s ease;
+  // TABLET VIEW
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .section-items.lg-screen,
+    .section-items.sm-screen,
+    .table.lg-screen,
+    .table.sm-screen {
+      display: none;
+    }
 
-          &.active {
-            opacity: 1;
-            left: 0%;
-          }
-          .heavenly-body-name {
-            h3 {
-              color: white;
-              font-family: "Bellefair", sans-serif;
-              font-weight: normal;
-              font-size: 100px;
-              margin-left: 5px;
-              margin-top: 37px;
-            }
-          }
-          .heavenly-body-present-desc {
-            margin-top: -20%;
-            p {
-              color: #d0d6f9;
-              font-family: "Barlow", sans-serif;
-              font-size: 18px;
-              line-height: 35px;
-            }
+    & {
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    .section-items.md-screen {
+      position: relative;
+
+      .destination-intro {
+        padding-left: 39px;
+        h3 {
+          margin: 0;
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 20px;
+          font-weight: normal;
+          letter-spacing: 3.38px;
+
+          span {
+            opacity: 0.3;
+            font-weight: bold;
+            margin-right: 19px;
           }
         }
-        .destination-items {
-          position: relative;
-          width: 100%;
-          .destination-line {
-            opacity: 0.2;
-            border: 0.1px solid white;
-          }
-          table {
-            margin-top: 6%;
-            text-align: left;
-            width: 100%;
-            .destination-label {
-              font-family: "Barlow Condensed", sans-serif;
-              font-size: 14px;
-              font-weight: normal;
-              letter-spacing: 2.36px;
+      }
+
+      .heavenly-bodies {
+        margin-top: 60px;
+
+        .heavenly-bodies-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .heavenly-body-img {
+            width: 300px;
+            height: 300px;
+            position: relative;
+
+            .body-img {
+              position: absolute;
+              width: 300px;
+              height: 300px;
+              filter: brightness(10%);
+              -webkit-filter: brightness(10%);
+              transition: all 1s ease;
+              opacity: 0;
+
+              &.active {
+                opacity: 1;
+                filter: brightness(120%);
+                -webkit-filter: brightness(120%);
+              }
             }
-            .destination-values {
-              line-height: 50px;
-              font-family: "Bellefair", sans-serif;
-              font-size: 28px;
+          }
+
+          .heavenly-body-info {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            margin-top: 53px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .heavenly-body-nav {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              ul {
+                position: relative;
+                width: 286px;
+                height: 34px;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                li {
+                  position: relative;
+                  list-style: none;
+                  margin-right: 35px;
+                  .heavenly-body-btn {
+                    position: relative;
+                    padding: 0;
+                    background: none;
+                    border: none;
+                    color: #d0d6f9;
+                    font-size: 16px;
+                    font-family: "Barlow Condensed", sans-serif;
+                    letter-spacing: 2.7px;
+                    transition: all 0.3s ease;
+
+                    span {
+                      position: absolute;
+                      opacity: 0;
+                      left: 0;
+                      top: 150%;
+                      width: 0%;
+                      height: 5px;
+                      background-color: white;
+                      transition: all 0.3s ease;
+                    }
+
+                    &.active {
+                      color: white;
+
+                      span {
+                        opacity: 1;
+                        width: 95%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .heavenly-body-present {
+              width: 100%;
+              position: absolute;
+              text-align: center;
+              margin-top: 50%;
+              width: 573px;
+              padding: 0;
+              opacity: 0;
+              transition: all 0.3s ease;
+
+              &.active {
+                margin-top: 25%;
+                opacity: 1;
+              }
+
+              .heavenly-body-name {
+                h3 {
+                  font-family: "Bellefair", sans-serif;
+                  font-size: 80px;
+                  font-weight: normal;
+                  margin: 0;
+                  padding: 0;
+                }
+              }
+
+              .heavenly-body-present-desc {
+                margin-top: 8px;
+
+                p {
+                  margin: 0;
+                  font-family: "Barlow", sans-serif;
+                  font-size: 16px;
+                  line-height: 28px;
+                }
+              }
+
+              .destination-items {
+                margin-top: 10px;
+                position: relative;
+                .destination-line {
+                  opacity: 0.3;
+                  border: 0.1px solid white;
+                }
+
+                .table.md-screen {
+                  position: relative;
+                  margin-top: 45px;
+                  width: 100%;
+
+                  thead {
+                    .value-labels {
+                      font-family: "Barlow Condensed", sans-serif;
+                      font-size: 14px;
+                      line-height: 1px;
+                      letter-spacing: 2.36px;
+                    }
+                  }
+                  tbody {
+                    text-align: center;
+                    .values {
+                      font-family: "Bellefair", sans-serif;
+                      font-size: 28px;
+                      font-weight: normal;
+                      td {
+                        padding-top: 12px;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
