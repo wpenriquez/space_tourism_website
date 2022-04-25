@@ -68,6 +68,46 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* TABLET VIEW */}
+        <div className="navbar-items md-screen">
+          <div className="logo">
+            <Link to="/">
+              <Logo />
+            </Link>
+          </div>
+          <div className="line"></div>
+          <div className="nav-links">
+            <div className="nav-blur"></div>
+            <ul>
+              <li>
+                <NavLink to="/">
+                  HOME<span></span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/destination">
+                  DESTINATION<span></span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/crew">
+                  CREW<span></span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/technology">
+                  TECHNOLOGY<span></span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/missions">
+                  MISSIONS<span></span>
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         {/* MOBILE VIEW */}
         <div className="navbar-items sm-screen">
           <div className="logo">
@@ -113,46 +153,6 @@ const Navbar = () => {
               <li>
                 <NavLink to="/missions" onClick={collapseMobileNav}>
                   <b>04</b> MISSIONS<span></span>
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* TABLET VIEW */}
-        <div className="navbar-items md-screen">
-          <div className="logo">
-            <Link to="/">
-              <Logo />
-            </Link>
-          </div>
-          <div className="line"></div>
-          <div className="nav-links">
-            <div className="nav-blur"></div>
-            <ul>
-              <li>
-                <NavLink to="/">
-                  HOME<span></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/destination">
-                  DESTINATION<span></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/crew">
-                  CREW<span></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/technology">
-                  TECHNOLOGY<span></span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/missions">
-                  MISSIONS<span></span>
                 </NavLink>
               </li>
             </ul>

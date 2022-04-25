@@ -122,16 +122,16 @@ const Crew = () => {
         <Carousel crewVal={crewValues} />
       </div>
 
-      {/* MOBILE VIEW */}
-      <div className="section-items sm-screen">
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
         <div className="crew-intro">
           <span>02</span>MEET YOUR CREW
         </div>
         <Carousel crewVal={crewValues} />
       </div>
 
-      {/* TABLET VIEW */}
-      <div className="section-items md-screen">
+      {/* MOBILE VIEW */}
+      <div className="section-items sm-screen">
         <div className="crew-intro">
           <span>02</span>MEET YOUR CREW
         </div>

@@ -96,6 +96,68 @@ const CrewCarousel = (props) => {
         </div>
       </div>
 
+      {/* TABLET VIEW */}
+      <div className="crew-carousel-inner md-screen">
+        <div className="crew-carousel-info">
+          {props.crewVal.map((val) => (
+            <div
+              tabIndex={activeState === val.id ? "1" : ""}
+              onMouseOver={() => setMousedOver(true)}
+              onMouseOut={() => setMousedOver(false)}
+              key={val.id}
+              className={
+                activeState === val.id
+                  ? "crew-carousel-info-inner active"
+                  : "crew-carousel-info-inner"
+              }
+            >
+              <h2>{val.occupation}</h2>
+              <h1>{val.name}</h1>
+              {val.descMobile}
+            </div>
+          ))}
+        </div>
+
+        <div className="crew-carousel-indicators">
+          <ul>
+            {props.crewVal.map((val) => (
+              <li key={val.id}>
+                <button
+                  key={val.id}
+                  onClick={() => {
+                    toggleActive(val.id);
+                    setMousedOver(true);
+                    setTimeout(() => setMousedOver(false), 300);
+                  }}
+                  className={
+                    activeState === val.id
+                      ? "crew-carousel-button active"
+                      : "crew-carousel-button"
+                  }
+                ></button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="crew-carousel-images">
+          {props.crewVal.map((val) => (
+            <img
+              key={val.id}
+              onMouseOver={() => setMousedOver(true)}
+              onMouseOut={() => setMousedOver(false)}
+              className={
+                activeState === val.id
+                  ? "crew-carousel-img active"
+                  : "crew-carousel-img"
+              }
+              src={val.img}
+              alt={val.name}
+            />
+          ))}
+        </div>
+      </div>
+
       {/* MOBILE VIEW */}
       <div className="crew-carousel-inner sm-screen">
         <div className="crew-carousel-images">
@@ -157,68 +219,6 @@ const CrewCarousel = (props) => {
               <h1>{val.name}</h1>
               {val.descMobile}
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* TABLET VIEW */}
-      <div className="crew-carousel-inner md-screen">
-        <div className="crew-carousel-info">
-          {props.crewVal.map((val) => (
-            <div
-              tabIndex={activeState === val.id ? "1" : ""}
-              onMouseOver={() => setMousedOver(true)}
-              onMouseOut={() => setMousedOver(false)}
-              key={val.id}
-              className={
-                activeState === val.id
-                  ? "crew-carousel-info-inner active"
-                  : "crew-carousel-info-inner"
-              }
-            >
-              <h2>{val.occupation}</h2>
-              <h1>{val.name}</h1>
-              {val.descMobile}
-            </div>
-          ))}
-        </div>
-
-        <div className="crew-carousel-indicators">
-          <ul>
-            {props.crewVal.map((val) => (
-              <li key={val.id}>
-                <button
-                  key={val.id}
-                  onClick={() => {
-                    toggleActive(val.id);
-                    setMousedOver(true);
-                    setTimeout(() => setMousedOver(false), 300);
-                  }}
-                  className={
-                    activeState === val.id
-                      ? "crew-carousel-button active"
-                      : "crew-carousel-button"
-                  }
-                ></button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="crew-carousel-images">
-          {props.crewVal.map((val) => (
-            <img
-              key={val.id}
-              onMouseOver={() => setMousedOver(true)}
-              onMouseOut={() => setMousedOver(false)}
-              className={
-                activeState === val.id
-                  ? "crew-carousel-img active"
-                  : "crew-carousel-img"
-              }
-              src={val.img}
-              alt={val.name}
-            />
           ))}
         </div>
       </div>

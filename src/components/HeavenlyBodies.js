@@ -87,6 +87,22 @@ const HeavenlyBodies = (props) => {
                   </tbody>
                 </table>
 
+                {/* TABLET VIEW */}
+                <table className="table md-screen">
+                  <thead>
+                    <tr className="value-labels">
+                      <td>AVG. DISTANCE</td>
+                      <td>EST. TRAVEL TIME</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="values">
+                      <td>{val.distance}</td>
+                      <td>{val.travel}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
                 {/* MOBILE VIEW */}
                 <table className="table sm-screen">
                   <thead>
@@ -103,22 +119,6 @@ const HeavenlyBodies = (props) => {
                     </tr>
                     <tr>
                       <td className="val-travel">{val.travel}</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                {/* TABLET VIEW */}
-                <table className="table md-screen">
-                  <thead>
-                    <tr className="value-labels">
-                      <td>AVG. DISTANCE</td>
-                      <td>EST. TRAVEL TIME</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="values">
-                      <td>{val.distance}</td>
-                      <td>{val.travel}</td>
                     </tr>
                   </tbody>
                 </table>

@@ -114,8 +114,8 @@ const Technology = () => {
         />
       </div>
 
-      {/* MOBILE VIEW */}
-      <div className="section-items sm-screen">
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
         <div className="tech-intro">
           <span>03</span>SPACE LAUNCH 101
         </div>
@@ -126,8 +126,8 @@ const Technology = () => {
         />
       </div>
 
-      {/* TABLET VIEW */}
-      <div className="section-items md-screen">
+      {/* MOBILE VIEW */}
+      <div className="section-items sm-screen">
         <div className="tech-intro">
           <span>03</span>SPACE LAUNCH 101
         </div>

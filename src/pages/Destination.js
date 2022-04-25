@@ -70,8 +70,8 @@ const Destination = () => {
         />
       </div>
 
-      {/* MOBILE VIEW */}
-      <div className="section-items sm-screen">
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
         <div className="destination-intro">
           <h3>
             <span>01</span>PICK YOUR DESTINATION
@@ -84,8 +84,8 @@ const Destination = () => {
         />
       </div>
 
-      {/* TABLET VIEW */}
-      <div className="section-items md-screen">
+      {/* MOBILE VIEW */}
+      <div className="section-items sm-screen">
         <div className="destination-intro">
           <h3>
             <span>01</span>PICK YOUR DESTINATION

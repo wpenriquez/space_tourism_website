@@ -59,8 +59,8 @@ const TechnologyItems = (props) => {
         </div>
       </div>
 
-      {/* MOBILE VIEW */}
-      <div className="tech-desc-items sm-screen">
+      {/* TABLET VIEW */}
+      <div className="tech-desc-items md-screen">
         <div className="tech-img">
           {props.techValues.map((val) => (
             <img
@@ -112,8 +112,8 @@ const TechnologyItems = (props) => {
         </div>
       </div>
 
-      {/* TABLET VIEW */}
-      <div className="tech-desc-items md-screen">
+      {/* MOBILE VIEW */}
+      <div className="tech-desc-items sm-screen">
         <div className="tech-img">
           {props.techValues.map((val) => (
             <img
