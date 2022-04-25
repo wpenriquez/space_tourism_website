@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <section className="section-home">
+
       {/* DESKTOP VIEW */}
       <div className="section-items lg-screen">
         <div className="space-intro">
@@ -61,7 +62,7 @@ const Home = () => {
             world experience!
           </p>
         </div>
-        <div className="explore-button">
+        <div className="explore-button lg-screen">
           <Link to="/destination">
             <div className="explore">
               EXPLORE

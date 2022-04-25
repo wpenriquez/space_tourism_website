@@ -110,7 +110,9 @@
     display: none;
   }
 
+
   .navbar-items.sm-screen {
+
     position: relative;
     z-index: 2;
     margin-left: 50%;
@@ -143,6 +145,7 @@
     transition: all 0.3s ease;
     opacity: 0;
     z-index: 0;
+
 
     &.active {
       opacity: 1;
