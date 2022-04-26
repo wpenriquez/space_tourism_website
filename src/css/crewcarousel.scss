@@ -10,6 +10,18 @@
       display: none;
     }
 
+    @media only screen and (min-width: 1920px) {
+      & {
+        margin-top: 9%;
+
+        .crew-carousel-inner.lg-screen {
+          .crew-carousel-images {
+            width: 600px;
+          }
+        }
+      }
+    }
+
     .crew-carousel-inner.lg-screen {
       position: relative;
       display: flex;
@@ -90,7 +102,7 @@
       }
       .crew-carousel-images {
         position: relative;
-        width: 100%;
+        width: 600px;
 
         .crew-carousel-img {
           height: 100%;
