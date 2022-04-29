@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactPaginate from "react-paginate";
 import "../css/missions.css";
 import chevron from "../assets/missions/down-chevron.svg";
 import $ from "jquery";
@@ -21,6 +22,10 @@ const Missions = () => {
   const [filteredByLaunchpad, setLaunchPadState] = useState([]);
   const [filteredByYear, setYear] = useState([]);
   const [displayResults, setResults] = useState([]);
+  const [paginateResult, setPaginateResult] = useState([]);
+  const [pageSelected, setPageSelected] = useState(0);
+  const [showPage, setShowPage] = useState([]);
+  const [pageLength, setPageLength] = useState(0);
 
   const onlineApi =
     "https://space-tourism-launches-default-rtdb.firebaseio.com/data.json";
@@ -51,6 +56,7 @@ const Missions = () => {
     //------------------------//
     const checkValues = () => {
       setResults(filteredByYear);
+      paginateApi();
     };
 
     //_______________________//
@@ -158,6 +164,31 @@ const Missions = () => {
       }
     };
 
+    //___________________________________//
+    // FUNCTION TO PAGINATE THE RESULTS //
+    //----------------------------------//
+    const paginateApi = () => {
+      var row = 0;
+      var col = 0;
+      var pageArray = [];
+      for (let i = 0; i < filteredByYear.length; i++) {
+        if (i % 10 === 0 && i !== 0) {
+          row++;
+          col = 0;
+        }
+
+        if (i === 0 || (i % 10 === 0 && i !== 0)) {
+          pageArray[row] = [];
+        }
+
+        pageArray[row][col] = filteredByYear[i];
+        pageArray[row][col].result = i + 1;
+        col++;
+      }
+      setPageLength(pageArray.length);
+      setPaginateResult(pageArray);
+    };
+
     //______________//
     // START FILTER //
     //--------------//
@@ -183,6 +214,7 @@ const Missions = () => {
     filteredByKeyword,
     filteredByYear,
     displayResults,
+    paginateResult,
   ]);
 
   //_____________________________________//
@@ -207,6 +239,21 @@ const Missions = () => {
       },
       500
     );
+  };
+
+  //_______________________________________//
+  // USE EFFECT FOR SETTING PAGE TO DISPLAY//
+  //---------------------------------------//
+  useEffect(() => {
+    setShowPage(paginateResult[pageSelected]);
+  }, [pageSelected, paginateResult]);
+
+  //_________________________________//
+  // FUNCTION TO HANDLE PAGE CHANGE //
+  //--------------------------------//
+  const handlePageClick = (data) => {
+    console.log("page change");
+    setPageSelected(data.selected);
   };
 
   return (
@@ -258,14 +305,37 @@ const Missions = () => {
                     : `No Missions Found`}
                 </p>
               </div>
+              {matchLength > 0 && pageLength > 1 ? (
+                <ReactPaginate
+                  previousLabel={"<"}
+                  nextLabel={">"}
+                  breakLabel={"..."}
+                  pageCount={pageLength}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  containerClassName={"pagination"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item previous"}
+                  previousLinkClassName={"page-link previous"}
+                  nextClassName={"page-item next"}
+                  nextLinkClassName={"page-link next"}
+                  breakClassName={"page-item break"}
+                  breakLinkClassNamer={"page-link break"}
+                  activeClassName={"active"}
+                />
+              ) : (
+                ""
+              )}
               <div className="missions-result-container">
-                {matches.map((val) => (
-                  <MissionCard
-                    key={val.flight_number}
-                    value={val}
-                    launchpad={launchPad}
-                  />
-                ))}
+                {showPage !== undefined &&
+                  showPage.map((val) => (
+                    <MissionCard
+                      key={val.flight_number}
+                      value={val}
+                      launchpad={launchPad}
+                    />
+                  ))}
               </div>
             </div>
           </div>
@@ -324,14 +394,37 @@ const Missions = () => {
                     : `No Missions Found`}
                 </p>
               </div>
+              {matchLength > 0 && pageLength > 1 ? (
+                <ReactPaginate
+                  previousLabel={"<"}
+                  nextLabel={">"}
+                  breakLabel={"..."}
+                  pageCount={pageLength}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  containerClassName={"pagination"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item previous"}
+                  previousLinkClassName={"page-link previous"}
+                  nextClassName={"page-item next"}
+                  nextLinkClassName={"page-link next"}
+                  breakClassName={"page-item break"}
+                  breakLinkClassNamer={"page-link break"}
+                  activeClassName={"active"}
+                />
+              ) : (
+                ""
+              )}
               <div className="missions-result-container">
-                {matches.map((val) => (
-                  <MissionCard
-                    key={val.flight_number}
-                    value={val}
-                    launchpad={launchPad}
-                  />
-                ))}
+                {showPage !== undefined &&
+                  showPage.map((val) => (
+                    <MissionCard
+                      key={val.flight_number}
+                      value={val}
+                      launchpad={launchPad}
+                    />
+                  ))}
               </div>
             </div>
           </div>
@@ -342,7 +435,7 @@ const Missions = () => {
               id="test"
               onClick={() => {
                 const top = ".section-items.md-screen > .missions-content";
-                scrollToTop(top, 830);
+                scrollToTop(top, 520);
               }}
             >
               Back to top
@@ -390,15 +483,51 @@ const Missions = () => {
                     ? `Showing ${matchLength} Mission`
                     : `No Missions Found`}
                 </p>
+                <p>
+                  {showPage !== undefined && (showPage.map((val,index, showPage) => {
+                    if(index === 0) {
+                      if(index === showPage.length - 1) {
+                        return `Result #${val.result}`
+                      }
+                      return `Results #${val.result} - `
+                    }
+                    if(index === showPage.length - 1) {
+                      return val.result;
+                    }
+                  }))}
+                </p>
               </div>
               <div className="missions-result-container">
-                {matches.map((val) => (
-                  <MissionCard
-                    key={val.flight_number}
-                    value={val}
-                    launchpad={launchPad}
+                {matchLength > 0 && pageLength > 1 ? (
+                  <ReactPaginate
+                    previousLabel={"<"}
+                    nextLabel={">"}
+                    breakLabel={"..."}
+                    pageCount={pageLength}
+                    pageRangeDisplayed={3}
+                    onPageChange={handlePageClick}
+                    containerClassName={"pagination"}
+                    pageClassName={"page-item"}
+                    pageLinkClassName={"page-link"}
+                    previousClassName={"page-item previous"}
+                    previousLinkClassName={"page-link previous"}
+                    nextClassName={"page-item next"}
+                    nextLinkClassName={"page-link next"}
+                    breakClassName={"page-item break"}
+                    breakLinkClassNamer={"page-link break"}
+                    activeClassName={"active"}
                   />
-                ))}
+                ) : (
+                  ""
+                )}
+                {showPage !== undefined &&
+                  showPage.map((val) => (
+                    <MissionCard
+                      key={val.flight_number}
+                      value={val}
+                      launchpad={launchPad}
+                    />
+                  ))}
               </div>
             </div>
           </div>

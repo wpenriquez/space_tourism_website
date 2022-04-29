@@ -187,6 +187,50 @@
     margin-top: 5px;
     font-weight: normal;
   }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item {
+    cursor: pointer;
+    line-height: 50px;
+    font-size: 20px;
+    background: none;
+    text-align: center;
+    border: 1px solid white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    list-style: none;
+    margin-right: 20px;
+    color: white;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item:hover {
+    background: grey;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item.previous, .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item.next {
+    border: none;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item .page-link {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-weight: normal;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item.active {
+    background: white;
+    color: black;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item.active .page-link {
+    font-weight: bold;
+  }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .missions-result-container {
     position: relative;
   }
@@ -479,6 +523,43 @@
     color: white;
     font-size: 20px;
   }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item {
+    line-height: 40px;
+    font-size: 20px;
+    background: none;
+    text-align: center;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    list-style: none;
+    margin-right: 20px;
+    color: white;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item.previous, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item.next {
+    border: none;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item .page-link {
+    font-weight: normal;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item.active {
+    background: white;
+    color: black;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item.active .page-link {
+    font-weight: bold;
+  }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item {
     border: 2px solid gainsboro;
     padding: 10px;
@@ -506,13 +587,19 @@
     letter-spacing: 1.3px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
     width: 100px;
     height: 100px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info {
     position: relative;
@@ -881,6 +968,41 @@
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-search-results p {
     margin: 0;
+  }
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+  }
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item {
+    background: none;
+    text-align: center;
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    list-style: none;
+    margin-right: 20px;
+    color: white;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item.previous, .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item.next {
+    border: none;
+  }
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item .page-link {
+    font-weight: normal;
+  }
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item.active {
+    background: white;
+    color: black;
+  }
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item.active .page-link {
+    font-weight: bold;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container {
     position: relative;

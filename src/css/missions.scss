@@ -202,6 +202,52 @@
               }
             }
 
+            .pagination {
+              justify-content: center;
+              display: flex;
+              padding: 0;
+              .page-item {
+                cursor: pointer;
+                line-height: 50px;
+                font-size: 20px;
+                background: none;
+                text-align: center;
+                border: 1px solid white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                list-style: none;
+                margin-right: 20px;
+                color: white;
+                transition: all 0.3s ease;
+
+                &:hover {
+                  background: grey;
+                }
+
+                &.previous,
+                &.next {
+                  border: none;
+                }
+
+                .page-link {
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  font-weight: normal;
+                }
+
+                &.active {
+                  background: white;
+                  color: black;
+
+                  .page-link {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+
             .missions-result-container {
               position: relative;
               .mission-item {
@@ -517,6 +563,44 @@
               font-size: 20px;
             }
 
+            .pagination {
+              justify-content: center;
+              display: flex;
+              padding: 0;
+              .page-item {
+                line-height: 40px;
+                font-size: 20px;
+                background: none;
+                text-align: center;
+                border: 1px solid white;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                list-style: none;
+                margin-right: 20px;
+                color: white;
+                transition: all 0.3s ease;
+
+                &.previous,
+                &.next {
+                  border: none;
+                }
+
+                .page-link {
+                  font-weight: normal;
+                }
+
+                &.active {
+                  background: white;
+                  color: black;
+
+                  .page-link {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+
             .missions-result-container {
               .mission-item {
                 border: 2px solid rgb(220, 220, 220);
@@ -538,13 +622,15 @@
                   font-family: "Barlow Condensed", sans-serif;
                   letter-spacing: 1.3px;
                   .mission-logo {
+                    display: flex;
+                    justify-content: center;
                     position: relative;
                     width: 100px;
                     height: 100px;
 
                     img {
-                      width: auto;
-                      height: 100%;
+                      width: 100%;
+                      height: auto;
                     }
                   }
                   .mission-info {
@@ -953,6 +1039,42 @@
 
               p {
                 margin: 0;
+              }
+            }
+
+            .pagination {
+              justify-content: center;
+              display: flex;
+              padding: 0;
+              .page-item {
+                background: none;
+                text-align: center;
+                border: 1px solid white;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                list-style: none;
+                margin-right: 20px;
+                color: white;
+                transition: all 0.3s ease;
+
+                &.previous,
+                &.next {
+                  border: none;
+                }
+
+                .page-link {
+                  font-weight: normal;
+                }
+
+                &.active {
+                  background: white;
+                  color: black;
+
+                  .page-link {
+                    font-weight: bold;
+                  }
+                }
               }
             }
 
