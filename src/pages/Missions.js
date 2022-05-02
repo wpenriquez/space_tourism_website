@@ -252,9 +252,20 @@ const Missions = () => {
   // FUNCTION TO HANDLE PAGE CHANGE //
   //--------------------------------//
   const handlePageClick = (data) => {
-    console.log("page change");
     setPageSelected(data.selected);
   };
+
+  //____________________________________________________//
+  // USE EFFECT FOR RELOADING PAGE ON ORIENTATION CHANGE //
+  //-----------------------------------------------------//
+  useEffect(() => {
+    const handleResize = () => {
+      window.location.reload();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section className="section-missions">
@@ -303,6 +314,22 @@ const Missions = () => {
                     : matchLength === 1
                     ? `Showing ${matchLength} Mission`
                     : `No Missions Found`}
+                </p>
+                <p>
+                  {showPage !== undefined &&
+                    showPage.map((val, index, showPage) => {
+                      if (index === 0) {
+                        if (index === showPage.length - 1) {
+                          return `Result #${val.result}`;
+                        }
+                        return `Results #${val.result} - `;
+                      }
+                      if (index === showPage.length - 1) {
+                        return val.result;
+                      }
+
+                      return null;
+                    })}
                 </p>
               </div>
               {matchLength > 0 && pageLength > 1 ? (
@@ -392,6 +419,22 @@ const Missions = () => {
                     : matchLength === 1
                     ? `Showing ${matchLength} Mission`
                     : `No Missions Found`}
+                </p>
+                <p>
+                  {showPage !== undefined &&
+                    showPage.map((val, index, showPage) => {
+                      if (index === 0) {
+                        if (index === showPage.length - 1) {
+                          return `Result #${val.result}`;
+                        }
+                        return `Results #${val.result} - `;
+                      }
+                      if (index === showPage.length - 1) {
+                        return val.result;
+                      }
+
+                      return null;
+                    })}
                 </p>
               </div>
               {matchLength > 0 && pageLength > 1 ? (
@@ -484,17 +527,20 @@ const Missions = () => {
                     : `No Missions Found`}
                 </p>
                 <p>
-                  {showPage !== undefined && (showPage.map((val,index, showPage) => {
-                    if(index === 0) {
-                      if(index === showPage.length - 1) {
-                        return `Result #${val.result}`
+                  {showPage !== undefined &&
+                    showPage.map((val, index, showPage) => {
+                      if (index === 0) {
+                        if (index === showPage.length - 1) {
+                          return `Result #${val.result}`;
+                        }
+                        return `Results #${val.result} - `;
                       }
-                      return `Results #${val.result} - `
-                    }
-                    if(index === showPage.length - 1) {
-                      return val.result;
-                    }
-                  }))}
+                      if (index === showPage.length - 1) {
+                        return val.result;
+                      }
+
+                      return null;
+                    })}
                 </p>
               </div>
               <div className="missions-result-container">
