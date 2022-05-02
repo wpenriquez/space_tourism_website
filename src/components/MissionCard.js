@@ -8,6 +8,7 @@ import { ReactComponent as YouTube } from "../assets/missions/logo-youtube.svg";
 
 const MissionCard = (props) => {
   const [dropDown, setDropDown] = useState(false);
+  const [logoStyle, setLogoStyle] = useState({});
 
   const computeTimeLocation = (dateTime, location, launchLoc) => {
     const months = [
@@ -75,8 +76,38 @@ const MissionCard = (props) => {
       computedHours + ":" + zeroMinutes + eMinutes + amPm
     } from ${fullLoc}`;
   };
+  useEffect(() => {
+    const checkIfImageExists = (url, callback) => {
+      const img = new Image();
 
-  useEffect(() => {}, [dropDown, setDropDown]);
+      img.src = url;
+      if (img.complete) {
+        callback(true);
+      } else {
+        img.onload = () => {
+          callback(true);
+        };
+
+        img.onerror = () => {
+          callback(false);
+        };
+      }
+    };
+
+    checkIfImageExists(props.value.links.mission_patch, (exists) => {
+      if (exists) {
+        setLogoStyle({});
+      } else {
+        setLogoStyle({
+          border: "1px solid white",
+          height: "95px",
+          width: "95px",
+          borderRadius: "5px",
+          padding: "5px",
+        });
+      }
+    });
+  }, [props.value.links.mission_patch]);
 
   return (
     <div className="mission-item">
@@ -84,12 +115,13 @@ const MissionCard = (props) => {
       <div className="mission-item-inner lg-screen">
         <div className="mission-logo">
           <img
+            style={logoStyle}
             src={
               typeof props.value.links.mission_patch !== "undefined"
                 ? props.value.links.mission_patch
                 : ""
             }
-            alt="Patch_Img"
+            alt="Patch not available"
             width="100%"
           />{" "}
         </div>
@@ -235,12 +267,13 @@ const MissionCard = (props) => {
       <div className="mission-item-inner md-screen">
         <div className="mission-logo">
           <img
+            style={logoStyle}
             src={
               typeof props.value.links.mission_patch !== "undefined"
                 ? props.value.links.mission_patch
                 : ""
             }
-            alt="Patch_Img"
+            alt="Patch not available"
             width="100%"
           />{" "}
         </div>
@@ -411,12 +444,13 @@ const MissionCard = (props) => {
             <p>Flight Number</p>
           </div>
           <img
+            style={logoStyle}
             src={
               typeof props.value.links.mission_patch !== "undefined"
                 ? props.value.links.mission_patch
                 : ""
             }
-            alt="Patch_Img"
+            alt="Patch not available"
             width="30%"
           />
         </div>
