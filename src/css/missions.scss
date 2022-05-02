@@ -1,218 +1,1299 @@
 .section-missions {
   width: 100%;
   height: 100%;
-  padding-top: 20%;
+  padding-top: 3%;
 
-  .missions-head {
-    margin-bottom: 20%;
-    position: relative;
-    font-family: "Bellefair", sans-serif;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .missions-intro {
-      h1 {
-        padding: 0;
-        margin: 0 0 10% 0;
-        font-weight: normal;
-        font-size: 100px;
-      }
+  // DESKTOP VIEW
+  @media only screen and (min-width: 992px) {
+    .section-items.sm-screen,
+    .section-items.md-screen,
+    .missions-form.md-screen,
+    .missions-form.sm-screen,
+    .mission-item-inner.sm-screen,
+    .mission-item-inner.md-screen {
+      display: none;
     }
-    .missions-down-btn {
-      width: 8%;
 
-      img {
-        filter: invert(85%);
-        -webkit-filter: invert(85%);
-        opacity: 1;
-        margin-top: 0%;
-        transition: all 0.3s ease;
+    .section-items.lg-screen {
+      .missions-top-intro {
+        padding-left: 163px;
+        font-family: "Barlow Condensed", sans-serif;
+        letter-spacing: 4.72px;
 
-        &:hover {
-          opacity: 0.4;
-          margin-top: 10%;
-          cursor: pointer;
+        span {
+          font-weight: bold;
+          opacity: 0.3;
+          margin-right: 28px;
+        }
+        h3 {
+          font-size: 28px;
+          font-weight: 300;
         }
       }
-    }
-  }
-  .missions-content {
-    position: relative;
-    background-color: rgb(205, 215, 215);
-    padding: 50px 50px 0px 50px;
-    height: auto;
+      .missions-head {
+        padding-left: 163px;
+        padding-right: 163px;
+        margin-top: 15%;
+        margin-bottom: 50%;
+        position: relative;
+        font-family: "Bellefair", sans-serif;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .missions-intro {
+          h1 {
+            padding: 0;
+            margin: 0 0 10% 0;
+            font-weight: normal;
+            font-size: 85px;
+          }
+        }
+        .missions-down-btn {
+          width: 8%;
 
-    .missions-form {
-      background-color: rgb(229, 229, 229);
-      padding: 20px;
-      color: black;
-      text-align: left;
-      margin-bottom: 1px;
-      // FORM TABLE
-      table {
-        border-spacing: 5px;
-        width: 100%;
+          img {
+            filter: invert(85%);
+            -webkit-filter: invert(85%);
+            opacity: 1;
+            margin-top: 0%;
+            transition: all 0.3s ease;
 
-        thead {
-          tr {
-            th {
+            &:hover {
+              opacity: 0.4;
+              margin-top: 10%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .missions-content {
+        position: relative;
+        background-color: rgba(200, 200, 200, 0.08);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 50px 163px 0px 163px;
+        height: auto;
+
+        .form-container {
+          .missions-form.lg-screen {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-color: rgba(4, 5, 13, 0.5);
+            padding: 20px;
+            color: white;
+            text-align: left;
+            margin-bottom: 5px;
+            font-family: "Barlow Condensed", sans-serif;
+            letter-spacing: 1.37px;
+            // FORM TABLE DESKTOP
+            table {
+              border-spacing: 5px;
+              width: 100%;
+
+              thead {
+                tr {
+                  th {
+                    font-weight: bold;
+                  }
+                }
+              }
+              tbody {
+                tr {
+                  td {
+                    font-family: "Barlow", sans-serif;
+
+                    input,
+                    select {
+                      background: none;
+                      border: none;
+                      border-bottom: 1px solid rgb(196, 196, 196);
+                      color: white;
+                      font-family: "Barlow", sans-serif;
+                    }
+                    input {
+                      width: 98%;
+                      height: 30px;
+                    }
+
+                    ::placeholder {
+                      color: rgb(147, 146, 146);
+                    }
+
+                    :-ms-input-placeholder {
+                      color: rgb(147, 146, 146);
+                    }
+
+                    ::-ms-input-placeholder {
+                      color: rgb(147, 146, 146);
+                    }
+
+                    select {
+                      height: 33px;
+                    }
+                    #launchpads {
+                      width: 100%;
+                    }
+
+                    #min-year,
+                    #max-year {
+                      width: 100%;
+                    }
+
+                    .apply-btn {
+                      font-family: "Barlow Condensed", sans-serif;
+                      height: 33px;
+                      transition: all 0.3s ease;
+                      border: none;
+                      color: #0b0d17;
+                      padding: 0 10px 0 10px;
+                      border-radius: 5px;
+                      width: 100%;
+                      font-size: 18px;
+                      background-color: white;
+                      font-weight: bold;
+                      cursor: pointer;
+                      transition: all 0.3s ease;
+                      filter: brightness(100%);
+                      -webkit-filter: brightness(100%);
+
+                      &:hover {
+                        filter: brightness(80%);
+                        -webkit-filter: brightness(80%);
+                      }
+
+                      &:active {
+                        background-color: #0b0d17;
+                        color: white;
+                      }
+                    }
+                  }
+
+                  .keywords-input {
+                    width: 25%;
+                  }
+
+                  .launchpads-select {
+                    width: 31%;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .missions-body {
+          position: relative;
+          padding: 20px 50px 20px 50px;
+          background-color: rgba(111, 111, 111, 0.6);
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+
+          .missions-results {
+            .missions-search-results {
+              color: white;
+              text-align: center;
+
+              p {
+                font-family: "Barlow Condensed", sans-serif;
+                font-size: 20px;
+                letter-spacing: 1.3px;
+                margin-top: 5px;
+                font-weight: normal;
+              }
+            }
+
+            .pagination {
+              justify-content: center;
+              display: flex;
+              padding: 0;
+              .page-item {
+                cursor: pointer;
+                line-height: 50px;
+                font-size: 20px;
+                background: none;
+                text-align: center;
+                border: 1px solid white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                list-style: none;
+                margin-right: 20px;
+                color: white;
+                transition: all 0.3s ease;
+
+                &:hover {
+                  background: grey;
+                }
+
+                &.previous,
+                &.next {
+                  border: none;
+                }
+
+                .page-link {
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  font-weight: normal;
+                }
+
+                &.active {
+                  background: white;
+                  color: black;
+
+                  .page-link {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+
+            .missions-result-container {
+              position: relative;
+              .mission-item {
+                border: 2px solid rgb(220, 220, 220);
+                padding: 10px;
+                border-radius: 50px 20px;
+                margin: 30px 0px 30px 0px;
+                position: relative;
+                width: 100%;
+                height: 162px;
+
+                .mission-item-inner.lg-screen {
+                  position: relative;
+                  width: 100%;
+                  height: 162px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  font-family: "Barlow Condensed", sans-serif;
+                  letter-spacing: 1.5px;
+                  color: white;
+
+                  .mission-logo {
+                    position: relative;
+                    height: 100px;
+                    width: 100px;
+
+                    img {
+                      width: 100%;
+                    }
+                  }
+                  .mission-info {
+                    position: relative;
+                    font-weight: 100;
+                    width: 720px;
+
+                    table {
+                      position: relative;
+                      border-collapse: collapse;
+                      margin-top: 1%;
+                      width: 100%;
+                      thead {
+                        tr {
+                          td {
+                            font-size: 20px;
+                            font-weight: bold;
+                            padding-bottom: 10px;
+
+                            span {
+                              b {
+                                color: red;
+                              }
+                            }
+                          }
+                        }
+                      }
+                      tbody {
+                        tr {
+                          td {
+                            font-size: 16px;
+                          }
+
+                          .mission-desc {
+                            padding-bottom: 10px;
+                          }
+                        }
+
+                        .mission-btns {
+                          td {
+                            padding-top: 7%;
+                            button {
+                              font-size: 16px;
+                              margin-right: 10px;
+                              font-family: "Barlow", sans-serif;
+                              background: none;
+                              border: 1px solid white;
+                              color: white;
+                              padding: 5px 10px 5px 10px;
+                              border-radius: 5px;
+                              cursor: pointer;
+
+                              &:disabled {
+                                cursor: default;
+                                color: rgb(196, 196, 196);
+                                border: 1px solid rgb(196, 196, 196);
+                                text-decoration: line-through;
+                              }
+
+                              &:not([disabled]):hover,
+                              &:not([disabled]):focus {
+                                background-color: rgb(131, 131, 131);
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .mission-flight-number {
+                    position: relative;
+                    text-align: center;
+                    width: 100px;
+                    height: 100px;
+
+                    p {
+                      font-size: 16px;
+                      font-weight: 100;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .missions-footer {
+          padding: 10px;
+          display: flex;
+          font-family: "Barlow Condensed", sans-serif;
+          letter-spacing: 1.37px;
+          justify-content: space-between;
+          p {
+            color: white;
+          }
+          button {
+            font-family: "Barlow Condensed", sans-serif;
+            letter-spacing: 1.37px;
+            font-size: 16px;
+            background: none;
+            border: none;
+            color: rgb(197, 197, 197);
+            text-decoration: underline;
+            transition: all 0.3s ease;
+            font-weight: normal;
+            cursor: pointer;
+            &:hover {
               font-weight: bold;
             }
           }
         }
-        tbody {
-          tr {
-            td {
-              font-family: "Barlow", sans-serif;
+      }
+    }
+  }
 
-              input,
-              select {
-                border: 1px solid rgb(196, 196, 196);
-                border-radius: 5px;
-              }
-              input {
-                width: 98%;
-                height: 30px;
+  // TABLET VIEW
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .section-items.sm-screen,
+    .section-items.lg-screen,
+    .missions-form.lg-screen,
+    .missions-form.sm-screen,
+    .mission-item-inner.sm-screen,
+    .mission-item-inner.lg-screen {
+      display: none;
+    }
+
+    & {
+      padding: 0;
+
+      margin-top: 40px;
+    }
+
+    .section-items.md-screen {
+      .missions-top-intro {
+        padding-left: 39px;
+        h3 {
+          margin: 0;
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 20px;
+          font-weight: normal;
+          letter-spacing: 3.38px;
+
+          span {
+            opacity: 0.3;
+            font-weight: bold;
+            margin-right: 19px;
+          }
+        }
+      }
+
+      .missions-head {
+        margin-top: 40%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Bellefair", sans-serif;
+        .missions-intro {
+          h1 {
+            font-weight: normal;
+            font-size: 50px;
+          }
+        }
+
+        .missions-down-btn {
+          width: 15%;
+
+          img {
+            filter: invert(75%);
+            -webkit-filter: invert(75%);
+          }
+        }
+      }
+
+      .missions-content {
+        background-color: rgba(200, 200, 200, 0.08);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        margin-top: 50%;
+        padding: 20px;
+        padding-left: 39px;
+        padding-right: 39px;
+
+        .form-container {
+          margin-bottom: 5px;
+          .missions-form.md-screen {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-color: rgba(4, 5, 13, 0.5);
+            color: white;
+            padding: 10px;
+            table {
+              font-family: "Barlow Condensed", sans-serif;
+              letter-spacing: 1.37px;
+              width: 100%;
+              border-spacing: 10px;
+
+              .label {
+                font-weight: bold;
+                font-size: 20px;
               }
 
-              select {
-                height: 33px;
-              }
-              #launchpads {
-                width: 100%;
+              .left-col {
+                width: 40%;
               }
 
+              #keywords {
+                box-sizing: border-box;
+              }
+
+              #keywords,
+              #launchpads,
               #min-year,
               #max-year {
+                border: none;
                 width: 100%;
+                height: 40px;
+                border: none;
+                background: none;
+                border-bottom: 1px solid white;
+                color: white;
+                font-family: "Barlow", sans-serif;
               }
 
-              .apply-btn {
-                height: 33px;
-                transition: all 0.3s ease;
-                border: none;
-                color: white;
-                padding: 0 10px 0 10px;
-                border-radius: 5px;
-                width: 100%;
-                font-size: 18px;
-                background-color: rgb(10, 183, 131);
-                font-weight: bold;
-                cursor: pointer;
+              .min-year-select,
+              .max-year-select {
+                text-align: center;
+              }
 
+              ::placeholder {
+                color: rgb(147, 146, 146);
+              }
+
+              :-ms-input-placeholder {
+                color: rgb(147, 146, 146);
+              }
+
+              ::-ms-input-placeholder {
+                color: rgb(147, 146, 146);
+              }
+
+              .form-apply {
+                justify-content: center;
+                .apply-btn {
+                  font-family: "Barlow Condensed", sans-serif;
+                  letter-spacing: 1px;
+                  width: 100%;
+                  height: 40px;
+                  font-size: 25px;
+                  background-color: white;
+                  color: #0b0d17;
+                  border-radius: 15px;
+                  border: none;
+                  transition: all 0.3s ease;
+
+                  &:focus,
+                  &:hover {
+                    filter: brightness(85%);
+                  }
+
+                  &:active {
+                    background-color: #0b0d17;
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .missions-body {
+          position: relative;
+          background-color: rgba(111, 111, 111, 0.6);
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          padding: 20px;
+
+          .missions-results {
+            .missions-search-results {
+              font-family: "Barlow Condensed", sans-serif;
+              letter-spacing: 1.3px;
+              text-align: center;
+              color: white;
+              font-size: 20px;
+            }
+
+            .pagination {
+              justify-content: center;
+              display: flex;
+              padding: 0;
+              .page-item {
+                line-height: 40px;
+                font-size: 20px;
+                background: none;
+                text-align: center;
+                border: 1px solid white;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                list-style: none;
+                margin-right: 20px;
+                color: white;
+                transition: all 0.3s ease;
+
+                &.previous,
+                &.next {
+                  border: none;
+                }
+
+                .page-link {
+                  font-weight: normal;
+                }
+
+                &.active {
+                  background: white;
+                  color: black;
+
+                  .page-link {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+
+            .missions-result-container {
+              .mission-item {
+                border: 2px solid rgb(220, 220, 220);
+                padding: 10px;
+                border-radius: 50px 20px;
+                margin: 30px 0px 30px 0px;
+                position: relative;
+                width: auto;
+                height: 162px;
+
+                .mission-item-inner.md-screen {
+                  position: relative;
+                  width: 100%;
+                  height: 162px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  color: white;
+                  font-family: "Barlow Condensed", sans-serif;
+                  letter-spacing: 1.3px;
+                  .mission-logo {
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+                    width: 100px;
+                    height: 100px;
+
+                    img {
+                      width: 100%;
+                      height: auto;
+                    }
+                  }
+                  .mission-info {
+                    position: relative;
+                    font-weight: 100;
+                    width: 65%;
+
+                    table {
+                      border-collapse: collapse;
+                      width: 100%;
+
+                      thead {
+                        tr {
+                          td {
+                            font-weight: bold;
+                            padding-bottom: 10px;
+
+                            span {
+                              b {
+                                color: red;
+                              }
+                            }
+                          }
+                        }
+                      }
+                      tbody {
+                        tr {
+                          td {
+                            font-size: 14px;
+                          }
+
+                          .mission-desc {
+                            padding-bottom: 10px;
+                          }
+                        }
+
+                        .mission-btns {
+                          td {
+                            display: flex;
+                            .reddit-btns {
+                              position: relative;
+                              .reddit-dropdown-btn {
+                                z-index: 2;
+                                position: relative;
+                                width: 50px;
+                                height: 50px;
+                                font-size: 16px;
+                                margin-right: 10px;
+                                font-family: "Barlow", sans-serif;
+                                background: none;
+                                border: 1px solid white; // disabled: rgb(196, 196, 196)
+                                padding: 5px 10px 5px 10px;
+                                border-radius: 50%;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+
+                                &.active {
+                                  background-color: red;
+                                }
+                              }
+
+                              .reddit-content {
+                                position: absolute;
+                                top: -20%;
+                                left: 0%;
+                                opacity: 0;
+                                border: 1px solid white;
+                                background-color: rgb(63, 64, 73);
+                                border-radius: 20px;
+                                width: 0px;
+                                height: 50px;
+                                padding: 10px;
+                                padding-left: 36px;
+                                z-index: 0;
+                                transition: all 0.3s ease;
+                                display: flex;
+
+                                button {
+                                  position: relative;
+                                  visibility: hidden;
+                                  padding: 5px;
+                                  border: 1px solid white;
+                                  border-radius: 15px;
+                                  background: none;
+                                  margin-left: 20px;
+                                  width: 50px;
+                                  height: 50px;
+                                  transition: all 0.3s ease;
+
+                                  svg {
+                                    filter: invert(100%);
+                                  }
+
+                                  span {
+                                    visibility: hidden;
+                                    position: absolute;
+                                    left: 10%;
+                                    top: 45%;
+                                    width: 80%;
+                                    border: 1px solid rgb(196, 196, 196);
+                                    transform: rotate(40deg);
+                                  }
+
+                                  &:disabled {
+                                    border: 1px solid rgb(173, 173, 173);
+
+                                    span {
+                                      visibility: visible;
+                                    }
+                                  }
+
+                                  &:active {
+                                    background-color: red;
+
+                                    svg {
+                                      filter: invert(100%);
+                                      -webkit-filter: invert(100%);
+                                    }
+                                  }
+                                }
+
+                                &.active {
+                                  opacity: 1;
+                                  left: 8%;
+                                  width: 210px;
+                                  z-index: 1;
+
+                                  button {
+                                    visibility: visible;
+                                  }
+                                }
+                              }
+                            }
+
+                            button.main {
+                              width: 50px;
+                              height: 50px;
+                              border: 1px solid white;
+                              margin-right: 10px;
+                              background: none;
+                              border-radius: 50%;
+                              padding: 8px;
+                              position: relative;
+                              transition: all 0.3s ease;
+
+                              svg {
+                                filter: invert(100%);
+                              }
+
+                              span {
+                                visibility: hidden;
+                                position: absolute;
+                                left: 10%;
+                                top: 45%;
+                                width: 80%;
+                                border: 1px solid rgb(170, 170, 170);
+                                transform: rotate(40deg);
+                              }
+
+                              &:disabled {
+                                border: 1px solid rgb(220, 220, 220);
+
+                                span {
+                                  visibility: visible;
+                                }
+                              }
+
+                              &.presskit {
+                                transition: all 0.3s ease;
+                                &:not(:disabled):active,
+                                &:not(:disabled):hover {
+                                  background-color: royalblue;
+
+                                  svg {
+                                    filter: invert(100%);
+                                    -webkit-filter: invert(100%);
+                                  }
+                                }
+                              }
+
+                              &.youtube {
+                                &:not(:disabled):active,
+                                &:not(:disabled):hover {
+                                  background-color: red;
+
+                                  svg {
+                                    filter: invert(100%);
+                                    -webkit-filter: invert(100%);
+                                  }
+                                }
+                              }
+
+                              &:disabled {
+                                fill: grey;
+                                border: 1px solid rgb(196, 196, 196);
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .mission-flight-number {
+                    position: relative;
+                    text-align: center;
+                    color: white;
+                    width: 100px;
+                    height: 100px;
+
+                    p {
+                      font-weight: 100;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .missions-footer {
+          padding: 10px;
+          display: flex;
+          font-family: "Barlow Condensed", sans-serif;
+          letter-spacing: 1.37px;
+          justify-content: space-between;
+          p {
+            color: white;
+          }
+          button {
+            color: rgb(197, 197, 197);
+            font-family: "Barlow Condensed", sans-serif;
+            letter-spacing: 1.37px;
+            font-size: 14px;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+            &:hover {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // MOBILE VIEW
+  @media only screen and (max-width: 767px) {
+    .section-items.lg-screen,
+    .section-items.md-screen,
+    .missions-form.md-screen,
+    .missions-form.lg-screen,
+    .mission-item-inner.lg-screen,
+    .mission-item-inner.md-screen {
+      display: none;
+    }
+
+    & {
+      padding-top: 0%;
+    }
+
+    .section-items.sm-screen {
+      .missions-top-intro {
+        font-family: "Barlow Condensed", sans-serif;
+        letter-spacing: 2.7px;
+        text-align: center;
+
+        span {
+          font-weight: bold;
+          opacity: 0.3;
+          margin-right: 16px;
+        }
+
+        h3 {
+          font-size: 16px;
+          font-weight: 300;
+        }
+      }
+      .missions-head {
+        margin-top: 50%;
+        padding-bottom: 110%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Bellefair", sans-serif;
+        .missions-intro {
+          h1 {
+            font-weight: normal;
+            font-size: 26px;
+          }
+        }
+        .missions-down-btn {
+          width: 15%;
+
+          img {
+            filter: invert(75%);
+            -webkit-filter: invert(75%);
+          }
+        }
+      }
+
+      .missions-content {
+        background-color: rgba(200, 200, 200, 0.08);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        height: auto;
+        padding: 10px;
+        padding-top: 20px;
+
+        .missions-form.sm-screen {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          background-color: rgba(4, 5, 13, 0.5);
+          color: white;
+          text-align: left;
+          padding: 10px;
+          margin-bottom: 5px;
+
+          // FORM TABLE MOBILE
+          table {
+            font-family: "Barlow Condensed", sans-serif;
+            letter-spacing: 1.37px;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+
+            #keywords {
+              box-sizing: border-box;
+            }
+
+            #launchpads,
+            #keywords,
+            #min-year,
+            #max-year {
+              width: 100%;
+              height: 30px;
+              margin-bottom: 10px;
+              border-bottom: 1px solid white;
+              color: white;
+              font-family: "Barlow", sans-serif;
+              background: none;
+              border: none;
+              border-bottom: 1px solid white;
+            }
+
+            ::placeholder {
+              color: rgb(147, 146, 146);
+            }
+
+            :-ms-input-placeholder {
+              color: rgb(147, 146, 146);
+            }
+
+            ::-ms-input-placeholder {
+              color: rgb(147, 146, 146);
+            }
+
+            .form-apply {
+              .apply-btn {
+                display: block;
+                margin: auto;
+                width: 50%;
+                height: 35px;
+                color: white;
+                padding: 5px;
+                border-radius: 5px;
+                font-family: "Barlow Condensed", sans-serif;
+                letter-spacing: 1px;
+                background-color: white;
+                color: #0b0d17;
+                font-weight: bold;
+                border: none;
+                transition: all 0.3s ease;
+
+                &:focus,
                 &:hover {
-                  background-color: rgb(12, 158, 114);
+                  filter: brightness(85%);
                 }
 
                 &:active {
-                  background-color: grey;
+                  background-color: #0b0d17;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+
+        .missions-body {
+          position: relative;
+          background-color: rgba(111, 111, 111, 0.6);
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+
+          .missions-results {
+            padding: 10px;
+            .missions-search-results {
+              font-family: "Barlow Condensed", sans-serif;
+              letter-spacing: 1.3px;
+              color: white;
+              text-align: center;
+              padding: 10px;
+
+              p {
+                margin: 0;
+              }
+            }
+
+            .pagination {
+              justify-content: center;
+              display: flex;
+              padding: 0;
+              .page-item {
+                background: none;
+                text-align: center;
+                border: 1px solid white;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                list-style: none;
+                margin-right: 20px;
+                color: white;
+                transition: all 0.3s ease;
+
+                &.previous,
+                &.next {
+                  border: none;
+                }
+
+                .page-link {
+                  font-weight: normal;
+                }
+
+                &.active {
+                  background: white;
+                  color: black;
+
+                  .page-link {
+                    font-weight: bold;
+                  }
                 }
               }
             }
 
-            .keywords-input {
-              width: 25%;
-            }
-
-            .launchpads-select {
-              width: 31%;
-            }
-          }
-        }
-      }
-    }
-    .missions-body {
-      position: relative;
-      padding: 20px 50px 20px 50px;
-      background-color: white;
-
-      .missions-results {
-        .missions-search-results {
-          color: black;
-          text-align: center;
-
-          p {
-            margin-top: 5px;
-            font-weight: 300;
-          }
-        }
-
-        .missions-result-container {
-          position: relative;
-          .mission-item {
-            margin: 30px 0px 30px 0px;
-            position: relative;
-            width: 100%;
-            height: 162px;
-            .mission-item-inner {
+            .missions-result-container {
               position: relative;
-              width: 100%;
-              height: 162px;
-              display: flex;
-
-              justify-content: space-between;
-              .mission-logo {
-                height: 100px;
-                width: 100px;
-                line-height: 100px;
-                color: black;
-              }
-              .mission-info {
+              .mission-item {
+                border: 2px solid rgb(220, 220, 220);
+                border-radius: 50px 20px;
+                padding: 10px;
                 position: relative;
-                color: black;
-                font-weight: 100;
-                width: auto;
-                left: -13%;
+                margin-bottom: 20px;
 
-                table {
-                  border-collapse: collapse;
-                  margin-top: 1%;
-                  width: auto;
-                  thead {
-                    tr {
-                      td {
-                        font-weight: bold;
-                        padding-bottom: 10px;
+                .mission-item-inner.sm-screen {
+                  color: white;
+                  font-family: "Barlow Condensed", sans-serif;
+                  letter-spacing: 1.3px;
 
-                        span {
-                          b {
-                            color: red;
-                          }
+                  .mission-flight-number-logo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  }
+
+                  .mission-info {
+                    font-size: 12px;
+                    h2 {
+                      span {
+                        b {
+                          color: red;
                         }
                       }
                     }
                   }
-                  tbody {
-                    tr {
-                      td {
-                        font-size: 14px;
+
+                  .mission-btns {
+                    position: relative;
+                    display: flex;
+                    .reddit-btns {
+                      position: relative;
+
+                      .reddit-dropdown-btn {
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 1px solid white;
+                        background: none;
+                        transition: all 0.1s ease;
+                        z-index: 2;
+
+                        svg {
+                          transition: all 0.1s ease;
+                        }
+
+                        &.active {
+                          background-color: red;
+                        }
                       }
 
-                      .mission-desc {
-                        padding-bottom: 10px;
-                      }
-                    }
+                      .reddit-content {
+                        position: absolute;
+                        top: -15%;
+                        left: 0%;
+                        opacity: 0;
+                        border: 1px solid white;
+                        background-color: rgb(63, 64, 73);
+                        border-radius: 15px;
+                        width: 0px;
+                        height: 40px;
+                        z-index: 0;
+                        padding: 10%;
+                        padding-left: 30%;
+                        padding-right: 20%;
+                        transition: all 0.3s ease;
+                        display: flex;
 
-                    .mission-btns {
-                      td {
-                        padding-top: 7%;
                         button {
-                          font-size: 16px;
-                          margin-right: 10px;
-                          font-family: "Barlow", sans-serif;
-                          background-color: white;
-                          border: 1px solid rgb(196, 196, 196);
-                          padding: 5px 10px 5px 10px;
-                          border-radius: 5px;
-                          cursor: pointer;
+                          position: relative;
+                          visibility: hidden;
+                          padding: 5px;
+                          border: 1px solid white;
+                          border-radius: 15px;
+                          background: none;
+                          margin-left: 10px;
+                          width: 40px;
+                          height: 40px;
+                          transition: all 0.3s ease;
+
+                          svg {
+                            filter: invert(100%);
+                            -webkit-filter: invert(100%);
+                          }
+
+                          span {
+                            visibility: hidden;
+                            position: absolute;
+                            left: 10%;
+                            top: 45%;
+                            width: 80%;
+                            border: 1px solid rgb(170, 170, 170);
+                            transform: rotate(40deg);
+                          }
 
                           &:disabled {
-                            cursor: default;
+                            border: 1px solid rgb(173, 173, 173);
+
+                            span {
+                              visibility: visible;
+                            }
                           }
 
-                          &:not([disabled]):hover {
-                            background-color: rgb(212, 212, 212);
+                          &:active {
+                            background-color: red;
+
+                            svg {
+                              filter: invert(100%);
+                              -webkit-filter: invert(100%);
+                            }
+                          }
+                        }
+
+                        &.active {
+                          opacity: 1;
+                          left: 30%;
+                          width: 150px;
+                          z-index: 1;
+
+                          button {
+                            visibility: visible;
+                          }
+                        }
+                      }
+                    }
+
+                    button.main {
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 50%;
+                      border: 1px solid white;
+                      background: none;
+                      display: flex;
+                      align-items: center;
+                      margin-right: 20px;
+                      transition: all 0.3s ease;
+
+                      svg {
+                        filter: invert(100%);
+                        -webkit-filter: invert(100%);
+                      }
+
+                      &.presskit {
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                        &:not(:disabled):active,
+                        &:not(:disabled):hover {
+                          background: royalblue;
+
+                          svg {
+                            filter: invert(100%);
+                            -webkit-filter: invert(100%);
+                          }
+                        }
+
+                        span {
+                          visibility: hidden;
+                          top: 48%;
+                          left: 5%;
+                          position: absolute;
+                          border: 1px solid rgb(170, 170, 170);
+                          width: 80%;
+                          transform: rotate(40deg);
+                        }
+                        &:disabled {
+                          border: 1px solid rgb(173, 173, 173);
+
+                          span {
+                            visibility: visible;
+                          }
+
+                          svg {
+                            fill: rgb(220, 220, 220);
+                          }
+                        }
+                      }
+
+                      &.youtube {
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                        &:not(:disabled):active,
+                        &:not(:disabled):hover {
+                          background: red;
+
+                          svg {
+                            filter: invert(100%);
+                            -webkit-filter: invert(100%);
+                          }
+                        }
+
+                        span {
+                          position: absolute;
+                          visibility: hidden;
+                          top: 48%;
+                          left: 5%;
+                          position: absolute;
+                          border: 1px solid rgb(170, 170, 170);
+                          width: 80%;
+                          transform: rotate(40deg);
+                        }
+
+                        &:disabled {
+                          border: 1px solid rgb(173, 173, 173);
+                          svg {
+                            fill: grey;
+                          }
+
+                          span {
+                            visibility: visible;
                           }
                         }
                       }
@@ -220,39 +1301,31 @@
                   }
                 }
               }
-
-              .mission-flight-number {
-                position: relative;
-                text-align: center;
-                color: black;
-                width: 100px;
-                height: 100px;
-
-                p {
-                  font-weight: 100;
-                }
-              }
             }
           }
         }
-      }
-    }
-    .missions-footer {
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      p {
-        color: rgb(120, 120, 120);
-      }
-      button {
-        font-size: 14px;
-        background: none;
-        border: none;
-        font-family: "Barlow", sans-serif;
-        text-decoration: underline;
-        cursor: pointer;
-        &:hover {
-          font-weight: bold;
+
+        .missions-footer {
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          font-family: "Barlow Condensed", sans-serif;
+          letter-spacing: 1.37px;
+
+          p {
+            color: white;
+          }
+
+          button {
+            color: rgb(197, 197, 197);
+            padding: 0;
+            font-size: 12px;
+            border: none;
+            background: none;
+            font-family: "Barlow Condensed", sans-serif;
+            letter-spacing: 1.37px;
+            text-decoration: underline;
+          }
         }
       }
     }

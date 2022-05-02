@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactPaginate from "react-paginate";
 import "../css/missions.css";
 import chevron from "../assets/missions/down-chevron.svg";
 import $ from "jquery";
@@ -21,6 +22,10 @@ const Missions = () => {
   const [filteredByLaunchpad, setLaunchPadState] = useState([]);
   const [filteredByYear, setYear] = useState([]);
   const [displayResults, setResults] = useState([]);
+  const [paginateResult, setPaginateResult] = useState([]);
+  const [pageSelected, setPageSelected] = useState(0);
+  const [showPage, setShowPage] = useState([]);
+  const [pageLength, setPageLength] = useState(0);
 
   const onlineApi =
     "https://space-tourism-launches-default-rtdb.firebaseio.com/data.json";
@@ -51,6 +56,7 @@ const Missions = () => {
     //------------------------//
     const checkValues = () => {
       setResults(filteredByYear);
+      paginateApi();
     };
 
     //_______________________//
@@ -137,11 +143,50 @@ const Missions = () => {
     const changeResultsHeight = () => {
       if (matches.length <= 3) {
         document.querySelector(".missions-result-container").style.height =
-          "585px";
+          "650px";
+        document.querySelector(
+          ".section-items.sm-screen .missions-result-container"
+        ).style.height = "850px";
+
+        document.querySelector(
+          ".section-items.md-screen .missions-result-container"
+        ).style.height = "850px";
       } else {
         document.querySelector(".missions-result-container").style.height =
           "auto";
+        document.querySelector(
+          ".section-items.sm-screen .missions-result-container"
+        ).style.height = "auto";
+
+        document.querySelector(
+          ".section-items.md-screen .missions-result-container"
+        ).style.height = "auto";
       }
+    };
+
+    //___________________________________//
+    // FUNCTION TO PAGINATE THE RESULTS //
+    //----------------------------------//
+    const paginateApi = () => {
+      var row = 0;
+      var col = 0;
+      var pageArray = [];
+      for (let i = 0; i < filteredByYear.length; i++) {
+        if (i % 10 === 0 && i !== 0) {
+          row++;
+          col = 0;
+        }
+
+        if (i === 0 || (i % 10 === 0 && i !== 0)) {
+          pageArray[row] = [];
+        }
+
+        pageArray[row][col] = filteredByYear[i];
+        pageArray[row][col].result = i + 1;
+        col++;
+      }
+      setPageLength(pageArray.length);
+      setPaginateResult(pageArray);
     };
 
     //______________//
@@ -169,15 +214,16 @@ const Missions = () => {
     filteredByKeyword,
     filteredByYear,
     displayResults,
+    paginateResult,
   ]);
 
   //_____________________________________//
   // FUNCTION TO SMOOTHLY SCROLL TO FORM //
   //-------------------------------------//
-  const scrollToForm = () => {
+  const scrollToForm = (form) => {
     $("html,body").animate(
       {
-        scrollTop: $(".missions-content").offset().top,
+        scrollTop: $(form).offset().top,
       },
       500
     );
@@ -186,69 +232,363 @@ const Missions = () => {
   //_______________________________________________//
   // FUNCTION TO SMOOTHLY SCROLL TO TOP OF RESULTS //
   //-----------------------------------------------//
-  const scrollToTop = () => {
+  const scrollToTop = (top, offset) => {
     $("html,body").animate(
       {
-        scrollTop: $("#missions-content").position().top + 125,
+        scrollTop: $(top).position().top + offset,
       },
       500
     );
   };
 
+  //_______________________________________//
+  // USE EFFECT FOR SETTING PAGE TO DISPLAY//
+  //---------------------------------------//
+  useEffect(() => {
+    setShowPage(paginateResult[pageSelected]);
+  }, [pageSelected, paginateResult]);
+
+  //_________________________________//
+  // FUNCTION TO HANDLE PAGE CHANGE //
+  //--------------------------------//
+  const handlePageClick = (data) => {
+    setPageSelected(data.selected);
+  };
+
+  //____________________________________________________//
+  // USE EFFECT FOR RELOADING PAGE ON ORIENTATION CHANGE //
+  //-----------------------------------------------------//
+  useEffect(() => {
+    const handleResize = () => {
+      window.location.reload();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="section-missions">
-      <div className="missions-head">
-        <div className="missions-intro">
-          <h1>DISCOVER SPACE MISSIONS</h1>
+      {/* DESKTOP VIEW */}
+      <div className="section-items lg-screen">
+        <div className="missions-top-intro">
+          <h3>
+            <span>04</span>REVISIT PAST MISSIONS
+          </h3>
         </div>
-        <div
-          onKeyDown={(e) => {
-            if (e.keyCode === 13) {
-              scrollToForm();
-            }
-          }}
-          onClick={scrollToForm}
-          className="missions-down-btn"
-          tabIndex="0"
-        >
-          <img src={chevron} alt="" />
-        </div>
-      </div>
-      <div id="missions-content" className="missions-content">
-        <MissionForm
-          launchpad={launchPad}
-          launch={launch}
-          search={search}
-          setSearch={setSearch}
-        />
-
-        <div id="missions-body" className="missions-body">
-          <div className="missions-results">
-            <div className="missions-search-results">
-              <p>
-                {matchLength > 1
-                  ? `Showing ${matchLength} Missions`
-                  : matchLength === 1
-                  ? `Showing ${matchLength} Mission`
-                  : `No Missions Found`}
-              </p>
-            </div>
-            <div className="missions-result-container">
-              {matches.map((val) => (
-                <MissionCard
-                  key={val.flight_number}
-                  value={val}
-                  launchpad={launchPad}
-                />
-              ))}
-            </div>
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onKeyDown={(e) => {
+              const form = ".missions-content";
+              if (e.keyCode === 13) {
+                scrollToForm(form);
+              }
+            }}
+            onClick={() => {
+              const form = ".missions-content";
+              scrollToForm(form);
+            }}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
           </div>
         </div>
-        <div className="missions-footer">
-          <p>Copyright © 2022 </p>
-          <button id="test" onClick={scrollToTop}>
-            Back to top
-          </button>
+        <div id="missions-content" className="missions-content">
+          <MissionForm
+            launchpad={launchPad}
+            launch={launch}
+            search={search}
+            setSearch={setSearch}
+          />
+
+          <div id="missions-body" className="missions-body">
+            <div className="missions-results">
+              <div className="missions-search-results">
+                <p>
+                  {matchLength > 1
+                    ? `Showing ${matchLength} Missions`
+                    : matchLength === 1
+                    ? `Showing ${matchLength} Mission`
+                    : `No Missions Found`}
+                </p>
+                <p>
+                  {showPage !== undefined &&
+                    showPage.map((val, index, showPage) => {
+                      if (index === 0) {
+                        if (index === showPage.length - 1) {
+                          return `Result #${val.result}`;
+                        }
+                        return `Results #${val.result} - `;
+                      }
+                      if (index === showPage.length - 1) {
+                        return val.result;
+                      }
+
+                      return null;
+                    })}
+                </p>
+              </div>
+              {matchLength > 0 && pageLength > 1 ? (
+                <ReactPaginate
+                  previousLabel={"<"}
+                  nextLabel={">"}
+                  breakLabel={"..."}
+                  pageCount={pageLength}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  containerClassName={"pagination"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item previous"}
+                  previousLinkClassName={"page-link previous"}
+                  nextClassName={"page-item next"}
+                  nextLinkClassName={"page-link next"}
+                  breakClassName={"page-item break"}
+                  breakLinkClassNamer={"page-link break"}
+                  activeClassName={"active"}
+                />
+              ) : (
+                ""
+              )}
+              <div className="missions-result-container">
+                {showPage !== undefined &&
+                  showPage.map((val) => (
+                    <MissionCard
+                      key={val.flight_number}
+                      value={val}
+                      launchpad={launchPad}
+                    />
+                  ))}
+              </div>
+            </div>
+          </div>
+          <div className="missions-footer">
+            <p>Copyright © 2022 </p>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".missions-content";
+                scrollToTop(top, 125);
+              }}
+            >
+              Back to top
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* TABLET VIEW */}
+      <div className="section-items md-screen">
+        <div className="missions-top-intro">
+          <h3>
+            <span>04</span>REVISIT PAST MISSIONS
+          </h3>
+        </div>
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onClick={() => {
+              const form = ".section-items.md-screen > .missions-content";
+              scrollToForm(form);
+            }}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
+          </div>
+        </div>
+        <div id="missions-content" className="missions-content">
+          <MissionForm
+            launchpad={launchPad}
+            launch={launch}
+            search={search}
+            setSearch={setSearch}
+          />
+          <div id="missions-body" className="missions-body">
+            <div className="missions-results">
+              <div className="missions-search-results">
+                <p>
+                  {matchLength > 1
+                    ? `Showing ${matchLength} Missions`
+                    : matchLength === 1
+                    ? `Showing ${matchLength} Mission`
+                    : `No Missions Found`}
+                </p>
+                <p>
+                  {showPage !== undefined &&
+                    showPage.map((val, index, showPage) => {
+                      if (index === 0) {
+                        if (index === showPage.length - 1) {
+                          return `Result #${val.result}`;
+                        }
+                        return `Results #${val.result} - `;
+                      }
+                      if (index === showPage.length - 1) {
+                        return val.result;
+                      }
+
+                      return null;
+                    })}
+                </p>
+              </div>
+              {matchLength > 0 && pageLength > 1 ? (
+                <ReactPaginate
+                  previousLabel={"<"}
+                  nextLabel={">"}
+                  breakLabel={"..."}
+                  pageCount={pageLength}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageClick}
+                  containerClassName={"pagination"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item previous"}
+                  previousLinkClassName={"page-link previous"}
+                  nextClassName={"page-item next"}
+                  nextLinkClassName={"page-link next"}
+                  breakClassName={"page-item break"}
+                  breakLinkClassNamer={"page-link break"}
+                  activeClassName={"active"}
+                />
+              ) : (
+                ""
+              )}
+              <div className="missions-result-container">
+                {showPage !== undefined &&
+                  showPage.map((val) => (
+                    <MissionCard
+                      key={val.flight_number}
+                      value={val}
+                      launchpad={launchPad}
+                    />
+                  ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="missions-footer">
+            <p>Copyright © 2022 </p>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".section-items.md-screen > .missions-content";
+                scrollToTop(top, 520);
+              }}
+            >
+              Back to top
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE VIEW */}
+      <div className="section-items sm-screen">
+        <div className="missions-top-intro">
+          <h3>
+            <span>04</span>REVISIT PAST MISSIONS
+          </h3>
+        </div>
+        <div className="missions-head">
+          <div className="missions-intro">
+            <h1>DISCOVER SPACE MISSIONS</h1>
+          </div>
+          <div
+            onClick={() => {
+              const form = ".section-items.sm-screen > .missions-content";
+              scrollToForm(form);
+            }}
+            className="missions-down-btn"
+            tabIndex="0"
+          >
+            <img src={chevron} alt="" />
+          </div>
+        </div>
+        <div id="missions-content" className="missions-content">
+          <MissionForm
+            launchpad={launchPad}
+            launch={launch}
+            search={search}
+            setSearch={setSearch}
+          />
+          <div id="missions-body" className="missions-body">
+            <div className="missions-results">
+              <div className="missions-search-results">
+                <p>
+                  {matchLength > 1
+                    ? `Showing ${matchLength} Missions`
+                    : matchLength === 1
+                    ? `Showing ${matchLength} Mission`
+                    : `No Missions Found`}
+                </p>
+                <p>
+                  {showPage !== undefined &&
+                    showPage.map((val, index, showPage) => {
+                      if (index === 0) {
+                        if (index === showPage.length - 1) {
+                          return `Result #${val.result}`;
+                        }
+                        return `Results #${val.result} - `;
+                      }
+                      if (index === showPage.length - 1) {
+                        return val.result;
+                      }
+
+                      return null;
+                    })}
+                </p>
+              </div>
+              <div className="missions-result-container">
+                {matchLength > 0 && pageLength > 1 ? (
+                  <ReactPaginate
+                    previousLabel={"<"}
+                    nextLabel={">"}
+                    breakLabel={"..."}
+                    pageCount={pageLength}
+                    pageRangeDisplayed={3}
+                    onPageChange={handlePageClick}
+                    containerClassName={"pagination"}
+                    pageClassName={"page-item"}
+                    pageLinkClassName={"page-link"}
+                    previousClassName={"page-item previous"}
+                    previousLinkClassName={"page-link previous"}
+                    nextClassName={"page-item next"}
+                    nextLinkClassName={"page-link next"}
+                    breakClassName={"page-item break"}
+                    breakLinkClassNamer={"page-link break"}
+                    activeClassName={"active"}
+                  />
+                ) : (
+                  ""
+                )}
+                {showPage !== undefined &&
+                  showPage.map((val) => (
+                    <MissionCard
+                      key={val.flight_number}
+                      value={val}
+                      launchpad={launchPad}
+                    />
+                  ))}
+              </div>
+            </div>
+          </div>
+          <div className="missions-footer">
+            <p>Copyright © 2022 </p>
+            <button
+              id="test"
+              onClick={() => {
+                const top = ".section-items.sm-screen > .missions-content";
+                scrollToTop(top, 115);
+              }}
+            >
+              Back to top
+            </button>
+          </div>
         </div>
       </div>
     </section>
