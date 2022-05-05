@@ -53,6 +53,8 @@ const MissionForm = (props) => {
 
     checkYearRange(minYear, maxYear);
 
+    props.setForcePage(0);
+
     props.setSearch({
       keyword: keyWord,
       launchpad: launchPads,

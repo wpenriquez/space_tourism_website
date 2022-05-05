@@ -24,16 +24,10 @@
   }
   .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen {
     margin-top: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     height: 527px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-between;
+    align-items: center;
   }
   .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns {
     width: 80px;
@@ -56,7 +50,6 @@
     color: white;
     border-radius: 50%;
     margin-bottom: 32px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li .tech-button:hover, .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-btns ul li .tech-button:focus {
@@ -84,7 +77,6 @@
   .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-info .tech-name-desc {
     position: absolute;
     opacity: 0;
-    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     left: 30%;
   }
@@ -110,7 +102,6 @@
     position: absolute;
     opacity: 0;
     left: 71%;
-    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
   .section-tech .section-items.lg-screen .tech-items .tech-desc-items.lg-screen .tech-img .tech-photo.active {
@@ -148,16 +139,9 @@
   .section-tech .section-items.md-screen .tech-items .tech-desc-items.md-screen {
     position: relative;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .section-tech .section-items.md-screen .tech-items .tech-desc-items.md-screen .tech-img {
     position: relative;
@@ -168,10 +152,8 @@
     position: absolute;
     width: 101%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     opacity: 0;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-tech .section-items.md-screen .tech-items .tech-desc-items.md-screen .tech-img .tech-photo.active {
@@ -183,8 +165,6 @@
   .section-tech .section-items.md-screen .tech-items .tech-desc-items.md-screen .tech-btns ul {
     padding: 0;
     margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 210px;
   }
@@ -204,7 +184,6 @@
     font-family: "Bellefair", sans-serif;
     letter-spacing: 1.5px;
     font-size: 24px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-tech .section-items.md-screen .tech-items .tech-desc-items.md-screen .tech-btns ul li .tech-button.active {
@@ -229,7 +208,6 @@
     margin-top: 16px;
     position: absolute;
     opacity: 0;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-tech .section-items.md-screen .tech-items .tech-desc-items.md-screen .tech-info .tech-name-desc h1 {
@@ -260,16 +238,9 @@
   }
   .section-tech .section-items.sm-screen {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .section-tech .section-items.sm-screen .tech-intro {
     font-family: "Barlow Condensed", sans-serif;
@@ -288,16 +259,9 @@
   }
   .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-img {
     position: relative;
@@ -310,10 +274,8 @@
     left: 50%;
     width: 101%;
     height: 100%;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-img .tech-photo.active {
     opacity: 1;
@@ -327,8 +289,6 @@
   .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns ul {
     padding: 0;
     margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns ul li {
@@ -345,7 +305,6 @@
     letter-spacing: 1px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     margin-right: 16px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-btns ul li .tech-button.active {
@@ -370,7 +329,6 @@
     width: 100%;
     position: absolute;
     opacity: 0;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-tech .section-items.sm-screen .tech-items .tech-desc-items.sm-screen .tech-info .tech-name-desc h1 {
@@ -387,4 +345,3 @@
     opacity: 1;
   }
 }
-/*# sourceMappingURL=technology.css.map */

@@ -35,16 +35,9 @@
     position: relative;
     font-family: "Bellefair", sans-serif;
     text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .section-missions .section-items.lg-screen .missions-head .missions-intro h1 {
     padding: 0;
@@ -60,7 +53,6 @@
     -webkit-filter: invert(85%);
     opacity: 1;
     margin-top: 0%;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.lg-screen .missions-head .missions-down-btn img:hover {
@@ -109,15 +101,6 @@
     width: 98%;
     height: 30px;
   }
-  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td ::-webkit-input-placeholder {
-    color: #939292;
-  }
-  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td :-ms-input-placeholder {
-    color: #939292;
-  }
-  .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td ::-ms-input-placeholder {
-    color: #939292;
-  }
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td ::placeholder {
     color: #939292;
   }
@@ -140,7 +123,6 @@
   .section-missions .section-items.lg-screen .missions-content .form-container .missions-form.lg-screen table tbody tr td .apply-btn {
     font-family: "Barlow Condensed", sans-serif;
     height: 33px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border: none;
     color: #0b0d17;
@@ -188,11 +170,7 @@
     font-weight: normal;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    justify-content: center;
     display: flex;
     padding: 0;
   }
@@ -209,11 +187,13 @@
     list-style: none;
     margin-right: 20px;
     color: white;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item:hover {
     background: grey;
+  }
+  .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item.disabled {
+    visibility: hidden;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item.previous, .section-missions .section-items.lg-screen .missions-content .missions-body .missions-results .pagination .page-item.next {
     border: none;
@@ -247,15 +227,9 @@
     position: relative;
     width: 100%;
     height: 162px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     font-family: "Barlow Condensed", sans-serif;
     letter-spacing: 1.5px;
     color: white;
@@ -328,14 +302,10 @@
   }
   .section-missions .section-items.lg-screen .missions-content .missions-footer {
     padding: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     font-family: "Barlow Condensed", sans-serif;
     letter-spacing: 1.37px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   .section-missions .section-items.lg-screen .missions-content .missions-footer p {
     color: white;
@@ -348,7 +318,6 @@
     border: none;
     color: #c5c5c5;
     text-decoration: underline;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     font-weight: normal;
     cursor: pointer;
@@ -389,16 +358,9 @@
   .section-missions .section-items.md-screen .missions-head {
     margin-top: 40%;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     font-family: "Bellefair", sans-serif;
   }
   .section-missions .section-items.md-screen .missions-head .missions-intro h1 {
@@ -445,8 +407,7 @@
     width: 40%;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #keywords {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #keywords,
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table #launchpads,
@@ -465,15 +426,6 @@
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .max-year-select {
     text-align: center;
   }
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table ::-webkit-input-placeholder {
-    color: #939292;
-  }
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table :-ms-input-placeholder {
-    color: #939292;
-  }
-  .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table ::-ms-input-placeholder {
-    color: #939292;
-  }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table ::placeholder {
     color: #939292;
   }
@@ -484,9 +436,7 @@
     color: #939292;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn {
     font-family: "Barlow Condensed", sans-serif;
@@ -498,12 +448,10 @@
     color: #0b0d17;
     border-radius: 15px;
     border: none;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:focus, .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:hover {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
+    filter: brightness(85%);
   }
   .section-missions .section-items.md-screen .missions-content .form-container .missions-form.md-screen table .form-apply .apply-btn:active {
     background-color: #0b0d17;
@@ -524,11 +472,7 @@
     font-size: 20px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    justify-content: center;
     display: flex;
     padding: 0;
   }
@@ -544,8 +488,10 @@
     list-style: none;
     margin-right: 20px;
     color: white;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+  }
+  .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item.disabled {
+    visibility: hidden;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item.previous, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .pagination .page-item.next {
     border: none;
@@ -573,26 +519,16 @@
     position: relative;
     width: 100%;
     height: 162px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     color: white;
     font-family: "Barlow Condensed", sans-serif;
     letter-spacing: 1.3px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     position: relative;
     width: 100px;
     height: 100px;
@@ -624,8 +560,6 @@
     padding-bottom: 10px;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns {
@@ -644,7 +578,6 @@
     padding: 5px 10px 5px 10px;
     border-radius: 50%;
     cursor: pointer;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-dropdown-btn.active {
@@ -663,10 +596,7 @@
     padding: 10px;
     padding-left: 36px;
     z-index: 0;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button {
@@ -679,12 +609,10 @@
     margin-left: 20px;
     width: 50px;
     height: 50px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button svg {
-    -webkit-filter: invert(100%);
-            filter: invert(100%);
+    filter: invert(100%);
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button span {
     visibility: hidden;
@@ -693,8 +621,7 @@
     top: 45%;
     width: 80%;
     border: 1px solid #c4c4c4;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
+    transform: rotate(40deg);
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td .reddit-btns .reddit-content button:disabled {
     border: 1px solid #adadad;
@@ -727,12 +654,10 @@
     border-radius: 50%;
     padding: 8px;
     position: relative;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main svg {
-    -webkit-filter: invert(100%);
-            filter: invert(100%);
+    filter: invert(100%);
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main span {
     visibility: hidden;
@@ -741,8 +666,7 @@
     top: 45%;
     width: 80%;
     border: 1px solid #aaaaaa;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
+    transform: rotate(40deg);
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main:disabled {
     border: 1px solid gainsboro;
@@ -751,7 +675,6 @@
     visibility: visible;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit {
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):active, .section-missions .section-items.md-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.md-screen .mission-info table tbody .mission-btns td button.main.presskit:not(:disabled):hover {
@@ -784,14 +707,10 @@
   }
   .section-missions .section-items.md-screen .missions-content .missions-footer {
     padding: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     font-family: "Barlow Condensed", sans-serif;
     letter-spacing: 1.37px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   .section-missions .section-items.md-screen .missions-content .missions-footer p {
     color: white;
@@ -841,16 +760,9 @@
     margin-top: 50%;
     padding-bottom: 110%;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     font-family: "Bellefair", sans-serif;
   }
   .section-missions .section-items.sm-screen .missions-head .missions-intro h1 {
@@ -890,8 +802,7 @@
     font-weight: bold;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table #keywords {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table #launchpads,
   .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table #keywords,
@@ -906,15 +817,6 @@
     background: none;
     border: none;
     border-bottom: 1px solid white;
-  }
-  .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table ::-webkit-input-placeholder {
-    color: #939292;
-  }
-  .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table :-ms-input-placeholder {
-    color: #939292;
-  }
-  .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table ::-ms-input-placeholder {
-    color: #939292;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table ::placeholder {
     color: #939292;
@@ -939,12 +841,10 @@
     color: #0b0d17;
     font-weight: bold;
     border: none;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table .form-apply .apply-btn:focus, .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table .form-apply .apply-btn:hover {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
+    filter: brightness(85%);
   }
   .section-missions .section-items.sm-screen .missions-content .missions-form.sm-screen table .form-apply .apply-btn:active {
     background-color: #0b0d17;
@@ -970,11 +870,7 @@
     margin: 0;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    justify-content: center;
     display: flex;
     padding: 0;
   }
@@ -988,8 +884,10 @@
     list-style: none;
     margin-right: 20px;
     color: white;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+  }
+  .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item.disabled {
+    visibility: hidden;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item.previous, .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .pagination .page-item.next {
     border: none;
@@ -1020,15 +918,9 @@
     letter-spacing: 1.3px;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-flight-number-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-info {
     font-size: 12px;
@@ -1038,8 +930,6 @@
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns .reddit-btns {
@@ -1052,12 +942,10 @@
     border-radius: 50%;
     border: 1px solid white;
     background: none;
-    -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
     z-index: 2;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns .reddit-btns .reddit-dropdown-btn svg {
-    -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns .reddit-btns .reddit-dropdown-btn.active {
@@ -1077,10 +965,7 @@
     padding: 10%;
     padding-left: 30%;
     padding-right: 20%;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns .reddit-btns .reddit-content button {
@@ -1093,7 +978,6 @@
     margin-left: 10px;
     width: 40px;
     height: 40px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns .reddit-btns .reddit-content button svg {
@@ -1107,8 +991,7 @@
     top: 45%;
     width: 80%;
     border: 1px solid #aaaaaa;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
+    transform: rotate(40deg);
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns .reddit-btns .reddit-content button:disabled {
     border: 1px solid #adadad;
@@ -1138,14 +1021,9 @@
     border-radius: 50%;
     border: 1px solid white;
     background: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     margin-right: 20px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main svg {
@@ -1153,12 +1031,8 @@
     -webkit-filter: invert(100%);
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.presskit {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     position: relative;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.presskit:not(:disabled):active, .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.presskit:not(:disabled):hover {
@@ -1175,8 +1049,7 @@
     position: absolute;
     border: 1px solid #aaaaaa;
     width: 80%;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
+    transform: rotate(40deg);
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.presskit:disabled {
     border: 1px solid #adadad;
@@ -1188,12 +1061,8 @@
     fill: gainsboro;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.youtube {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     position: relative;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.youtube:not(:disabled):active, .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.youtube:not(:disabled):hover {
@@ -1211,8 +1080,7 @@
     position: absolute;
     border: 1px solid #aaaaaa;
     width: 80%;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
+    transform: rotate(40deg);
   }
   .section-missions .section-items.sm-screen .missions-content .missions-body .missions-results .missions-result-container .mission-item .mission-item-inner.sm-screen .mission-btns button.main.youtube:disabled {
     border: 1px solid #adadad;
@@ -1224,12 +1092,8 @@
     visibility: visible;
   }
   .section-missions .section-items.sm-screen .missions-content .missions-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     font-size: 12px;
     font-family: "Barlow Condensed", sans-serif;
     letter-spacing: 1.37px;
@@ -1248,4 +1112,3 @@
     text-decoration: underline;
   }
 }
-/*# sourceMappingURL=missions.css.map */

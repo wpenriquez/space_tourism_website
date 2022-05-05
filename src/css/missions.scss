@@ -225,6 +225,10 @@
                   background: grey;
                 }
 
+                &.disabled {
+                  visibility: hidden;
+                }
+
                 &.previous,
                 &.next {
                   border: none;
@@ -580,6 +584,10 @@
                 margin-right: 20px;
                 color: white;
                 transition: all 0.3s ease;
+
+                &.disabled {
+                  visibility: hidden;
+                }
 
                 &.previous,
                 &.next {
@@ -1057,6 +1065,10 @@
                 margin-right: 20px;
                 color: white;
                 transition: all 0.3s ease;
+
+                &.disabled {
+                  visibility: hidden;
+                }
 
                 &.previous,
                 &.next {

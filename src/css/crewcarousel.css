@@ -23,12 +23,8 @@
 @media only screen and (min-width: 992px) {
   .crew-carousel .crew-carousel-inner.lg-screen {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     height: 100%;
   }
   .crew-carousel .crew-carousel-inner.lg-screen .crew-carousel-desc {
@@ -42,7 +38,6 @@
     position: relative;
   }
   .crew-carousel .crew-carousel-inner.lg-screen .crew-carousel-desc .crew-carousel-info .crew-carousel-info-inner {
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     opacity: 0;
     font-family: "Bellefair", sans-serif;
@@ -76,15 +71,12 @@
   }
   .crew-carousel .crew-carousel-inner.lg-screen .crew-carousel-desc .crew-carousel-indicators ul {
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .crew-carousel .crew-carousel-inner.lg-screen .crew-carousel-desc .crew-carousel-indicators ul li {
     list-style: none;
   }
   .crew-carousel .crew-carousel-inner.lg-screen .crew-carousel-desc .crew-carousel-indicators ul li .crew-carousel-button {
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border-radius: 50%;
     border: none;
@@ -109,7 +101,6 @@
     position: absolute;
     left: 10%;
     opacity: 0;
-    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
   .crew-carousel .crew-carousel-inner.lg-screen .crew-carousel-images .crew-carousel-img.active {
@@ -128,16 +119,9 @@
   }
   .crew-carousel .crew-carousel-inner.md-screen {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info {
     position: relative;
@@ -152,7 +136,6 @@
     left: -15%;
     opacity: 0;
     width: 450px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-info .crew-carousel-info-inner h2 {
@@ -179,8 +162,6 @@
   }
   .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul {
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 88px;
     margin: 0;
@@ -191,7 +172,6 @@
   }
   .crew-carousel .crew-carousel-inner.md-screen .crew-carousel-indicators ul li .crew-carousel-button {
     padding: 0;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
@@ -212,18 +192,13 @@
     height: 100%;
     width: 540px;
     height: 483px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .crew-carousel .crew-carousel-images .crew-carousel-img {
     position: absolute;
     opacity: 0;
     height: 100%;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .crew-carousel .crew-carousel-images .crew-carousel-img.active {
@@ -243,16 +218,9 @@
   .crew-carousel .crew-carousel-inner.sm-screen {
     margin-top: -1%;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     width: auto;
   }
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-images {
@@ -261,19 +229,14 @@
     width: 327px;
     height: 223px;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-images .crew-carousel-img {
     position: absolute;
     width: auto;
     height: 100%;
     opacity: 0;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-images .crew-carousel-img.active {
@@ -284,8 +247,6 @@
   }
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-indicators ul {
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-indicators ul li {
@@ -293,7 +254,6 @@
     margin-right: 16px;
   }
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-indicators ul li .crew-carousel-button {
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
@@ -315,7 +275,6 @@
   .crew-carousel .crew-carousel-inner.sm-screen .crew-carousel-info .crew-carousel-info-inner {
     left: 0;
     position: absolute;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     font-family: "Bellefair", sans-serif;
     opacity: 0;
@@ -344,4 +303,3 @@
     opacity: 1;
   }
 }
-/*# sourceMappingURL=crewcarousel.css.map */

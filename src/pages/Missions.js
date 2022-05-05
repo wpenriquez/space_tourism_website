@@ -27,6 +27,7 @@ const Missions = () => {
   const [showPage, setShowPage] = useState([]);
   const [pageLength, setPageLength] = useState(0);
   const [apiError, setApiError] = useState(false);
+  const [forcePage, setForcePage] = useState(0);
 
   const onlineApi =
     "https://space-tourism-launches-default-rtdb.firebaseio.com/data.json";
@@ -130,7 +131,6 @@ const Missions = () => {
       });
 
       setKeyword(filterKeyword);
-
       if (search.launchpad !== "") {
         filterSearchByLaunchPad();
       } else if (search.minyear !== "" || search.maxyear !== "") {
@@ -145,26 +145,38 @@ const Missions = () => {
     // CALL FUNCTION TO CHANGE HEIGHT OF RESULTS CONTAINER //
     //-----------------------------------------------------//
     const changeResultsHeight = () => {
-      if (matches.length <= 3) {
-        document.querySelector(".missions-result-container").style.height =
-          "650px";
-        document.querySelector(
-          ".section-items.sm-screen .missions-result-container"
-        ).style.height = "850px";
+      if (showPage !== undefined) {
+        if (showPage.length <= 3) {
+          document.querySelector(".missions-result-container").style.height =
+            "755px";
+          document.querySelector(
+            ".section-items.sm-screen .missions-result-container"
+          ).style.height = "850px";
 
-        document.querySelector(
-          ".section-items.md-screen .missions-result-container"
-        ).style.height = "850px";
+          document.querySelector(
+            ".section-items.md-screen .missions-result-container"
+          ).style.height = "850px";
+        } else {
+          document.querySelector(".missions-result-container").style.height =
+            "auto";
+          document.querySelector(
+            ".section-items.sm-screen .missions-result-container"
+          ).style.height = "auto";
+
+          document.querySelector(
+            ".section-items.md-screen .missions-result-container"
+          ).style.height = "auto";
+        }
       } else {
         document.querySelector(".missions-result-container").style.height =
-          "auto";
+          "755px";
         document.querySelector(
           ".section-items.sm-screen .missions-result-container"
-        ).style.height = "auto";
+        ).style.height = "850px";
 
         document.querySelector(
           ".section-items.md-screen .missions-result-container"
-        ).style.height = "auto";
+        ).style.height = "850px";
       }
     };
 
@@ -219,6 +231,7 @@ const Missions = () => {
     filteredByYear,
     displayResults,
     paginateResult,
+    showPage,
   ]);
 
   //_____________________________________//
@@ -250,13 +263,18 @@ const Missions = () => {
   //---------------------------------------//
   useEffect(() => {
     setShowPage(paginateResult[pageSelected]);
-  }, [pageSelected, paginateResult]);
+    if (showPage === undefined) {
+      setPageSelected(0);
+    }
+  }, [pageSelected, paginateResult, showPage]);
 
   //_________________________________//
   // FUNCTION TO HANDLE PAGE CHANGE //
   //--------------------------------//
   const handlePageClick = (data) => {
     setPageSelected(data.selected);
+    setForcePage(data.selected);
+    console.log(pageSelected);
   };
 
   //____________________________________________________//
@@ -307,6 +325,7 @@ const Missions = () => {
             launch={launch}
             search={search}
             setSearch={setSearch}
+            setForcePage={setForcePage}
           />
 
           <div id="missions-body" className="missions-body">
@@ -357,6 +376,7 @@ const Missions = () => {
                   breakClassName={"page-item break"}
                   breakLinkClassNamer={"page-link break"}
                   activeClassName={"active"}
+                  forcePage={forcePage}
                 />
               ) : (
                 ""
@@ -416,6 +436,7 @@ const Missions = () => {
             launch={launch}
             search={search}
             setSearch={setSearch}
+            setPageSelected={setPageSelected}
           />
           <div id="missions-body" className="missions-body">
             <div className="missions-results">
@@ -524,6 +545,7 @@ const Missions = () => {
             launch={launch}
             search={search}
             setSearch={setSearch}
+            setPageSelected={setPageSelected}
           />
           <div id="missions-body" className="missions-body">
             <div className="missions-results">

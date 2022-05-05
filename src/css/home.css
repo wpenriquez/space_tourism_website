@@ -14,15 +14,10 @@
   .section-home .section-items.lg-screen {
     position: relative;
     top: 15%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-around;
+    align-items: center;
   }
   .section-home .section-items.lg-screen .space-intro {
     width: 450px;
@@ -53,7 +48,6 @@
     border-radius: 50%;
   }
   .section-home .section-items.lg-screen .explore-button a .explore {
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     position: relative;
     letter-spacing: 2px;
@@ -80,7 +74,6 @@
     border-radius: 50%;
     width: 274px;
     height: 274px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-home .section-items.lg-screen .explore-button a:hover .explore, .section-home .section-items.lg-screen .explore-button a:focus .explore {
@@ -109,16 +102,9 @@
     margin-top: 106px;
   }
   .section-home .section-items.md-screen {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .section-home .section-items.md-screen .space-intro {
     width: 450px;
@@ -150,7 +136,6 @@
     border-radius: 50%;
     line-height: 242px;
     text-align: center;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-home .section-items.md-screen .explore-button a {
@@ -186,38 +171,20 @@
     padding-top: 0%;
     padding-left: 20px;
     padding-right: 20px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .section-home .section-items.sm-screen {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    align-items: center;
+    flex-direction: column;
   }
   .section-home .section-items.sm-screen .space-intro {
     height: 276px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .section-home .section-items.sm-screen .space-intro h3 {
     font-family: "Barlow Condensed", sans-serif;
@@ -251,7 +218,6 @@
     border-radius: 50%;
     font-family: "Bellefair", sans-serif;
     color: #0b0d17;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .section-home .section-items.sm-screen .explore-button a .explore:active, .section-home .section-items.sm-screen .explore-button a .explore:hover {
@@ -262,4 +228,3 @@
     border-radius: 50%;
   }
 }
-/*# sourceMappingURL=home.css.map */
