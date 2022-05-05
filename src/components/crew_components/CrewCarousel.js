@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/crewcarousel.css";
+import "../../css/crewcarousel.css";
 
 const CrewCarousel = (props) => {
   const [activeState, changeState] = useState(1);

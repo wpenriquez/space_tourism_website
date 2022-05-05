@@ -4,8 +4,8 @@ import "../css/missions.css";
 import chevron from "../assets/missions/down-chevron.svg";
 import $ from "jquery";
 import axios from "axios";
-import MissionCard from "../components/MissionCard";
-import MissionForm from "../components/MissionForm";
+import MissionCard from "../components/mission_components/MissionCard";
+import MissionForm from "../components/mission_components/MissionForm";
 
 const Missions = () => {
   const [launch, setLaunch] = useState([]);
@@ -26,6 +26,7 @@ const Missions = () => {
   const [pageSelected, setPageSelected] = useState(0);
   const [showPage, setShowPage] = useState([]);
   const [pageLength, setPageLength] = useState(0);
+  const [apiError, setApiError] = useState(false);
 
   const onlineApi =
     "https://space-tourism-launches-default-rtdb.firebaseio.com/data.json";
@@ -35,13 +36,14 @@ const Missions = () => {
   //---------------------------------------------//
   useEffect(() => {
     const loadLaunches = async () => {
+      setApiError(false);
       axios
         .get(onlineApi)
         .then((res) => {
           setLaunch(res.data.launches);
           setLaunchPad(res.data.launchpads);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => setApiError(true));
     };
 
     loadLaunches();
@@ -120,7 +122,9 @@ const Missions = () => {
         const regex = new RegExp(`${search.keyword}`, "gi");
         return (
           val.rocket.rocket_name.match(regex) ||
+          val.rocket.rocket_name.replace(/\s+/g, "").match(regex) || // remove spaces
           val.payloads[0].payload_id.match(regex) ||
+          val.payloads[0].payload_id.replace(/\s+/g, "").match(regex) ||
           val.flight_number === parseInt(search.keyword)
         );
       });
@@ -308,12 +312,15 @@ const Missions = () => {
           <div id="missions-body" className="missions-body">
             <div className="missions-results">
               <div className="missions-search-results">
+                {/* placeholder for non accessible api */}
                 <p>
                   {matchLength > 1
                     ? `Showing ${matchLength} Missions`
                     : matchLength === 1
                     ? `Showing ${matchLength} Mission`
-                    : `No Missions Found`}
+                    : matchLength === 0 && !apiError
+                    ? "No Missions Found"
+                    : "Server error has occured. Please try again later."}
                 </p>
                 <p>
                   {showPage !== undefined &&
@@ -418,7 +425,9 @@ const Missions = () => {
                     ? `Showing ${matchLength} Missions`
                     : matchLength === 1
                     ? `Showing ${matchLength} Mission`
-                    : `No Missions Found`}
+                    : matchLength === 0 && !apiError
+                    ? "No Missions Found"
+                    : "Server error has occured. Please try again later."}
                 </p>
                 <p>
                   {showPage !== undefined &&
@@ -524,7 +533,9 @@ const Missions = () => {
                     ? `Showing ${matchLength} Missions`
                     : matchLength === 1
                     ? `Showing ${matchLength} Mission`
-                    : `No Missions Found`}
+                    : matchLength === 0 && !apiError
+                    ? "No Missions Found"
+                    : "Server error has occured. Please try again later."}
                 </p>
                 <p>
                   {showPage !== undefined &&

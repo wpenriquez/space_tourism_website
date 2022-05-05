@@ -1,9 +1,9 @@
-import { ReactComponent as Logo } from "../assets/shared/logo.svg";
-import { ReactComponent as Hamburger } from "../assets/shared/icon-hamburger.svg";
-import { ReactComponent as CloseBtn } from "../assets/shared/icon-close.svg";
+import { ReactComponent as Logo } from "../../assets/shared/logo.svg";
+import { ReactComponent as Hamburger } from "../../assets/shared/icon-hamburger.svg";
+import { ReactComponent as CloseBtn } from "../../assets/shared/icon-close.svg";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
-import "../css/navbar.css";
+import "../../css/navbar.css";
 
 const Navbar = () => {
   const path = useLocation().pathname;

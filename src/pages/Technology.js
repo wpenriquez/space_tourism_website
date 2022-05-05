@@ -6,7 +6,7 @@ import thirdTech from "../assets/technology/image-space-capsule-portrait.jpg";
 import firstTechLand from "../assets/technology/image-launch-vehicle-landscape.jpg";
 import secondTechLand from "../assets/technology/image-spaceport-landscape.jpg";
 import thirdTechLand from "../assets/technology/image-space-capsule-landscape.jpg";
-import TechnologyItems from "../components/TechnologyItems";
+import TechnologyItems from "../components/technology_components/TechnologyItems";
 
 const Technology = () => {
   const techValues = [

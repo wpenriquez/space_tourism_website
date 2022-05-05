@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ReactComponent as RedditBtn } from "../assets/missions/logo-reddit.svg";
-import { ReactComponent as CampaignBtn } from "../assets/missions/logo-megaphone-outline.svg";
-import { ReactComponent as LaunchBtn } from "../assets/missions/logo-rocket-outline.svg";
-import { ReactComponent as MediaBtn } from "../assets/missions/logo-play-circle-outline.svg";
-import { ReactComponent as PressKit } from "../assets/missions/logo-news-outline.svg";
-import { ReactComponent as YouTube } from "../assets/missions/logo-youtube.svg";
+import { ReactComponent as RedditBtn } from "../../assets/missions/logo-reddit.svg";
+import { ReactComponent as CampaignBtn } from "../../assets/missions/logo-megaphone-outline.svg";
+import { ReactComponent as LaunchBtn } from "../../assets/missions/logo-rocket-outline.svg";
+import { ReactComponent as MediaBtn } from "../../assets/missions/logo-play-circle-outline.svg";
+import { ReactComponent as PressKit } from "../../assets/missions/logo-news-outline.svg";
+import { ReactComponent as YouTube } from "../../assets/missions/logo-youtube.svg";
 
 const MissionCard = (props) => {
   const [dropDown, setDropDown] = useState(false);

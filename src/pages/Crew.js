@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import Carousel from "../components/CrewCarousel";
+import Carousel from "../components/crew_components/CrewCarousel";
 import "../css/crew.css";
 import ansari from "../assets/crew/image-anousheh-ansari.png";
 import hurley from "../assets/crew/image-douglas-hurley.png";
