@@ -436,7 +436,7 @@ const Missions = () => {
             launch={launch}
             search={search}
             setSearch={setSearch}
-            setPageSelected={setPageSelected}
+            setForcePage={setForcePage}
           />
           <div id="missions-body" className="missions-body">
             <div className="missions-results">
@@ -485,6 +485,7 @@ const Missions = () => {
                   breakClassName={"page-item break"}
                   breakLinkClassNamer={"page-link break"}
                   activeClassName={"active"}
+                  forcePage={forcePage}
                 />
               ) : (
                 ""
@@ -545,7 +546,7 @@ const Missions = () => {
             launch={launch}
             search={search}
             setSearch={setSearch}
-            setPageSelected={setPageSelected}
+            setForcePage={setForcePage}
           />
           <div id="missions-body" className="missions-body">
             <div className="missions-results">
@@ -595,6 +596,7 @@ const Missions = () => {
                     breakClassName={"page-item break"}
                     breakLinkClassNamer={"page-link break"}
                     activeClassName={"active"}
+                    forcePage={forcePage}
                   />
                 ) : (
                   ""
