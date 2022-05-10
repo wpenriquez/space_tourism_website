@@ -10,6 +10,7 @@ const MissionCard = (props) => {
   const [dropDown, setDropDown] = useState(false);
   const [logoStyle, setLogoStyle] = useState({});
 
+  // FUNCTION TO SET LAUNCH INFO
   const computeTimeLocation = (dateTime, location, launchLoc) => {
     const months = [
       "January",
@@ -76,6 +77,8 @@ const MissionCard = (props) => {
       computedHours + ":" + zeroMinutes + eMinutes + amPm
     } from ${fullLoc}`;
   };
+
+  // CHECK IF LINK FOR PATCH/LOGO CAN BE ACCESSED
   useEffect(() => {
     const checkIfImageExists = (url, callback) => {
       const img = new Image();
@@ -94,6 +97,7 @@ const MissionCard = (props) => {
       }
     };
 
+    // CONDITION TO SET STYLE IF PATCH/LOGO IS UNREACHABLE
     checkIfImageExists(props.value.links.mission_patch, (exists) => {
       if (exists) {
         setLogoStyle({});

@@ -5,6 +5,7 @@ const MissionForm = (props) => {
 
   let keyWord, launchPads, minYear, maxYear;
 
+  // FUNCTION TO CHECK MIN YEAR MAX YEAR RANGE
   const checkYearRange = (min, max) => {
     if (!isNaN(parseInt(min))) {
       if (!isNaN(parseInt(max))) {
@@ -15,6 +16,7 @@ const MissionForm = (props) => {
     }
   };
 
+  // FUNCTION TO GET INPUT VALUES
   const submitHandler = (event, mobile, tablet) => {
     event.preventDefault();
 
@@ -63,6 +65,7 @@ const MissionForm = (props) => {
     });
   };
 
+  // USE EFFECT FOR COMPUTING YEAR FROM API DATA
   useEffect(() => {
     const yearArr = [];
     const computeYear = () => {

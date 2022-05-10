@@ -8,7 +8,9 @@ import "../../css/navbar.css";
 const Navbar = () => {
   const path = useLocation().pathname;
   const location = path.split("/")[1];
+  const [collapse, setCollapse] = useState(false);
 
+  // FUNCTION TO CHANGE BACKGROUND WHEN CHANGING WEBSITE PAGE
   const changeBackground = () => {
     if (!(location === "")) {
       document.querySelector("body").className = "";
@@ -20,8 +22,7 @@ const Navbar = () => {
 
   changeBackground();
 
-  const [collapse, setCollapse] = useState(false);
-
+  // FUNCTION TO COLLAPSE MOBILE SIDE NAV
   const collapseMobileNav = () => {
     setCollapse((prevState) => !prevState);
   };

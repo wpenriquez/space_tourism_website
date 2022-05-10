@@ -3,13 +3,14 @@ import "../../css/crewcarousel.css";
 
 const CrewCarousel = (props) => {
   const [activeState, changeState] = useState(1);
+  const [mousedOver, setMousedOver] = useState(false);
 
+  // FUNCTION TO CHANGE ACTIVE STATE OF
   const toggleActive = (val) => {
     changeState(val);
   };
 
-  const [mousedOver, setMousedOver] = useState(false);
-
+  // USE EFFECT FOR PAUSING THE CAROUSEL WHEN THE CURSOR IS HOVERING OVER THE CREW IMAGE OR INFO
   useEffect(() => {
     if (!mousedOver) {
       const slide = setInterval(() => {

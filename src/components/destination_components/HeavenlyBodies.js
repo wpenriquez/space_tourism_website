@@ -1,6 +1,7 @@
 import React from "react";
 
 const HeavenlyBodies = (props) => {
+  // FUNCTIO TO CHANGE ACTIVE STATE OF ITEM INDICATORS
   const toggleActive = (val) => {
     props.changeState(val);
   };
