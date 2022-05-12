@@ -55,7 +55,9 @@ const MissionForm = (props) => {
 
     checkYearRange(minYear, maxYear);
 
+    // RESET PAGE INDICATOR AND PAGE RESULTS TO FIRST PAGE
     props.setForcePage(0);
+    props.setPageSelected(0);
 
     props.setSearch({
       keyword: keyWord,

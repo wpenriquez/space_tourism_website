@@ -263,6 +263,7 @@ const Missions = () => {
   //---------------------------------------//
   useEffect(() => {
     setShowPage(paginateResult[pageSelected]);
+
     if (showPage === undefined) {
       setPageSelected(0);
     }
@@ -274,7 +275,6 @@ const Missions = () => {
   const handlePageClick = (data) => {
     setPageSelected(data.selected);
     setForcePage(data.selected);
-    console.log(pageSelected);
   };
 
   //____________________________________________________//
@@ -326,6 +326,7 @@ const Missions = () => {
             search={search}
             setSearch={setSearch}
             setForcePage={setForcePage}
+            setPageSelected={setPageSelected}
           />
 
           <div id="missions-body" className="missions-body">
@@ -342,7 +343,7 @@ const Missions = () => {
                     : "Server error has occured. Please try again later."}
                 </p>
                 <p>
-                  {showPage !== undefined &&
+                  {showPage &&
                     showPage.map((val, index, showPage) => {
                       if (index === 0) {
                         if (index === showPage.length - 1) {
@@ -451,7 +452,7 @@ const Missions = () => {
                     : "Server error has occured. Please try again later."}
                 </p>
                 <p>
-                  {showPage !== undefined &&
+                  {showPage &&
                     showPage.map((val, index, showPage) => {
                       if (index === 0) {
                         if (index === showPage.length - 1) {
