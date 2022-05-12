@@ -438,6 +438,7 @@ const Missions = () => {
             search={search}
             setSearch={setSearch}
             setForcePage={setForcePage}
+            setPageSelected={setPageSelected}
           />
           <div id="missions-body" className="missions-body">
             <div className="missions-results">
@@ -548,6 +549,7 @@ const Missions = () => {
             search={search}
             setSearch={setSearch}
             setForcePage={setForcePage}
+            setPageSelected={setPageSelected}
           />
           <div id="missions-body" className="missions-body">
             <div className="missions-results">
@@ -562,7 +564,7 @@ const Missions = () => {
                     : "Server error has occured. Please try again later."}
                 </p>
                 <p>
-                  {showPage !== undefined &&
+                  {showPage &&
                     showPage.map((val, index, showPage) => {
                       if (index === 0) {
                         if (index === showPage.length - 1) {
