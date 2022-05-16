@@ -50,97 +50,124 @@ const Missions = () => {
     loadLaunches();
   }, []);
 
-  //___________________________________________________________________//
-  // USE EFFECT FOR UPDATING FILTER VALUES COMING FROM MissionsForm.js //
-  //-------------------------------------------------------------------//
-  useEffect(() => {
-    //________________________//
-    // SET RESULTS TO DISPLAY //
-    //------------------------//
-    const checkValues = () => {
-      setResults(filteredByYear);
-      paginateApi();
-    };
+  //________________________//
+  // SET RESULTS TO DISPLAY //
+  //------------------------//
+  const checkValues = () => {
+    setResults(filteredByYear);
+    setMatch(displayResults);
+    setMatchLength(matches.length);
+    paginateApi();
+  };
 
-    //_______________________//
-    // FILTER SEARCH BY YEAR //
-    //-----------------------//
-    const filterSearchByYear = () => {
-      const filterYear = filteredByLaunchpad.filter((val) => {
-        let d = new Date(val.launch_date_local);
-        let fullYear = d.getFullYear();
-        let minYear = parseInt(search.minyear);
-        let maxYear = parseInt(search.maxyear);
-        if (!isNaN(minYear)) {
-          if (!isNaN(maxYear)) {
-            if (fullYear >= minYear && fullYear <= maxYear) {
-              return val;
-            } else {
-              return null;
-            }
-          } else {
-            if (fullYear >= minYear) {
-              return val;
-            } else {
-              return null;
-            }
-          }
-        } else if (!isNaN(maxYear)) {
-          if (fullYear <= maxYear) {
+  //_______________________//
+  // FILTER SEARCH BY YEAR //
+  //-----------------------//
+  const filterSearchByYear = () => {
+    const filterYear = filteredByLaunchpad.filter((val) => {
+      let d = new Date(val.launch_date_local);
+      let fullYear = d.getFullYear();
+      let minYear = parseInt(search.minyear);
+      let maxYear = parseInt(search.maxyear);
+      if (!isNaN(minYear)) {
+        if (!isNaN(maxYear)) {
+          if (fullYear >= minYear && fullYear <= maxYear) {
             return val;
           } else {
             return null;
           }
         } else {
+          if (fullYear >= minYear) {
+            return val;
+          } else {
+            return null;
+          }
+        }
+      } else if (!isNaN(maxYear)) {
+        if (fullYear <= maxYear) {
+          return val;
+        } else {
           return null;
         }
-      });
-      setYear(filterYear);
-    };
-
-    //____________________________//
-    // FILTER SEARCH BY LAUNCHPAD //
-    //----------------------------//
-    const filterSearchByLaunchPad = () => {
-      const filterLaunchPad = filteredByKeyword.filter((val) => {
-        const regex = new RegExp(`${search.launchpad}`, "gi");
-        return val.launch_site.site_id.match(regex);
-      });
-      setLaunchPadState(filterLaunchPad);
-
-      if (search.minyear !== "" || search.maxyear !== "") {
-        filterSearchByYear();
       } else {
-        setYear(filteredByLaunchpad);
+        return null;
       }
-    };
+    });
+    setYear(filterYear);
+  };
 
-    //__________________________//
-    // FILTER SEARCH BY KEYWORD //
-    //--------------------------//
-    const filterSearchByKeyword = () => {
-      const filterKeyword = launch.filter((val) => {
-        const regex = new RegExp(`${search.keyword}`, "gi");
-        return (
-          val.rocket.rocket_name.match(regex) ||
-          val.rocket.rocket_name.replace(/\s+/g, "").match(regex) || // remove spaces
-          val.payloads[0].payload_id.match(regex) ||
-          val.payloads[0].payload_id.replace(/\s+/g, "").match(regex) ||
-          val.flight_number === parseInt(search.keyword)
-        );
-      });
+  //____________________________//
+  // FILTER SEARCH BY LAUNCHPAD //
+  //----------------------------//
+  const filterSearchByLaunchPad = () => {
+    const filterLaunchPad = filteredByKeyword.filter((val) => {
+      const regex = new RegExp(`${search.launchpad}`, "gi");
+      return val.launch_site.site_id.match(regex);
+    });
+    setLaunchPadState(filterLaunchPad);
 
-      setKeyword(filterKeyword);
-      if (search.launchpad !== "") {
-        filterSearchByLaunchPad();
-      } else if (search.minyear !== "" || search.maxyear !== "") {
-        setLaunchPadState(filteredByKeyword);
-        filterSearchByYear();
-      } else {
-        setYear(filteredByKeyword);
+    if (search.minyear !== "" || search.maxyear !== "") {
+      filterSearchByYear();
+    } else {
+      setYear(filteredByLaunchpad);
+    }
+  };
+
+  //__________________________//
+  // FILTER SEARCH BY KEYWORD //
+  //--------------------------//
+  const filterSearchByKeyword = () => {
+    const filterKeyword = launch.filter((val) => {
+      const regex = new RegExp(`${search.keyword}`, "gi");
+      return (
+        val.rocket.rocket_name.match(regex) ||
+        val.rocket.rocket_name.replace(/\s+/g, "").match(regex) || // remove spaces
+        val.payloads[0].payload_id.match(regex) ||
+        val.payloads[0].payload_id.replace(/\s+/g, "").match(regex) ||
+        val.flight_number === parseInt(search.keyword)
+      );
+    });
+
+    setKeyword(filterKeyword);
+    if (search.launchpad !== "") {
+      filterSearchByLaunchPad();
+    } else if (search.minyear !== "" || search.maxyear !== "") {
+      setLaunchPadState(filteredByKeyword);
+      filterSearchByYear();
+    } else {
+      setYear(filteredByKeyword);
+    }
+  };
+
+  //___________________________________//
+  // FUNCTION TO PAGINATE THE RESULTS //
+  //----------------------------------//
+  const paginateApi = () => {
+    var row = 0;
+    var col = 0;
+    var pageArray = [];
+    for (let i = 0; i < filteredByYear.length; i++) {
+      if (i % 10 === 0 && i !== 0) {
+        row++;
+        col = 0;
       }
-    };
 
+      if (i === 0 || (i % 10 === 0 && i !== 0)) {
+        pageArray[row] = [];
+      }
+
+      pageArray[row][col] = filteredByYear[i];
+      pageArray[row][col].result = i + 1;
+      col++;
+    }
+    setPageLength(pageArray.length);
+    setPaginateResult(pageArray);
+  };
+
+  //___________________________________________________________________//
+  // USE EFFECT FOR UPDATING FILTER VALUES COMING FROM MissionsForm.js //
+  //-------------------------------------------------------------------//
+  useEffect(() => {
     //_____________________________________________________//
     // CALL FUNCTION TO CHANGE HEIGHT OF RESULTS CONTAINER //
     //-----------------------------------------------------//
@@ -180,31 +207,6 @@ const Missions = () => {
       }
     };
 
-    //___________________________________//
-    // FUNCTION TO PAGINATE THE RESULTS //
-    //----------------------------------//
-    const paginateApi = () => {
-      var row = 0;
-      var col = 0;
-      var pageArray = [];
-      for (let i = 0; i < filteredByYear.length; i++) {
-        if (i % 10 === 0 && i !== 0) {
-          row++;
-          col = 0;
-        }
-
-        if (i === 0 || (i % 10 === 0 && i !== 0)) {
-          pageArray[row] = [];
-        }
-
-        pageArray[row][col] = filteredByYear[i];
-        pageArray[row][col].result = i + 1;
-        col++;
-      }
-      setPageLength(pageArray.length);
-      setPaginateResult(pageArray);
-    };
-
     //______________//
     // START FILTER //
     //--------------//
@@ -214,9 +216,6 @@ const Missions = () => {
     // CALL FUNCTION TO SET VALUES TO DISPLAY //
     //----------------------------------------//
     checkValues();
-
-    setMatch(displayResults);
-    setMatchLength(matches.length);
 
     //_____________________________________________________________//
     // CALL FUNCTION TO CHANGE HEIGHT IF 3 OR LESS ITEMS ARE SHOWN //
